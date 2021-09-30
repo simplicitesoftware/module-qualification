@@ -252,8 +252,10 @@ var QualPostCertif = QualPostCertif || (function() {
 			        this.$refs.flowform.submitted = true
 			        
 			        this.submitted = true
+			        
 			        if(!unknown){
 			        	this.validateExams(this.validateCbk);
+			        	console.log("validation")
 			        	exams.forEach(exam => {
 			        		examQuestions = [];
 			        		this.questions.forEach(qst => {

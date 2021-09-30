@@ -52,6 +52,7 @@ Exercise
     - `SIM_CERTIF_INSTAL_EXP` Certification - Installation / Exploitation
     - `SIM_CERTIF_BEHAVE` Certification - Comportement
     - `SIM_CERTIF_HOOKS` Certification - Hooks
+    - `NA` Non applicable
 * `QUALEXANWSERTYPE`
     - `TXT` Texte
     - `ENUM` ENUM
@@ -60,6 +61,7 @@ Exercise
     - `1` Niveau 1
     - `2` Niveau 2
     - `3` Niveau 3
+    - `NA` Non applicable
 * `QUAL_REF_ENUM_CHOICES`
     - `Certification - Comportement-Niveau 1-303_REF_ENUM` 
     - `Certification - Comportement-Niveau 1-305_REF_ENUM` 
@@ -182,6 +184,8 @@ Exercise
     - `Simplicité - Notions de base-Niveau 1-21_REF_ENUM` 
     - `Simplicité - Notions de base-Niveau 1-23_REF_ENUM` 
     - `Simplicité - Notions de base-Niveau 1-27_REF_ENUM` 
+    - `Simplicité - Notions de base-Niveau 1-331_REF_ENUM` 
+    - `Simplicité - Notions de base-Niveau 1-333_REF_ENUM` 
     - `Simplicité - Notions de base-Niveau 1-3_REF_ENUM` 
     - `Simplicité - Notions de base-Niveau 1-7_REF_ENUM` 
     - `Simplicité - Notions de base-Niveau 1-9_REF_ENUM` 
@@ -190,6 +194,7 @@ Exercise
     - `Simplicité - Retour Formation-Niveau 1-113_REF_ENUM` 
     - `Simplicité - Retour Formation-Niveau 1-115_REF_ENUM` 
     - `Simplicité - Retour Formation-Niveau 1-119_REF_ENUM` 
+    - `Simplicité-Notionsdebase-Nonapplicable-337_REF_ENUM` 
 
 `QualUser` business object definition
 -------------------------------------
@@ -200,7 +205,12 @@ Exercise
 
 | Name                                                         | Type                                     | Required | Updatable | Personal | Description                                                                      |
 |--------------------------------------------------------------|------------------------------------------|----------|-----------|----------|----------------------------------------------------------------------------------|
+| `usr_login`                                                  | regexp(100)                              | yes*     | yes       | yes      | Login                                                                            |
+| `usr_last_name`                                              | char(50)                                 |          | yes       | yes      | Last name                                                                        |
+| `usr_active`                                                 | enum(1) using `USER_STATUS` list         |          | yes       |          | -                                                                                |
+| `usr_first_name`                                             | char(50)                                 |          | yes       | yes      | First name                                                                       |
 | `qualUsrTests`                                               | multi(100) using `QUALEXTYPE` list       |          | yes       |          | -                                                                                |
+| `usr_email`                                                  | email(100)                               |          | yes       | yes      | Email address                                                                    |
 | `qualUsrLevel`                                               | multi(100) using `QUALEXDIFFICULTY` list |          | yes       |          | -                                                                                |
 | `qualUsrTypedutilisateur`                                    | enum(100) using `QUALUSRTYPEDUTILISATEUR` list | yes      | yes       |          | -                                                                                |
 | `qualUsrToken`                                               | char(100)                                |          |           |          | -                                                                                |
@@ -208,6 +218,11 @@ Exercise
 
 ### Lists
 
+* `USER_STATUS`
+    - `0` Disabled
+    - `1` Enabled
+    - `2` Pending
+    - `3` Web services only
 * `QUALEXTYPE`
     - `UML` UML
     - `JAVA` JAVA
@@ -225,10 +240,12 @@ Exercise
     - `SIM_CERTIF_INSTAL_EXP` Certification - Installation / Exploitation
     - `SIM_CERTIF_BEHAVE` Certification - Comportement
     - `SIM_CERTIF_HOOKS` Certification - Hooks
+    - `NA` Non applicable
 * `QUALEXDIFFICULTY`
     - `1` Niveau 1
     - `2` Niveau 2
     - `3` Niveau 3
+    - `NA` Non applicable
 * `QUALUSRTYPEDUTILISATEUR`
     - `ADMIN` Administrateur
     - `CAND` Candidat
@@ -273,6 +290,7 @@ Exercise
     - `SIM_CERTIF_INSTAL_EXP` Certification - Installation / Exploitation
     - `SIM_CERTIF_BEHAVE` Certification - Comportement
     - `SIM_CERTIF_HOOKS` Certification - Hooks
+    - `NA` Non applicable
 
 `QualExamEx` business object definition
 ---------------------------------------
@@ -315,6 +333,7 @@ Exercise
     - `SIM_CERTIF_INSTAL_EXP` Certification - Installation / Exploitation
     - `SIM_CERTIF_BEHAVE` Certification - Comportement
     - `SIM_CERTIF_HOOKS` Certification - Hooks
+    - `NA` Non applicable
 * `QUAL_REF_ENUM_CHOICES`
     - `Certification - Comportement-Niveau 1-303_REF_ENUM` 
     - `Certification - Comportement-Niveau 1-305_REF_ENUM` 
@@ -437,6 +456,8 @@ Exercise
     - `Simplicité - Notions de base-Niveau 1-21_REF_ENUM` 
     - `Simplicité - Notions de base-Niveau 1-23_REF_ENUM` 
     - `Simplicité - Notions de base-Niveau 1-27_REF_ENUM` 
+    - `Simplicité - Notions de base-Niveau 1-331_REF_ENUM` 
+    - `Simplicité - Notions de base-Niveau 1-333_REF_ENUM` 
     - `Simplicité - Notions de base-Niveau 1-3_REF_ENUM` 
     - `Simplicité - Notions de base-Niveau 1-7_REF_ENUM` 
     - `Simplicité - Notions de base-Niveau 1-9_REF_ENUM` 
@@ -445,6 +466,7 @@ Exercise
     - `Simplicité - Retour Formation-Niveau 1-113_REF_ENUM` 
     - `Simplicité - Retour Formation-Niveau 1-115_REF_ENUM` 
     - `Simplicité - Retour Formation-Niveau 1-119_REF_ENUM` 
+    - `Simplicité-Notionsdebase-Nonapplicable-337_REF_ENUM` 
 * `QUALEXANWSERTYPE`
     - `TXT` Texte
     - `ENUM` ENUM
@@ -616,6 +638,8 @@ Exercise
     - `Simplicité - Notions de base-Niveau 1-21_REF_ENUM` 
     - `Simplicité - Notions de base-Niveau 1-23_REF_ENUM` 
     - `Simplicité - Notions de base-Niveau 1-27_REF_ENUM` 
+    - `Simplicité - Notions de base-Niveau 1-331_REF_ENUM` 
+    - `Simplicité - Notions de base-Niveau 1-333_REF_ENUM` 
     - `Simplicité - Notions de base-Niveau 1-3_REF_ENUM` 
     - `Simplicité - Notions de base-Niveau 1-7_REF_ENUM` 
     - `Simplicité - Notions de base-Niveau 1-9_REF_ENUM` 
@@ -624,6 +648,7 @@ Exercise
     - `Simplicité - Retour Formation-Niveau 1-113_REF_ENUM` 
     - `Simplicité - Retour Formation-Niveau 1-115_REF_ENUM` 
     - `Simplicité - Retour Formation-Niveau 1-119_REF_ENUM` 
+    - `Simplicité-Notionsdebase-Nonapplicable-337_REF_ENUM` 
 * `QUALEXTYPE`
     - `UML` UML
     - `JAVA` JAVA
@@ -641,6 +666,7 @@ Exercise
     - `SIM_CERTIF_INSTAL_EXP` Certification - Installation / Exploitation
     - `SIM_CERTIF_BEHAVE` Certification - Comportement
     - `SIM_CERTIF_HOOKS` Certification - Hooks
+    - `NA` Non applicable
 * `QUALEXUSRANSWERENUMERATION`
     - `A` code A
     - `B` code B

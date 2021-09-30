@@ -43,7 +43,7 @@ var QualPostTraining = QualPostTraining || (function($) {
 			}
 			else{
 				
-				if(generic){
+				/*if(generic){
 					start = new FlowForm.QuestionModel({
 			            id: 'start',
 			            title: "Bonjour "+String.fromCodePoint("0x1F44B"),
@@ -64,8 +64,17 @@ var QualPostTraining = QualPostTraining || (function($) {
 			            type: FlowForm.QuestionType.SectionBreak,
 			            required: true,
 	        		});
-				}
+				}*/
         	
+        		start = new FlowForm.QuestionModel({
+	            	id: 'start',
+		            title:"Bonjour "+String.fromCodePoint("0x1F44B"),
+	            	subtitle: "Vous avez été invité à répondre à un questionnaire.",
+	            	description:"Lorsque vous êtes prêts, cliquez sur 'suivant' ou Appuyez sur la touche ENTRÉE pour commencer.",
+		            type: FlowForm.QuestionType.SectionBreak,
+		            required: true,
+        		});
+        		
 				output.push(start);
 				
 				for(let k = 0; k < exams.length; k++){
@@ -153,6 +162,7 @@ var QualPostTraining = QualPostTraining || (function($) {
 				 onAnswer(qA) {
 				 	let id = qA.id;
 				 	console.log(id);
+				 	console.log("id= "+qA.id);
 					if(qA.type == FlowForm.QuestionType.SectionBreak && qA.id.includes("exam")){
 						//create exam in back
 						var usrExObj = app.getBusinessObject("QualUserExam");
@@ -258,48 +268,6 @@ var QualPostTraining = QualPostTraining || (function($) {
 			      store(exam, qsts){
 			      	
 			      	this.loading = true;
-			      	/*console.log("storing " + exam.examId);
-		    		var usrExObj = app.getBusinessObject("QualUserExam");
-		    		var usrExObjIds = [];
-			      	usrExObj.resetFilters();
-					usrExObj.getForCreate(function () {
-						usrExObj.item.qualUsrexamUsrId = params.userId;
-						usrExObj.item.qualUsrexamExamId = exam.examId;
-						usrExObj.create(function(){
-							//callback of creation -> answer items should have been created
-							usrExObjIds.push(usrExObj.getRowId());
-							qsts.forEach(function(qst, index){
-								if (qst.type !== FlowForm.QuestionType.SectionBreak) {
-									if(qst.examId == exam.examId){
-										let submittedValue = qst.answer;
-										var usrAnswerObj = app.getBusinessObject("QualExUsr");
-										usrAnswerObj.resetFilters();
-										usrAnswerObj.search(function(){
-											usrAnswerObj.getForUpdate(function(){
-												usrAnswerObj.item.qualExusrSubmitted = true;
-												usrAnswerObj.item.qualExusrAnswer = submittedValue;
-												usrAnswerObj.update(function(){
-													if(index === qsts.length - 1){
-														
-														usrExObjIds.forEach(id => {
-															usrExObj.getForUpdate(function(){
-																usrExObj.item.qualUsrexamEtat = "DONE";
-																usrExObj.update();
-															},id);
-														});
-													}
-												});
-											}, usrAnswerObj.list[0].row_id);
-										}, 
-										{
-											qualExusrUsrexamId:usrExObj.getRowId(),
-											qualExusrExamexId__qualExamexExId__qualExId:qst.id
-										});
-									}
-								}
-							})
-						}, usrExObj.item);
-					});*/
 					
 					//display "wait" section
 					setTimeout(() => {

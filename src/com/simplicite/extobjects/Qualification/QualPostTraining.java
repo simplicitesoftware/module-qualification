@@ -17,6 +17,7 @@ public class QualPostTraining extends ExternalObject {
 	*/
 	@Override
 	public String display(Parameters params) {
+		
 		try {
 			Grant g = getGrant();
 					
@@ -61,11 +62,9 @@ public class QualPostTraining extends ExternalObject {
 					if(!"".equals(examId)){
 						examEx.setFieldFilter("qualExamexExamId", examId);
 						
-						if(!generic){
-							JSONObject start = new JSONObject();
-							start.put("type", "QST_BREAK");
-							qsts.put(start);
-						}
+						JSONObject start = new JSONObject();
+						start.put("type", "QST_BREAK");
+						qsts.put(start);
 						
 						for(String[] row : examEx.search()){
 							
@@ -78,18 +77,9 @@ public class QualPostTraining extends ExternalObject {
 							qst.put("id", examEx.getFieldValue("qualExamexExId.qualExId"));
 							qsts.put(qst);
 							
-							//JSONObject answer = new JSONObject();
-							//answer.put(examEx.getFieldValue("qualExamexExId.qualExId"), examEx.getFieldValue("qualExamexExId.qualExAnswerEnumeration"));
 							answers.put(examEx.getFieldValue("qualExamexExId.qualExId"), examEx.getFieldValue("qualExamexExId.qualExAnswerEnumeration"));
-							//answers.put(answer);
 							
 						}
-						
-						/*if(!generic){
-							JSONObject end = new JSONObject();
-							end.put("type", "QST_BREAK");
-							qsts.put(end);
-						}*/
 						
 						exam.put("answers", answers);
 						

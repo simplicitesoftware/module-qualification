@@ -10,8 +10,26 @@ import com.simplicite.objects.System.User;
 /**
  * Business object QualUser
  */
-public class QualUser extends User {
+public class QualUser extends com.simplicite.objects.System.SimpleUser {
 	private static final long serialVersionUID = 1L;
+	
+		
+	@Override
+	public void postLoad() {
+		super.postLoad();
+		// hide most of the SimpleUser fields, keeping only email & login
+		hideFatherFields();
+	}				
+	
+	
+	 private void hideFatherFields() {
+
+        for (FieldArea fA : getFieldAreas()) {
+            if (fA.getName().startsWith("User"))
+                fA.setVisible(false);
+        }
+
+    }
 	
 	@Override
     public String postCreate() {

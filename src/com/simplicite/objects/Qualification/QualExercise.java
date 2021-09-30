@@ -76,6 +76,29 @@ public class QualExercise extends ObjectDB {
 		return null;
 	}
 	
+	/**
+	 * Unit tests method
+	 */
+	@Override
+	public String unitTests() {
+		try {
+			ObjectDB fl = getGrant().getTmpObject("FieldList");
+			fl.resetValues();
+			fl.setFieldFilter("mdl_name", "Qualification_Enum");
+			
+			for(String[] row : fl.search()){
+				fl.setValues(row, false);
+				String newName = fl.getFieldValue("lov_name").replace(" ", "");
+				fl.setFieldValue("lov_name", newName); 
+				fl.save();
+			}
+			return "Unit tests for" + getName();
+		} catch (Exception e) {
+			AppLog.error(null, e, getGrant());
+			return e.getMessage();
+		}
+	}
+	
 	
 	@Override
 	public String postCreate() {
@@ -103,7 +126,7 @@ public class QualExercise extends ObjectDB {
 			String flRefRowId = g.simpleQuery("select row_id from m_list where lov_name = 'QUAL_REF_ENUM_CHOICES'");
 			
 			lcRef.setFieldValue("lov_list_id", flRefRowId);
-			lcRef.setFieldValue("lov_code", idRef);
+			lcRef.setFieldValue("lov_code", idRef.replace(" ", ""));
 			lcRef.setFieldValue("lov_order_by", "999");
 			lcRef.setFieldValue("row_module_id", qualifID);
 			
@@ -117,7 +140,7 @@ public class QualExercise extends ObjectDB {
 			
 			ObjectDB fl = g.getTmpObject("FieldList");
 			fl.resetValues();
-			fl.setFieldValue("lov_name", idChoices);
+			fl.setFieldValue("lov_name", idChoices.replace(" ", ""));
 			fl.setFieldValue("row_module_id", qualifID);
 			
 			fl.create();
@@ -225,7 +248,7 @@ public class QualExercise extends ObjectDB {
 			ObjectDB lcChoice = g.getTmpObject("FieldListCode");
 			lcChoice.resetValues();
 			lcChoice.setFieldValue("lov_list_id", flRowId);
-			lcChoice.setFieldValue("lov_code", code);
+			lcChoice.setFieldValue("lov_code", code.replace(" ", ""));
 			lcChoice.setFieldValue("lov_order_by", "999");
 			lcChoice.setFieldValue("row_module_id", ModuleDB.getModuleId("Qualification_Enum"));
 			
