@@ -9,14 +9,11 @@ var QualPostCertif = QualPostCertif || (function() {
 	function render(params, qualTemplate) {
 		
 		try {
+			console.log(params)
 			if (typeof Vue === 'undefined') throw 'Vue.js not available';
 			
 			if (!params.pub) $('#demovuejsfrontend').css('min-height', '1000px');
 
-			/*app = app || (params.pub
-					? new Simplicite.Ajax(params.root, 'api', 'website', 'simplicite')  // External
-					: Simplicite.Application  // Internal
-				);*/
 			app = new Simplicite.Ajax(params.root, 'uipublic');
 			
 			let output = [];
@@ -38,9 +35,10 @@ var QualPostCertif = QualPostCertif || (function() {
 					content: "Il semblerait y avoir un problème avec l'affichage de votre questionnaire. Il est possible que votre token soit inexistant ou ait expiré.",
 					type: FlowForm.QuestionType.SectionBreak,
 					required: false,
-				})
+				});
 				output.push(start);
 			}
+			
 			else{
 				
 				start = new FlowForm.QuestionModel({
@@ -82,8 +80,9 @@ var QualPostCertif = QualPostCertif || (function() {
 					value: "other",
 				}),
 				endExamChoices.push(tmpChoice);
+				
 				let endExamJumps = examJumps;
-				endExamJumps["other"] = "_submit";
+				endExamJumps.other = "_submit";
 				
 				output.push(examSelector);
 				
@@ -92,34 +91,10 @@ var QualPostCertif = QualPostCertif || (function() {
 					let examTitle = exams[k].examTitle;
 					for(let i = 0; i < input.length; i++){
 						if(input[i].type == "ENUM"){
-							let choices = [];
-							let iChoices = input[i].enum.split("@@@");
-							for(let j = 0; j<iChoices.length; j++){
-								tmpChoice = new FlowForm.ChoiceOption({
-									label: iChoices[j],
-								}),
-								choices.push(tmpChoice);
-							}
-							tmp = new FlowForm.QuestionModel({
-								examId : exams[k].examId,
-								id: input[i].id,
-								title: input[i].title,
-								helpTextShow: false,
-								type: FlowForm.QuestionType.Dropdown,
-								required: true,
-								multiple: false,
-								options: choices,
-						    });
+							createEnumElement(input[i], exams[k]);
 						}
 						else if(input[i].type == "TXT"){
-							tmp = new FlowForm.QuestionModel({
-								examId : exams[k].examId,
-								id:input[i].id,
-								title: input[i].title,
-								type: FlowForm.QuestionType.LongText,
-								required: true
-								
-						    });
+							createTxtElement(input[i], exams[k]);
 						}
 						else if(input[i].type == "QST_BREAK"){
 							tmp = new FlowForm.QuestionModel({
@@ -140,23 +115,6 @@ var QualPostCertif = QualPostCertif || (function() {
 								required: true,
 								options: endExamChoices,
 								jump: examJumps,
-								/* : "exam-"+exams[k].examId +"-break_end",
-								examId : exams[k].examId,
-								helpTextShow: false,
-					            title: "Vous avez terminé cette catégorie.",
-					            subTitle :"Vous pouvez continuer ou retourner à l'écran de sélection de catégories.",
-					            type: FlowForm.QuestionType.MultipleChoice,
-					            required : true,
-					            options: [      
-					            	new FlowForm.ChoiceOption({
-										label: 'Continuer', 
-									}),
-									new FlowForm.ChoiceOption({				             
-						              	label: 'Sélectionner une catégorie',
-						              	value: 'back_to_the_start',
-					            	}),
-					            ],
-					            jump: examJumps,*/
 			        		});
 						}
 						
@@ -202,22 +160,6 @@ var QualPostCertif = QualPostCertif || (function() {
 				
 				 onAnswer(qA) {
 				 	let id = qA.id;
-				 	
-				 	//Exam is already created in back
-					/*if(qA.type == FlowForm.QuestionType.SectionBreak && qA.id.includes("exam")){
-						var usrExObj = app.getBusinessObject("QualUserExam");
-						usrExObj.resetFilters();
-						usrExObj.getForCreate(function () {
-							usrExObj.item.qualUsrexamUsrId = params.userId;
-							usrExObj.item.qualUsrexamExamId = qA.examId;
-							usrExObj.create(function(){
-								exObjRowId = usrExObj.getRowId();
-								usrExObjIds.push(exObjRowId);
-							}, usrExObj.item);
-							
-						});
-					}*/
-					
 					if(qA.type !== FlowForm.QuestionType.SectionBreak && qA.id !== "exam_selector" && !(qA.id).includes("break_end")){
 						//question answered -> set value in back
 						let submittedValue = qA.answer;
@@ -351,6 +293,42 @@ var QualPostCertif = QualPostCertif || (function() {
 			console.error('Render error: ' + e.message);
 		}
 		
+		function createEnumElement(input, exam){
+			
+			let choices = [];
+			let iChoices = input.enum.split("@@@");
+			for(let j = 0; j<iChoices.length; j++){
+				tmpChoice = new FlowForm.ChoiceOption({
+					label: iChoices[j],
+				}),
+				choices.push(tmpChoice);
+			}
+			
+			return new FlowForm.QuestionModel({
+				examId : exam.examId,
+				id: input.id,
+				title: input.title,
+				helpTextShow: false,
+				type: FlowForm.QuestionType.Dropdown,
+				required: true,
+				multiple: false,
+				options: choices,
+		    });
+		
+		}
+		
+		function createTxtElement(input, exam){
+			
+			return new FlowForm.QuestionModel({
+				examId : exam.examId,
+				id:input.id,
+				title: input.title,
+				type: FlowForm.QuestionType.LongText,
+				required: true
+				
+		    });
+		
+		}
 		
 	}
 

@@ -24,6 +24,7 @@ public class QualExUsr extends ObjectDB {
 	}
 	
 	
+	
 	@Override
 	public void initList(ObjectDB parent) {
 		
@@ -51,7 +52,6 @@ public class QualExUsr extends ObjectDB {
 	
 	@Override
 	public void initUpdate() {
-		
 		Grant g = getGrant();
 		
 		getFieldArea("QualExUsr-1").setVisible(!isCandidate(g));

@@ -33,7 +33,6 @@ public class QualPostTraining extends ExternalObject {
 			String examId = "";
 			boolean generic = "GEN".equals(g.simpleQuery("select qual_usr_typedutilisateur from m_user where row_id = "+userId));
 			
-			//String userExams = g.simpleQuery("select qual_usr_tests from m_user where row_id = "+userId);
 			JSONArray exams = new JSONArray();
 			
 			
@@ -41,12 +40,6 @@ public class QualPostTraining extends ExternalObject {
 			
 			for(String[] userExamId : userExams){
 				examId = userExamId[0];
-				
-			//}
-						
-		//	for(String exType : userExams.split(";")){
-				
-		//		examId = g.simpleQuery("select row_id from qual_exam where qual_ex_type = '"+exType+"'");
 				
 				ObjectDB examObj = g.getTmpObject("QualExam");
 				

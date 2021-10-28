@@ -17,6 +17,7 @@ public class QualPostCertif extends ExternalObject {
 	 */
 	@Override
 	public Object display(Parameters params) {
+		
 		try {
 			Grant g = getGrant();
 					
@@ -25,24 +26,23 @@ public class QualPostCertif extends ExternalObject {
 			
 			String token = params.getParameter("token");
 			
+			//Get rowid of Certification linked to token passed in url
 			String certifId = g.simpleQuery("select row_id from qual_cert_usr where qual_certusr_url_eval LIKE '%"+token+"'");
 			
+			//Get rowid of user linked to token passed in url
 			String userId = g.simpleQuery("select row_id from m_user where qual_usr_token = '"+token+"'");
+			
 			ObjectDB examEx = g.getTmpObject("QualExamEx");
 			examEx.resetValues();
 			examEx.resetFilters();
 			
 			String examId = "";
-			boolean generic = "GEN".equals(g.simpleQuery("select qual_usr_typedutilisateur from m_user where row_id = "+userId));
 			
-			//String userExams = g.simpleQuery("select qual_usr_tests from m_user where row_id = "+userId);
 			JSONArray exams = new JSONArray();
 			
-			List<String[]> userExams = g.query("select qual_usrexam_exam_id from qual_usr_exam_subjects where qual_usrexam_usr_id = "+userId);
-			
+			//Get certif exams linked to the user (created when linking a user to a certification)
 			List<String[]> usrCertifExams = g.query("select row_id, QUAL_USREXAM_EXAM_ID from qual_user_exam where QUAL_USREXAM_CERTUSR_ID = "+certifId);
 						
-			//for(String[] userExamId : userExams){
 			JSONArray userExamIdsArray = new JSONArray();
 			
 			for(String[] userExamIds : usrCertifExams){
@@ -64,11 +64,9 @@ public class QualPostCertif extends ExternalObject {
 					if(!"".equals(examId)){
 						examEx.setFieldFilter("qualExamexExamId", examId);
 						
-						if(!generic){
-							JSONObject start = new JSONObject();
-							start.put("type", "QST_BREAK");
-							qsts.put(start);
-						}
+						JSONObject start = new JSONObject();
+						start.put("type", "QST_BREAK");
+						qsts.put(start);
 						
 						for(String[] row : examEx.search()){
 							
@@ -81,17 +79,8 @@ public class QualPostCertif extends ExternalObject {
 							qst.put("id", examEx.getFieldValue("qualExamexExId.qualExId"));
 							qsts.put(qst);
 							
-							//JSONObject answer = new JSONObject();
-							//answer.put(examEx.getFieldValue("qualExamexExId.qualExId"), examEx.getFieldValue("qualExamexExId.qualExAnswerEnumeration"));
 							answers.put(examEx.getFieldValue("qualExamexExId.qualExId"), examEx.getFieldValue("qualExamexExId.qualExAnswerEnumeration"));
-							//answers.put(answer);
 							
-						}
-						
-						if(!generic){
-							JSONObject end = new JSONObject();
-							end.put("type", "QST_BREAK_END");
-							qsts.put(end);
 						}
 						
 						exam.put("answers", answers);
@@ -100,6 +89,8 @@ public class QualPostCertif extends ExternalObject {
 						exam.put("examTitle", examName);
 						exam.put("examId", userExamIds[0]);
 						exam.put("examDescription", examDescription);
+						
+						
 						
 					}
 					exams.put(exam);
@@ -111,7 +102,6 @@ public class QualPostCertif extends ExternalObject {
 			String template = HTMLTool.getResourceHTMLContent(this, "HTML_POST_CERTIF_TEMPLATE");
 			JSONObject renderParams = params.toJSONObject().put("pub", pub).put("exams", exams);
 			
-			renderParams.put("generic", generic);
 			renderParams.put("userId", userId);
 			renderParams.put("userExamIds", userExamIdsArray);
 			

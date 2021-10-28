@@ -5,7 +5,7 @@
 	<action>upsert</action>
 	<data>
 		<mdl_name>Qualification</mdl_name>
-		<mdl_version>0.14</mdl_version>
+		<mdl_version>0.16</mdl_version>
 		<mdl_prefix>qual</mdl_prefix>
 		<mdl_url><![CDATA[{
 	"type": "git",
@@ -100,6 +100,14 @@
 	<name>Model</name>
 	<action>upsert</action>
 	<data>
+		<mod_name>Model-QualCreateQuizz</mod_name>
+		<mod_template_id.mtp_name>ModelProcess</mod_template_id.mtp_name>
+		<mod_doc>files/Model/Model-QualCreateQuizz.svg</mod_doc>
+		<mod_json/>
+		<mod_image>files/Model/Model-QualCreateQuizz.png</mod_image>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
 		<mod_name>Qualification-Model</mod_name>
 		<mod_template_id.mtp_name>ModelBusinessObject</mod_template_id.mtp_name>
 		<mod_doc>files/Model/Qualification-Model.svg</mod_doc>
@@ -122,7 +130,7 @@
 	<data>
 		<grp_name>QUAL_CANDIDATE</grp_name>
 		<grp_comment/>
-		<grp_type>G</grp_type>
+		<grp_type>G;R</grp_type>
 		<grp_parent_id.grp_name/>
 		<grp_home_id.viw_name>QualCandidateScope</grp_home_id.viw_name>
 		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
@@ -458,7 +466,7 @@
 		<lov_list_id.lov_name>QUALEXTYPE</lov_list_id.lov_name>
 		<lov_code>SIM_CERTIF_INSTAL_EXP</lov_code>
 		<lov_order_by>140</lov_order_by>
-		<lov_label>Certification - Installation / Exploitation</lov_label>
+		<lov_label>Certification - Installation - Exploitation</lov_label>
 		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
 		<lov_color/>
 		<lov_color_bg/>
@@ -1479,6 +1487,80 @@
 	<name>Field</name>
 	<action>upsert</action>
 	<data>
+		<fld_name>cquizzAddOtherUser</fld_name>
+		<fld_dbname/>
+		<fld_visible>3</fld_visible>
+		<fld_updatable>1</fld_updatable>
+		<fld_required>0</fld_required>
+		<fld_fonctid>0</fld_fonctid>
+		<fld_research/>
+		<fld_researchreq>0</fld_researchreq>
+		<fld_sort>C</fld_sort>
+		<fld_more>0</fld_more>
+		<fld_listmore>0</fld_listmore>
+		<fld_listsum/>
+		<fld_tray/>
+		<fld_type>8</fld_type>
+		<fld_type_id.flt_code/>
+		<fld_list_id.lov_name/>
+		<fld_copy>1</fld_copy>
+		<fld_size>1</fld_size>
+		<fld_minsize/>
+		<fld_precision/>
+		<fld_fromdate_id.fld_name/>
+		<fld_dfault/>
+		<fld_indexable>0</fld_indexable>
+		<fld_autocomp>0</fld_autocomp>
+		<fld_groupby>0</fld_groupby>
+		<fld_updall>1</fld_updall>
+		<fld_case/>
+		<fld_righttoleft>0</fld_righttoleft>
+		<fld_rendering/>
+		<fld_speech/>
+		<fld_calc/>
+		<fld_objlist/>
+		<fld_comment/>
+		<fld_classification/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<fld_name>cQuizzPrcAddToUser</fld_name>
+		<fld_dbname/>
+		<fld_visible>3</fld_visible>
+		<fld_updatable>1</fld_updatable>
+		<fld_required>1</fld_required>
+		<fld_fonctid>0</fld_fonctid>
+		<fld_research/>
+		<fld_researchreq>0</fld_researchreq>
+		<fld_sort>C</fld_sort>
+		<fld_more>0</fld_more>
+		<fld_listmore>0</fld_listmore>
+		<fld_listsum/>
+		<fld_tray/>
+		<fld_type>8</fld_type>
+		<fld_type_id.flt_code/>
+		<fld_list_id.lov_name/>
+		<fld_copy>1</fld_copy>
+		<fld_size>1</fld_size>
+		<fld_minsize/>
+		<fld_precision/>
+		<fld_fromdate_id.fld_name/>
+		<fld_dfault/>
+		<fld_indexable>0</fld_indexable>
+		<fld_autocomp>0</fld_autocomp>
+		<fld_groupby>0</fld_groupby>
+		<fld_updall>1</fld_updall>
+		<fld_case/>
+		<fld_righttoleft>0</fld_righttoleft>
+		<fld_rendering/>
+		<fld_speech/>
+		<fld_calc/>
+		<fld_objlist/>
+		<fld_comment/>
+		<fld_classification/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
 		<fld_name>qualCertNom</fld_name>
 		<fld_dbname>qual_cert_nom</fld_dbname>
 		<fld_visible>3</fld_visible>
@@ -1501,7 +1583,7 @@
 		<fld_precision/>
 		<fld_fromdate_id.fld_name/>
 		<fld_dfault/>
-		<fld_indexable>0</fld_indexable>
+		<fld_indexable>1</fld_indexable>
 		<fld_autocomp>0</fld_autocomp>
 		<fld_groupby>0</fld_groupby>
 		<fld_updall>1</fld_updall>
@@ -1687,12 +1769,12 @@
 		<fld_fromdate_id.fld_name/>
 		<fld_dfault/>
 		<fld_indexable>0</fld_indexable>
-		<fld_autocomp>0</fld_autocomp>
+		<fld_autocomp>1</fld_autocomp>
 		<fld_groupby>0</fld_groupby>
 		<fld_updall>1</fld_updall>
 		<fld_case/>
 		<fld_righttoleft>0</fld_righttoleft>
-		<fld_rendering/>
+		<fld_rendering>FKPS</fld_rendering>
 		<fld_speech/>
 		<fld_calc/>
 		<fld_objlist/>
@@ -3069,6 +3151,43 @@
 		<fld_classification/>
 		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
 	</data>
+	<data>
+		<fld_name>user_choice</fld_name>
+		<fld_dbname/>
+		<fld_visible>3</fld_visible>
+		<fld_updatable>1</fld_updatable>
+		<fld_required>1</fld_required>
+		<fld_fonctid>0</fld_fonctid>
+		<fld_research/>
+		<fld_researchreq>0</fld_researchreq>
+		<fld_sort>C</fld_sort>
+		<fld_more>0</fld_more>
+		<fld_listmore>0</fld_listmore>
+		<fld_listsum/>
+		<fld_tray/>
+		<fld_type>8</fld_type>
+		<fld_type_id.flt_code/>
+		<fld_list_id.lov_name/>
+		<fld_copy>1</fld_copy>
+		<fld_size>1</fld_size>
+		<fld_minsize/>
+		<fld_precision/>
+		<fld_fromdate_id.fld_name/>
+		<fld_dfault><![CDATA[1]]></fld_dfault>
+		<fld_indexable>0</fld_indexable>
+		<fld_autocomp>0</fld_autocomp>
+		<fld_groupby>0</fld_groupby>
+		<fld_updall>1</fld_updall>
+		<fld_case/>
+		<fld_righttoleft>0</fld_righttoleft>
+		<fld_rendering/>
+		<fld_speech/>
+		<fld_calc/>
+		<fld_objlist/>
+		<fld_comment/>
+		<fld_classification/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
 </object>
 <object>
 	<name>Template</name>
@@ -3105,11 +3224,14 @@
 	</data>
 	<data>
 		<tpl_name>QualExamEx</tpl_name>
-		<tpl_ui><![CDATA[<div>
-  <div class="area" data-area="1"></div>
-  <div class="area" data-area="2"></div>
-</div>
-]]></tpl_ui>
+		<tpl_ui><![CDATA[<div class="row">
+  <div class="col-sm-6">
+    <div class="area" data-area="1"></div>
+  </div>
+  <div class="col-sm-6">
+    <div class="area" data-area="2"></div>
+  </div>
+</div>]]></tpl_ui>
 		<tpl_min/>
 		<tpl_image/>
 		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
@@ -3160,6 +3282,13 @@
   <div class="area" data-area="1"></div>
 </div>
 ]]></tpl_ui>
+		<tpl_min/>
+		<tpl_image/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tpl_name>QualUsrExamSubjects</tpl_name>
+		<tpl_ui><![CDATA[<div class="area" data-area="1"></div>]]></tpl_ui>
 		<tpl_min/>
 		<tpl_image/>
 		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
@@ -3498,6 +3627,25 @@
 		<ofa_icon><![CDATA[[EXPR:[OBJECTICON:QualCertif]]]]></ofa_icon>
 		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
 	</data>
+	<data>
+		<ofa_name>QualUsrExamSubjects-1</ofa_name>
+		<ofa_position>1</ofa_position>
+		<ofa_title>0</ofa_title>
+		<ofa_ui><![CDATA[<div>
+  <div class="field" data-field="qualUsrexamUsrId"></div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="field" data-field="qualUsrexamUsrId__usr_login"></div>
+    </div>
+    <div class="col-sm-6">
+      <div class="field" data-field="qualUsrexamExamId__qualExamName"></div>
+    </div>
+  </div>
+  <div class="field" data-field="qualUsrexamExamId"></div>
+</div>]]></ofa_ui>
+		<ofa_icon>star</ofa_icon>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
 </object>
 <object>
 	<name>Domain</name>
@@ -3528,6 +3676,17 @@
 <object>
 	<name>ObjectExternal</name>
 	<action>upsert</action>
+	<data>
+		<obe_name>QualCreateCandidate</obe_name>
+		<obe_type>E</obe_type>
+		<obe_url/>
+		<obe_comment/>
+		<obe_help/>
+		<obe_class/>
+		<obe_script_id>src/com/simplicite/extobjects/Qualification/QualCreateCandidate.java</obe_script_id>
+		<obe_icon/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
 	<data>
 		<obe_name>QualEndTestExt</obe_name>
 		<obe_type>E</obe_type>
@@ -3589,7 +3748,7 @@
 		<obo_delspec/>
 		<obo_exportorder>6</obo_exportorder>
 		<obo_distinct>0</obo_distinct>
-		<obo_indexable>0</obo_indexable>
+		<obo_indexable>1</obo_indexable>
 		<obo_groupby>0</obo_groupby>
 		<obo_dfltref/>
 		<obo_template_id.tpl_name>QualCertif</obo_template_id.tpl_name>
@@ -3802,7 +3961,7 @@
 		<obo_listsearch>1</obo_listsearch>
 		<obo_list_edit>N;L;E</obo_list_edit>
 		<obo_useform>1</obo_useform>
-		<obo_title/>
+		<obo_title><![CDATA[[VALUE:qualExamName] / [VALUE:qualExQuestion]]]></obo_title>
 		<obo_icon>img/color/help</obo_icon>
 		<obo_refcount>0</obo_refcount>
 		<obo_tree>0</obo_tree>
@@ -4120,7 +4279,7 @@
 		<obo_indexable>0</obo_indexable>
 		<obo_groupby>0</obo_groupby>
 		<obo_dfltref/>
-		<obo_template_id.tpl_name/>
+		<obo_template_id.tpl_name>QualUsrExamSubjects</obo_template_id.tpl_name>
 		<obo_cache>D</obo_cache>
 		<obo_copy>1</obo_copy>
 		<obo_export>1</obo_export>
@@ -4741,7 +4900,7 @@
 		<obf_ref_export>1</obf_ref_export>
 		<obf_copy/>
 		<obf_ref_order/>
-		<obf_fld_visible>3</obf_fld_visible>
+		<obf_fld_visible>0</obf_fld_visible>
 		<obf_fld_required/>
 		<obf_fld_updatable/>
 		<obf_fld_research/>
@@ -4828,11 +4987,11 @@
 		<obf_ref_export>1</obf_ref_export>
 		<obf_copy/>
 		<obf_ref_order/>
-		<obf_fld_visible/>
+		<obf_fld_visible>0</obf_fld_visible>
 		<obf_fld_required/>
 		<obf_fld_updatable/>
 		<obf_fld_research/>
-		<obf_fld_more/>
+		<obf_fld_more>0</obf_fld_more>
 		<obf_fld_listmore/>
 		<obf_fld_researchreq/>
 		<obf_fld_dfault/>
@@ -4857,11 +5016,11 @@
 		<obf_ref_export>1</obf_ref_export>
 		<obf_copy/>
 		<obf_ref_order/>
-		<obf_fld_visible/>
+		<obf_fld_visible>0</obf_fld_visible>
 		<obf_fld_required/>
 		<obf_fld_updatable/>
 		<obf_fld_research/>
-		<obf_fld_more/>
+		<obf_fld_more>0</obf_fld_more>
 		<obf_fld_listmore/>
 		<obf_fld_researchreq/>
 		<obf_fld_dfault/>
@@ -4915,11 +5074,11 @@
 		<obf_ref_export>1</obf_ref_export>
 		<obf_copy/>
 		<obf_ref_order/>
-		<obf_fld_visible/>
+		<obf_fld_visible>0</obf_fld_visible>
 		<obf_fld_required/>
 		<obf_fld_updatable/>
 		<obf_fld_research/>
-		<obf_fld_more/>
+		<obf_fld_more>0</obf_fld_more>
 		<obf_fld_listmore/>
 		<obf_fld_researchreq/>
 		<obf_fld_dfault/>
@@ -4944,11 +5103,11 @@
 		<obf_ref_export>1</obf_ref_export>
 		<obf_copy/>
 		<obf_ref_order/>
-		<obf_fld_visible/>
+		<obf_fld_visible>0</obf_fld_visible>
 		<obf_fld_required/>
 		<obf_fld_updatable/>
 		<obf_fld_research/>
-		<obf_fld_more/>
+		<obf_fld_more>0</obf_fld_more>
 		<obf_fld_listmore/>
 		<obf_fld_researchreq/>
 		<obf_fld_dfault/>
@@ -4973,11 +5132,11 @@
 		<obf_ref_export>1</obf_ref_export>
 		<obf_copy/>
 		<obf_ref_order/>
-		<obf_fld_visible/>
+		<obf_fld_visible>0</obf_fld_visible>
 		<obf_fld_required/>
 		<obf_fld_updatable/>
 		<obf_fld_research/>
-		<obf_fld_more/>
+		<obf_fld_more>0</obf_fld_more>
 		<obf_fld_listmore/>
 		<obf_fld_researchreq/>
 		<obf_fld_dfault/>
@@ -6780,8 +6939,8 @@
 		<obf_fld_researchreq/>
 		<obf_fld_dfault/>
 		<obf_field_id.fld_dfault/>
-		<obf_area_id.ofa_name/>
-		<obf_area_id.ofa_position/>
+		<obf_area_id.ofa_name>QualUsrExamSubjects-1</obf_area_id.ofa_name>
+		<obf_area_id.ofa_position>1</obf_area_id.ofa_position>
 		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -6800,17 +6959,17 @@
 		<obf_ref_export>1</obf_ref_export>
 		<obf_copy/>
 		<obf_ref_order/>
-		<obf_fld_visible/>
+		<obf_fld_visible>3</obf_fld_visible>
 		<obf_fld_required/>
 		<obf_fld_updatable/>
 		<obf_fld_research/>
-		<obf_fld_more/>
+		<obf_fld_more>0</obf_fld_more>
 		<obf_fld_listmore/>
 		<obf_fld_researchreq/>
 		<obf_fld_dfault/>
 		<obf_field_id.fld_dfault/>
-		<obf_area_id.ofa_name/>
-		<obf_area_id.ofa_position/>
+		<obf_area_id.ofa_name>QualUsrExamSubjects-1</obf_area_id.ofa_name>
+		<obf_area_id.ofa_position>1</obf_area_id.ofa_position>
 		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -6838,8 +6997,8 @@
 		<obf_fld_researchreq/>
 		<obf_fld_dfault/>
 		<obf_field_id.fld_dfault/>
-		<obf_area_id.ofa_name/>
-		<obf_area_id.ofa_position/>
+		<obf_area_id.ofa_name>QualUsrExamSubjects-1</obf_area_id.ofa_name>
+		<obf_area_id.ofa_position>1</obf_area_id.ofa_position>
 		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -6867,8 +7026,8 @@
 		<obf_fld_researchreq/>
 		<obf_fld_dfault/>
 		<obf_field_id.fld_dfault/>
-		<obf_area_id.ofa_name/>
-		<obf_area_id.ofa_position/>
+		<obf_area_id.ofa_name>QualUsrExamSubjects-1</obf_area_id.ofa_name>
+		<obf_area_id.ofa_position>1</obf_area_id.ofa_position>
 		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
 	</data>
 </object>
@@ -6893,7 +7052,7 @@
 		<obf_copy>0</obf_copy>
 		<obf_associate>1</obf_associate>
 		<obf_inline>0</obf_inline>
-		<obf_rendering/>
+		<obf_rendering>P</obf_rendering>
 		<obf_treedepth/>
 		<obf_area_id.ofa_name>QualExam-2</obf_area_id.ofa_name>
 		<obf_area_id.ofa_position>2</obf_area_id.ofa_position>
@@ -7015,8 +7174,8 @@
 		<obf_inline/>
 		<obf_rendering/>
 		<obf_treedepth/>
-		<obf_area_id.ofa_name/>
-		<obf_area_id.ofa_position/>
+		<obf_area_id.ofa_name>QualUsrExamSubjects-1</obf_area_id.ofa_name>
+		<obf_area_id.ofa_position>1</obf_area_id.ofa_position>
 		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -7135,8 +7294,8 @@
 		<obf_inline>0</obf_inline>
 		<obf_rendering>P</obf_rendering>
 		<obf_treedepth/>
-		<obf_area_id.ofa_name/>
-		<obf_area_id.ofa_position/>
+		<obf_area_id.ofa_name>QualUsrExamSubjects-1</obf_area_id.ofa_name>
+		<obf_area_id.ofa_position>1</obf_area_id.ofa_position>
 		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -7187,11 +7346,11 @@
 		<act_order/>
 	</data>
 	<data>
-		<act_name>QualGenerateTests</act_name>
+		<act_name>QualCandidateNotify</act_name>
 		<act_type>O</act_type>
 		<act_async>0</act_async>
 		<act_job_depth/>
-		<act_method>generateTests</act_method>
+		<act_method>qualNotify</act_method>
 		<act_script/>
 		<act_url/>
 		<act_image/>
@@ -7231,6 +7390,15 @@
 		<fct_name>QUAL_CERTUSR_R</fct_name>
 		<fct_object_id.obj_type>O</fct_object_id.obj_type>
 		<fct_object_id.obj_name>QualCertUsr</fct_object_id.obj_name>
+		<fct_function>L</fct_function>
+		<fct_action_id.act_name/>
+		<fct_view_id.viw_name/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<fct_name>QUAL_CREATE_CANDIDATE_E</fct_name>
+		<fct_object_id.obj_type>E</fct_object_id.obj_type>
+		<fct_object_id.obj_name>QualCreateCandidate</fct_object_id.obj_name>
 		<fct_function>L</fct_function>
 		<fct_action_id.act_name/>
 		<fct_view_id.viw_name/>
@@ -7354,11 +7522,11 @@
 		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
 	</data>
 	<data>
-		<fct_name>QUAL_USR_QUAL_GENERATE_TESTS_A</fct_name>
+		<fct_name>QUAL_USR_QUAL_CANDIDATE_NOTIFY_A</fct_name>
 		<fct_object_id.obj_type>O</fct_object_id.obj_type>
 		<fct_object_id.obj_name>QualUser</fct_object_id.obj_name>
 		<fct_function>A</fct_function>
-		<fct_action_id.act_name>QualGenerateTests</fct_action_id.act_name>
+		<fct_action_id.act_name>QualCandidateNotify</fct_action_id.act_name>
 		<fct_view_id.viw_name/>
 		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
 	</data>
@@ -7686,6 +7854,16 @@
 	</data>
 	<data>
 		<grt_group_id.grp_name>QUAL_ADMIN</grt_group_id.grp_name>
+		<grt_function_id.fct_name>QUAL_CREATE_CANDIDATE_E</grt_function_id.fct_name>
+		<grt_function_id.fct_object_id.obj_type>E</grt_function_id.fct_object_id.obj_type>
+		<grt_function_id.fct_object_id.obj_name>QualCreateCandidate</grt_function_id.fct_object_id.obj_name>
+		<grt_function_id.fct_action_id.act_name/>
+		<grt_function_id.fct_function>L</grt_function_id.fct_function>
+		<grt_activ>1</grt_activ>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<grt_group_id.grp_name>QUAL_ADMIN</grt_group_id.grp_name>
 		<grt_function_id.fct_name>QualExam-CUD</grt_function_id.fct_name>
 		<grt_function_id.fct_object_id.obj_type>O</grt_function_id.fct_object_id.obj_type>
 		<grt_function_id.fct_object_id.obj_name>QualExam</grt_function_id.fct_object_id.obj_name>
@@ -7736,10 +7914,10 @@
 	</data>
 	<data>
 		<grt_group_id.grp_name>QUAL_ADMIN</grt_group_id.grp_name>
-		<grt_function_id.fct_name>QUAL_USR_QUAL_GENERATE_TESTS_A</grt_function_id.fct_name>
+		<grt_function_id.fct_name>QUAL_USR_QUAL_CANDIDATE_NOTIFY_A</grt_function_id.fct_name>
 		<grt_function_id.fct_object_id.obj_type>O</grt_function_id.fct_object_id.obj_type>
 		<grt_function_id.fct_object_id.obj_name>QualUser</grt_function_id.fct_object_id.obj_name>
-		<grt_function_id.fct_action_id.act_name>QualGenerateTests</grt_function_id.fct_action_id.act_name>
+		<grt_function_id.fct_action_id.act_name>QualCandidateNotify</grt_function_id.fct_action_id.act_name>
 		<grt_function_id.fct_function>A</grt_function_id.fct_function>
 		<grt_activ>1</grt_activ>
 		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
@@ -8039,6 +8217,583 @@
 	</data>
 </object>
 <object>
+	<name>BPMProcess</name>
+	<action>upsert</action>
+	<data>
+		<pcs_name>QualCreateQuizz</pcs_name>
+		<pcs_short_name>CQUIZZ</pcs_short_name>
+		<pcs_comment/>
+		<pcs_type>0</pcs_type>
+		<pcs_class/>
+		<pcs_script_id>src/com/simplicite/workflows/Qualification/QualCreateQuizz.java</pcs_script_id>
+		<pcs_max_duration/>
+		<pcs_duration_unit>D</pcs_duration_unit>
+		<pcs_persitant>0</pcs_persitant>
+		<pcs_persist_depth/>
+		<pcs_alert_id.alt_name/>
+		<pcs_compensate_id.pcs_name/>
+		<pcs_model_id.mod_name>Model-QualCreateQuizz</pcs_model_id.mod_name>
+		<pcs_model_id.mod_image>files/Model/Model-QualCreateQuizz.png</pcs_model_id.mod_image>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+		<pcs_mainact_id.acy_step/>
+		<pcs_mainact_id.acy_name/>
+		<pcs_mainact_id.acy_process_id.pcs_name/>
+		<pcs_main_del/>
+	</data>
+</object>
+<object>
+	<name>BPMActivity</name>
+	<action>upsert</action>
+	<data>
+		<acy_process_id.pcs_name>QualCreateQuizz</acy_process_id.pcs_name>
+		<acy_step>CQUIZZ-000</acy_step>
+		<acy_name>Begin</acy_name>
+		<acy_comment/>
+		<acy_type>B</acy_type>
+		<acy_posx/>
+		<acy_posy/>
+		<acy_reversible>N</acy_reversible>
+		<acy_max_duration/>
+		<acy_duration_unit>D</acy_duration_unit>
+		<acy_alert_id.alt_name/>
+		<acy_user_dlg>0</acy_user_dlg>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<acy_process_id.pcs_name>QualCreateQuizz</acy_process_id.pcs_name>
+		<acy_step>CQUIZZ-100</acy_step>
+		<acy_name>CreateQuizz</acy_name>
+		<acy_comment/>
+		<acy_type>C</acy_type>
+		<acy_posx/>
+		<acy_posy/>
+		<acy_reversible>N</acy_reversible>
+		<acy_max_duration/>
+		<acy_duration_unit/>
+		<acy_alert_id.alt_name/>
+		<acy_user_dlg>1</acy_user_dlg>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<acy_process_id.pcs_name>QualCreateQuizz</acy_process_id.pcs_name>
+		<acy_step>CQUIZZ-200</acy_step>
+		<acy_name>SelectQuestions</acy_name>
+		<acy_comment/>
+		<acy_type>M</acy_type>
+		<acy_posx/>
+		<acy_posy/>
+		<acy_reversible>N</acy_reversible>
+		<acy_max_duration/>
+		<acy_duration_unit/>
+		<acy_alert_id.alt_name/>
+		<acy_user_dlg>1</acy_user_dlg>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<acy_process_id.pcs_name>QualCreateQuizz</acy_process_id.pcs_name>
+		<acy_step>CQUIZZ-400</acy_step>
+		<acy_name>SelectOtherQuestions</acy_name>
+		<acy_comment/>
+		<acy_type>I</acy_type>
+		<acy_posx/>
+		<acy_posy/>
+		<acy_reversible>O</acy_reversible>
+		<acy_max_duration/>
+		<acy_duration_unit/>
+		<acy_alert_id.alt_name/>
+		<acy_user_dlg>1</acy_user_dlg>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<acy_process_id.pcs_name>QualCreateQuizz</acy_process_id.pcs_name>
+		<acy_step>CQUIZZ-500</acy_step>
+		<acy_name>LinkToUser</acy_name>
+		<acy_comment/>
+		<acy_type>I</acy_type>
+		<acy_posx/>
+		<acy_posy/>
+		<acy_reversible>O</acy_reversible>
+		<acy_max_duration/>
+		<acy_duration_unit/>
+		<acy_alert_id.alt_name/>
+		<acy_user_dlg>1</acy_user_dlg>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<acy_process_id.pcs_name>QualCreateQuizz</acy_process_id.pcs_name>
+		<acy_step>CQUIZZ-600</acy_step>
+		<acy_name>SelectUsers</acy_name>
+		<acy_comment/>
+		<acy_type>M</acy_type>
+		<acy_posx/>
+		<acy_posy/>
+		<acy_reversible>N</acy_reversible>
+		<acy_max_duration/>
+		<acy_duration_unit/>
+		<acy_alert_id.alt_name/>
+		<acy_user_dlg>1</acy_user_dlg>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<acy_process_id.pcs_name>QualCreateQuizz</acy_process_id.pcs_name>
+		<acy_step>CQUIZZ-800</acy_step>
+		<acy_name>SelectOtherUsers</acy_name>
+		<acy_comment/>
+		<acy_type>I</acy_type>
+		<acy_posx/>
+		<acy_posy/>
+		<acy_reversible>N</acy_reversible>
+		<acy_max_duration/>
+		<acy_duration_unit/>
+		<acy_alert_id.alt_name/>
+		<acy_user_dlg>1</acy_user_dlg>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<acy_process_id.pcs_name>QualCreateQuizz</acy_process_id.pcs_name>
+		<acy_step>CQUIZZ-999</acy_step>
+		<acy_name>End</acy_name>
+		<acy_comment/>
+		<acy_type>E</acy_type>
+		<acy_posx/>
+		<acy_posy/>
+		<acy_reversible>N</acy_reversible>
+		<acy_max_duration/>
+		<acy_duration_unit>D</acy_duration_unit>
+		<acy_alert_id.alt_name/>
+		<acy_user_dlg>0</acy_user_dlg>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+</object>
+<object>
+	<name>BPMTransition</name>
+	<action>upsert</action>
+	<data>
+		<trs_process_id.pcs_name>QualCreateQuizz</trs_process_id.pcs_name>
+		<trs_from_id.acy_process_id.pcs_name>QualCreateQuizz</trs_from_id.acy_process_id.pcs_name>
+		<trs_from_id.acy_step>CQUIZZ-000</trs_from_id.acy_step>
+		<trs_from_id.acy_name>Begin</trs_from_id.acy_name>
+		<trs_to_id.acy_process_id.pcs_name>QualCreateQuizz</trs_to_id.acy_process_id.pcs_name>
+		<trs_to_id.acy_step>CQUIZZ-100</trs_to_id.acy_step>
+		<trs_to_id.acy_name>CreateQuizz</trs_to_id.acy_name>
+		<trs_name/>
+		<trs_action_id.act_name/>
+		<trs_condition/>
+		<trs_callback/>
+		<trs_alert_id.alt_name/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<trs_process_id.pcs_name>QualCreateQuizz</trs_process_id.pcs_name>
+		<trs_from_id.acy_process_id.pcs_name>QualCreateQuizz</trs_from_id.acy_process_id.pcs_name>
+		<trs_from_id.acy_step>CQUIZZ-100</trs_from_id.acy_step>
+		<trs_from_id.acy_name>CreateQuizz</trs_from_id.acy_name>
+		<trs_to_id.acy_process_id.pcs_name>QualCreateQuizz</trs_to_id.acy_process_id.pcs_name>
+		<trs_to_id.acy_step>CQUIZZ-200</trs_to_id.acy_step>
+		<trs_to_id.acy_name>SelectQuestions</trs_to_id.acy_name>
+		<trs_name/>
+		<trs_action_id.act_name/>
+		<trs_condition/>
+		<trs_callback/>
+		<trs_alert_id.alt_name/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<trs_process_id.pcs_name>QualCreateQuizz</trs_process_id.pcs_name>
+		<trs_from_id.acy_process_id.pcs_name>QualCreateQuizz</trs_from_id.acy_process_id.pcs_name>
+		<trs_from_id.acy_step>CQUIZZ-200</trs_from_id.acy_step>
+		<trs_from_id.acy_name>SelectQuestions</trs_from_id.acy_name>
+		<trs_to_id.acy_process_id.pcs_name>QualCreateQuizz</trs_to_id.acy_process_id.pcs_name>
+		<trs_to_id.acy_step>CQUIZZ-400</trs_to_id.acy_step>
+		<trs_to_id.acy_name>SelectOtherQuestions</trs_to_id.acy_name>
+		<trs_name/>
+		<trs_action_id.act_name/>
+		<trs_condition/>
+		<trs_callback/>
+		<trs_alert_id.alt_name/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<trs_process_id.pcs_name>QualCreateQuizz</trs_process_id.pcs_name>
+		<trs_from_id.acy_process_id.pcs_name>QualCreateQuizz</trs_from_id.acy_process_id.pcs_name>
+		<trs_from_id.acy_step>CQUIZZ-400</trs_from_id.acy_step>
+		<trs_from_id.acy_name>SelectOtherQuestions</trs_from_id.acy_name>
+		<trs_to_id.acy_process_id.pcs_name>QualCreateQuizz</trs_to_id.acy_process_id.pcs_name>
+		<trs_to_id.acy_step>CQUIZZ-200</trs_to_id.acy_step>
+		<trs_to_id.acy_name>SelectQuestions</trs_to_id.acy_name>
+		<trs_name/>
+		<trs_action_id.act_name/>
+		<trs_condition>1</trs_condition>
+		<trs_callback/>
+		<trs_alert_id.alt_name/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<trs_process_id.pcs_name>QualCreateQuizz</trs_process_id.pcs_name>
+		<trs_from_id.acy_process_id.pcs_name>QualCreateQuizz</trs_from_id.acy_process_id.pcs_name>
+		<trs_from_id.acy_step>CQUIZZ-400</trs_from_id.acy_step>
+		<trs_from_id.acy_name>SelectOtherQuestions</trs_from_id.acy_name>
+		<trs_to_id.acy_process_id.pcs_name>QualCreateQuizz</trs_to_id.acy_process_id.pcs_name>
+		<trs_to_id.acy_step>CQUIZZ-500</trs_to_id.acy_step>
+		<trs_to_id.acy_name>LinkToUser</trs_to_id.acy_name>
+		<trs_name/>
+		<trs_action_id.act_name/>
+		<trs_condition>0</trs_condition>
+		<trs_callback/>
+		<trs_alert_id.alt_name/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<trs_process_id.pcs_name>QualCreateQuizz</trs_process_id.pcs_name>
+		<trs_from_id.acy_process_id.pcs_name>QualCreateQuizz</trs_from_id.acy_process_id.pcs_name>
+		<trs_from_id.acy_step>CQUIZZ-500</trs_from_id.acy_step>
+		<trs_from_id.acy_name>LinkToUser</trs_from_id.acy_name>
+		<trs_to_id.acy_process_id.pcs_name>QualCreateQuizz</trs_to_id.acy_process_id.pcs_name>
+		<trs_to_id.acy_step>CQUIZZ-600</trs_to_id.acy_step>
+		<trs_to_id.acy_name>SelectUsers</trs_to_id.acy_name>
+		<trs_name/>
+		<trs_action_id.act_name/>
+		<trs_condition>1</trs_condition>
+		<trs_callback/>
+		<trs_alert_id.alt_name/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<trs_process_id.pcs_name>QualCreateQuizz</trs_process_id.pcs_name>
+		<trs_from_id.acy_process_id.pcs_name>QualCreateQuizz</trs_from_id.acy_process_id.pcs_name>
+		<trs_from_id.acy_step>CQUIZZ-500</trs_from_id.acy_step>
+		<trs_from_id.acy_name>LinkToUser</trs_from_id.acy_name>
+		<trs_to_id.acy_process_id.pcs_name>QualCreateQuizz</trs_to_id.acy_process_id.pcs_name>
+		<trs_to_id.acy_step>CQUIZZ-999</trs_to_id.acy_step>
+		<trs_to_id.acy_name>End</trs_to_id.acy_name>
+		<trs_name/>
+		<trs_action_id.act_name/>
+		<trs_condition>0</trs_condition>
+		<trs_callback/>
+		<trs_alert_id.alt_name/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<trs_process_id.pcs_name>QualCreateQuizz</trs_process_id.pcs_name>
+		<trs_from_id.acy_process_id.pcs_name>QualCreateQuizz</trs_from_id.acy_process_id.pcs_name>
+		<trs_from_id.acy_step>CQUIZZ-600</trs_from_id.acy_step>
+		<trs_from_id.acy_name>SelectUsers</trs_from_id.acy_name>
+		<trs_to_id.acy_process_id.pcs_name>QualCreateQuizz</trs_to_id.acy_process_id.pcs_name>
+		<trs_to_id.acy_step>CQUIZZ-800</trs_to_id.acy_step>
+		<trs_to_id.acy_name>SelectOtherUsers</trs_to_id.acy_name>
+		<trs_name/>
+		<trs_action_id.act_name/>
+		<trs_condition/>
+		<trs_callback/>
+		<trs_alert_id.alt_name/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<trs_process_id.pcs_name>QualCreateQuizz</trs_process_id.pcs_name>
+		<trs_from_id.acy_process_id.pcs_name>QualCreateQuizz</trs_from_id.acy_process_id.pcs_name>
+		<trs_from_id.acy_step>CQUIZZ-800</trs_from_id.acy_step>
+		<trs_from_id.acy_name>SelectOtherUsers</trs_from_id.acy_name>
+		<trs_to_id.acy_process_id.pcs_name>QualCreateQuizz</trs_to_id.acy_process_id.pcs_name>
+		<trs_to_id.acy_step>CQUIZZ-600</trs_to_id.acy_step>
+		<trs_to_id.acy_name>SelectUsers</trs_to_id.acy_name>
+		<trs_name/>
+		<trs_action_id.act_name/>
+		<trs_condition>1</trs_condition>
+		<trs_callback/>
+		<trs_alert_id.alt_name/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<trs_process_id.pcs_name>QualCreateQuizz</trs_process_id.pcs_name>
+		<trs_from_id.acy_process_id.pcs_name>QualCreateQuizz</trs_from_id.acy_process_id.pcs_name>
+		<trs_from_id.acy_step>CQUIZZ-800</trs_from_id.acy_step>
+		<trs_from_id.acy_name>SelectOtherUsers</trs_from_id.acy_name>
+		<trs_to_id.acy_process_id.pcs_name>QualCreateQuizz</trs_to_id.acy_process_id.pcs_name>
+		<trs_to_id.acy_step>CQUIZZ-999</trs_to_id.acy_step>
+		<trs_to_id.acy_name>End</trs_to_id.acy_name>
+		<trs_name/>
+		<trs_action_id.act_name/>
+		<trs_condition>0</trs_condition>
+		<trs_callback/>
+		<trs_alert_id.alt_name/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+</object>
+<object>
+	<name>BPMData</name>
+	<action>upsert</action>
+	<data>
+		<dta_activity_id.acy_process_id.pcs_name>QualCreateQuizz</dta_activity_id.acy_process_id.pcs_name>
+		<dta_activity_id.acy_step>CQUIZZ-100</dta_activity_id.acy_step>
+		<dta_activity_id.acy_name>CreateQuizz</dta_activity_id.acy_name>
+		<dta_group>Constraint</dta_group>
+		<dta_name>Mandatory</dta_name>
+		<dta_order>1</dta_order>
+		<dta_value>true</dta_value>
+		<dta_field_id.fld_name/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<dta_activity_id.acy_process_id.pcs_name>QualCreateQuizz</dta_activity_id.acy_process_id.pcs_name>
+		<dta_activity_id.acy_step>CQUIZZ-100</dta_activity_id.acy_step>
+		<dta_activity_id.acy_name>CreateQuizz</dta_activity_id.acy_name>
+		<dta_group>Object</dta_group>
+		<dta_name>Name</dta_name>
+		<dta_order>1</dta_order>
+		<dta_value>QualExam</dta_value>
+		<dta_field_id.fld_name/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<dta_activity_id.acy_process_id.pcs_name>QualCreateQuizz</dta_activity_id.acy_process_id.pcs_name>
+		<dta_activity_id.acy_step>CQUIZZ-200</dta_activity_id.acy_step>
+		<dta_activity_id.acy_name>SelectQuestions</dta_activity_id.acy_name>
+		<dta_group>Constraint</dta_group>
+		<dta_name>Mandatory</dta_name>
+		<dta_order>1</dta_order>
+		<dta_value>true</dta_value>
+		<dta_field_id.fld_name/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<dta_activity_id.acy_process_id.pcs_name>QualCreateQuizz</dta_activity_id.acy_process_id.pcs_name>
+		<dta_activity_id.acy_step>CQUIZZ-200</dta_activity_id.acy_step>
+		<dta_activity_id.acy_name>SelectQuestions</dta_activity_id.acy_name>
+		<dta_group>Object</dta_group>
+		<dta_name>Name</dta_name>
+		<dta_order>1</dta_order>
+		<dta_value>QualExercise</dta_value>
+		<dta_field_id.fld_name/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<dta_activity_id.acy_process_id.pcs_name>QualCreateQuizz</dta_activity_id.acy_process_id.pcs_name>
+		<dta_activity_id.acy_step>CQUIZZ-400</dta_activity_id.acy_step>
+		<dta_activity_id.acy_name>SelectOtherQuestions</dta_activity_id.acy_name>
+		<dta_group>Data</dta_group>
+		<dta_name>AREA:1</dta_name>
+		<dta_order>1</dta_order>
+		<dta_value>0</dta_value>
+		<dta_field_id.fld_name>user_choice</dta_field_id.fld_name>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<dta_activity_id.acy_process_id.pcs_name>QualCreateQuizz</dta_activity_id.acy_process_id.pcs_name>
+		<dta_activity_id.acy_step>CQUIZZ-400</dta_activity_id.acy_step>
+		<dta_activity_id.acy_name>SelectOtherQuestions</dta_activity_id.acy_name>
+		<dta_group>Data</dta_group>
+		<dta_name>Template</dta_name>
+		<dta_order>1</dta_order>
+		<dta_value>Base</dta_value>
+		<dta_field_id.fld_name/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<dta_activity_id.acy_process_id.pcs_name>QualCreateQuizz</dta_activity_id.acy_process_id.pcs_name>
+		<dta_activity_id.acy_step>CQUIZZ-400</dta_activity_id.acy_step>
+		<dta_activity_id.acy_name>SelectOtherQuestions</dta_activity_id.acy_name>
+		<dta_group>Question</dta_group>
+		<dta_name>Return</dta_name>
+		<dta_order>1</dta_order>
+		<dta_value>user_choice</dta_value>
+		<dta_field_id.fld_name/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<dta_activity_id.acy_process_id.pcs_name>QualCreateQuizz</dta_activity_id.acy_process_id.pcs_name>
+		<dta_activity_id.acy_step>CQUIZZ-500</dta_activity_id.acy_step>
+		<dta_activity_id.acy_name>LinkToUser</dta_activity_id.acy_name>
+		<dta_group>Data</dta_group>
+		<dta_name>Template</dta_name>
+		<dta_order>1</dta_order>
+		<dta_value>Base</dta_value>
+		<dta_field_id.fld_name/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<dta_activity_id.acy_process_id.pcs_name>QualCreateQuizz</dta_activity_id.acy_process_id.pcs_name>
+		<dta_activity_id.acy_step>CQUIZZ-500</dta_activity_id.acy_step>
+		<dta_activity_id.acy_name>LinkToUser</dta_activity_id.acy_name>
+		<dta_group>Data</dta_group>
+		<dta_name>AREA:1</dta_name>
+		<dta_order>1</dta_order>
+		<dta_value>0</dta_value>
+		<dta_field_id.fld_name>cQuizzPrcAddToUser</dta_field_id.fld_name>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<dta_activity_id.acy_process_id.pcs_name>QualCreateQuizz</dta_activity_id.acy_process_id.pcs_name>
+		<dta_activity_id.acy_step>CQUIZZ-500</dta_activity_id.acy_step>
+		<dta_activity_id.acy_name>LinkToUser</dta_activity_id.acy_name>
+		<dta_group>Question</dta_group>
+		<dta_name>Return</dta_name>
+		<dta_order>1</dta_order>
+		<dta_value>cQuizzPrcAddToUser</dta_value>
+		<dta_field_id.fld_name/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<dta_activity_id.acy_process_id.pcs_name>QualCreateQuizz</dta_activity_id.acy_process_id.pcs_name>
+		<dta_activity_id.acy_step>CQUIZZ-600</dta_activity_id.acy_step>
+		<dta_activity_id.acy_name>SelectUsers</dta_activity_id.acy_name>
+		<dta_group>Constraint</dta_group>
+		<dta_name>Mandatory</dta_name>
+		<dta_order>1</dta_order>
+		<dta_value>true</dta_value>
+		<dta_field_id.fld_name/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<dta_activity_id.acy_process_id.pcs_name>QualCreateQuizz</dta_activity_id.acy_process_id.pcs_name>
+		<dta_activity_id.acy_step>CQUIZZ-600</dta_activity_id.acy_step>
+		<dta_activity_id.acy_name>SelectUsers</dta_activity_id.acy_name>
+		<dta_group>Object</dta_group>
+		<dta_name>Name</dta_name>
+		<dta_order>1</dta_order>
+		<dta_value>QualUser</dta_value>
+		<dta_field_id.fld_name/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<dta_activity_id.acy_process_id.pcs_name>QualCreateQuizz</dta_activity_id.acy_process_id.pcs_name>
+		<dta_activity_id.acy_step>CQUIZZ-800</dta_activity_id.acy_step>
+		<dta_activity_id.acy_name>SelectOtherUsers</dta_activity_id.acy_name>
+		<dta_group>Data</dta_group>
+		<dta_name>Template</dta_name>
+		<dta_order>1</dta_order>
+		<dta_value>Base</dta_value>
+		<dta_field_id.fld_name/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<dta_activity_id.acy_process_id.pcs_name>QualCreateQuizz</dta_activity_id.acy_process_id.pcs_name>
+		<dta_activity_id.acy_step>CQUIZZ-800</dta_activity_id.acy_step>
+		<dta_activity_id.acy_name>SelectOtherUsers</dta_activity_id.acy_name>
+		<dta_group>Data</dta_group>
+		<dta_name>AREA:1</dta_name>
+		<dta_order>1</dta_order>
+		<dta_value>0</dta_value>
+		<dta_field_id.fld_name>cquizzAddOtherUser</dta_field_id.fld_name>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<dta_activity_id.acy_process_id.pcs_name>QualCreateQuizz</dta_activity_id.acy_process_id.pcs_name>
+		<dta_activity_id.acy_step>CQUIZZ-800</dta_activity_id.acy_step>
+		<dta_activity_id.acy_name>SelectOtherUsers</dta_activity_id.acy_name>
+		<dta_group>Question</dta_group>
+		<dta_name>Return</dta_name>
+		<dta_order>1</dta_order>
+		<dta_value>cquizzAddOtherUser</dta_value>
+		<dta_field_id.fld_name/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<dta_activity_id.acy_process_id.pcs_name>QualCreateQuizz</dta_activity_id.acy_process_id.pcs_name>
+		<dta_activity_id.acy_step>CQUIZZ-999</dta_activity_id.acy_step>
+		<dta_activity_id.acy_name>End</dta_activity_id.acy_name>
+		<dta_group>Forward</dta_group>
+		<dta_name>Page</dta_name>
+		<dta_order>1</dta_order>
+		<dta_value><![CDATA[[EXPR:HTMLTool.getFormURL("QualExam", null, "[PARAM:1]", null)]]]></dta_value>
+		<dta_field_id.fld_name/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<dta_activity_id.acy_process_id.pcs_name>QualCreateQuizz</dta_activity_id.acy_process_id.pcs_name>
+		<dta_activity_id.acy_step>CQUIZZ-999</dta_activity_id.acy_step>
+		<dta_activity_id.acy_name>End</dta_activity_id.acy_name>
+		<dta_group>Forward</dta_group>
+		<dta_name>PARAM:1</dta_name>
+		<dta_order>1</dta_order>
+		<dta_value><![CDATA[[CQUIZZ-100.Field.row_id]]]></dta_value>
+		<dta_field_id.fld_name/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+</object>
+<object>
+	<name>BPMHelp</name>
+	<action>upsert</action>
+	<data>
+		<hlp_activity_id.acy_process_id.pcs_name>QualCreateQuizz</hlp_activity_id.acy_process_id.pcs_name>
+		<hlp_activity_id.acy_step>CQUIZZ-100</hlp_activity_id.acy_step>
+		<hlp_activity_id.acy_name>CreateQuizz</hlp_activity_id.acy_name>
+		<hlp_lang>FRA</hlp_lang>
+		<hlp_abstract><![CDATA[<p>Si le questionnaire n'apparait pas dans la liste, cliquer sur le bouton <em><strong>Cr&eacute;er</strong></em></p>]]></hlp_abstract>
+		<hlp_content/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+</object>
+<object>
+	<name>BPMGrantActivity</name>
+	<action>upsert</action>
+	<data>
+		<gta_group_id.grp_name>QUAL_ADMIN</gta_group_id.grp_name>
+		<gta_activity_id.acy_process_id.pcs_name>QualCreateQuizz</gta_activity_id.acy_process_id.pcs_name>
+		<gta_activity_id.acy_step>CQUIZZ-000</gta_activity_id.acy_step>
+		<gta_activity_id.acy_name>Begin</gta_activity_id.acy_name>
+		<gta_grant>R;W;C</gta_grant>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<gta_group_id.grp_name>QUAL_ADMIN</gta_group_id.grp_name>
+		<gta_activity_id.acy_process_id.pcs_name>QualCreateQuizz</gta_activity_id.acy_process_id.pcs_name>
+		<gta_activity_id.acy_step>CQUIZZ-100</gta_activity_id.acy_step>
+		<gta_activity_id.acy_name>CreateQuizz</gta_activity_id.acy_name>
+		<gta_grant>R;W;C</gta_grant>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<gta_group_id.grp_name>QUAL_ADMIN</gta_group_id.grp_name>
+		<gta_activity_id.acy_process_id.pcs_name>QualCreateQuizz</gta_activity_id.acy_process_id.pcs_name>
+		<gta_activity_id.acy_step>CQUIZZ-200</gta_activity_id.acy_step>
+		<gta_activity_id.acy_name>SelectQuestions</gta_activity_id.acy_name>
+		<gta_grant>R;W;C</gta_grant>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<gta_group_id.grp_name>QUAL_ADMIN</gta_group_id.grp_name>
+		<gta_activity_id.acy_process_id.pcs_name>QualCreateQuizz</gta_activity_id.acy_process_id.pcs_name>
+		<gta_activity_id.acy_step>CQUIZZ-400</gta_activity_id.acy_step>
+		<gta_activity_id.acy_name>SelectOtherQuestions</gta_activity_id.acy_name>
+		<gta_grant>R;W;C</gta_grant>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<gta_group_id.grp_name>QUAL_ADMIN</gta_group_id.grp_name>
+		<gta_activity_id.acy_process_id.pcs_name>QualCreateQuizz</gta_activity_id.acy_process_id.pcs_name>
+		<gta_activity_id.acy_step>CQUIZZ-500</gta_activity_id.acy_step>
+		<gta_activity_id.acy_name>LinkToUser</gta_activity_id.acy_name>
+		<gta_grant>R;W;C</gta_grant>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<gta_group_id.grp_name>QUAL_ADMIN</gta_group_id.grp_name>
+		<gta_activity_id.acy_process_id.pcs_name>QualCreateQuizz</gta_activity_id.acy_process_id.pcs_name>
+		<gta_activity_id.acy_step>CQUIZZ-600</gta_activity_id.acy_step>
+		<gta_activity_id.acy_name>SelectUsers</gta_activity_id.acy_name>
+		<gta_grant>R;W;C</gta_grant>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<gta_group_id.grp_name>QUAL_ADMIN</gta_group_id.grp_name>
+		<gta_activity_id.acy_process_id.pcs_name>QualCreateQuizz</gta_activity_id.acy_process_id.pcs_name>
+		<gta_activity_id.acy_step>CQUIZZ-800</gta_activity_id.acy_step>
+		<gta_activity_id.acy_name>SelectOtherUsers</gta_activity_id.acy_name>
+		<gta_grant>R;W;C</gta_grant>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+</object>
+<object>
+	<name>BPMGrantProcess</name>
+	<action>upsert</action>
+	<data>
+		<gtp_group_id.grp_name>QUAL_ADMIN</gtp_group_id.grp_name>
+		<gtp_process_id.pcs_name>QualCreateQuizz</gtp_process_id.pcs_name>
+		<gtp_grant>N;R;C</gtp_grant>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+</object>
+<object>
 	<name>Crosstab</name>
 	<action>upsert</action>
 	<data>
@@ -8253,6 +9008,14 @@
 		<map_ext>0</map_ext>
 		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
 	</data>
+	<data>
+		<map_domain_id.obd_name>QualAdmin</map_domain_id.obd_name>
+		<map_object_id.obj_name/>
+		<map_process_id.pcs_name>QualCreateQuizz</map_process_id.pcs_name>
+		<map_order>3200</map_order>
+		<map_ext>0</map_ext>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
 </object>
 <object>
 	<name>ViewItem</name>
@@ -8331,6 +9094,13 @@
 <object>
 	<name>ObjectCtxHelp</name>
 	<action>upsert</action>
+	<data>
+		<och_object_id.obo_name>QualCertUsr</och_object_id.obo_name>
+		<och_context>C;U</och_context>
+		<och_lang>FRA</och_lang>
+		<och_help><![CDATA[<p>La cr&eacute;ation d'une certification pour un candidat entraine la cr&eacute;ation "d'examens du candidat". Sans les &eacute;l&eacute;ments "Examens du candidat" le questionnaire d'&eacute;valuation sera indisponible.</p>]]></och_help>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
 	<data>
 		<och_object_id.obo_name>QualExUsr</och_object_id.obo_name>
 		<och_context>U</och_context>
@@ -8642,7 +9412,7 @@
 	</data>
 	<data>
 		<tsl_typeAction>A</tsl_typeAction>
-		<tsl_id.act_name>QualGenerateTests</tsl_id.act_name>
+		<tsl_id.act_name>QualCandidateNotify</tsl_id.act_name>
 		<tsl_lang>ENU</tsl_lang>
 		<tsl_value>Generate tests</tsl_value>
 		<tsl_simplehelp/>
@@ -8658,7 +9428,7 @@
 	</data>
 	<data>
 		<tsl_typeAction>A</tsl_typeAction>
-		<tsl_id.act_name>QualGenerateTests</tsl_id.act_name>
+		<tsl_id.act_name>QualCandidateNotify</tsl_id.act_name>
 		<tsl_lang>FRA</tsl_lang>
 		<tsl_value>Notifier</tsl_value>
 		<tsl_simplehelp/>
@@ -8700,6 +9470,30 @@
 <object>
 	<name>TranslateField</name>
 	<action>upsert</action>
+	<data>
+		<tsl_typeField>F</tsl_typeField>
+		<tsl_id.fld_name>cquizzAddOtherUser</tsl_id.fld_name>
+		<tsl_lang>ENU</tsl_lang>
+		<tsl_value>Do you wish to add another user ?</tsl_value>
+		<tsl_simplehelp/>
+		<tsl_short_value/>
+		<tsl_placeholder/>
+		<tsl_listhelp/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+		<tsl_tooltip/>
+	</data>
+	<data>
+		<tsl_typeField>F</tsl_typeField>
+		<tsl_id.fld_name>cQuizzPrcAddToUser</tsl_id.fld_name>
+		<tsl_lang>ENU</tsl_lang>
+		<tsl_value>Do you wish to link this quizz to users ?</tsl_value>
+		<tsl_simplehelp/>
+		<tsl_short_value/>
+		<tsl_placeholder/>
+		<tsl_listhelp/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+		<tsl_tooltip/>
+	</data>
 	<data>
 		<tsl_typeField>F</tsl_typeField>
 		<tsl_id.fld_name>qualCertNom</tsl_id.fld_name>
@@ -9209,6 +10003,42 @@
 		<tsl_id.fld_name>qualUsrUrlQuest</tsl_id.fld_name>
 		<tsl_lang>ENU</tsl_lang>
 		<tsl_value>qual usr url quest</tsl_value>
+		<tsl_simplehelp/>
+		<tsl_short_value/>
+		<tsl_placeholder/>
+		<tsl_listhelp/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+		<tsl_tooltip/>
+	</data>
+	<data>
+		<tsl_typeField>F</tsl_typeField>
+		<tsl_id.fld_name>user_choice</tsl_id.fld_name>
+		<tsl_lang>ENU</tsl_lang>
+		<tsl_value>Do you wish to add other questions ?</tsl_value>
+		<tsl_simplehelp/>
+		<tsl_short_value/>
+		<tsl_placeholder/>
+		<tsl_listhelp/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+		<tsl_tooltip/>
+	</data>
+	<data>
+		<tsl_typeField>F</tsl_typeField>
+		<tsl_id.fld_name>cquizzAddOtherUser</tsl_id.fld_name>
+		<tsl_lang>FRA</tsl_lang>
+		<tsl_value>Souhaitez-vous associer ce questionnaire à d'autre candidats ?</tsl_value>
+		<tsl_simplehelp/>
+		<tsl_short_value/>
+		<tsl_placeholder/>
+		<tsl_listhelp/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+		<tsl_tooltip/>
+	</data>
+	<data>
+		<tsl_typeField>F</tsl_typeField>
+		<tsl_id.fld_name>cQuizzPrcAddToUser</tsl_id.fld_name>
+		<tsl_lang>FRA</tsl_lang>
+		<tsl_value>Souhaitez-vous associer ce questionnaire à des candidats ?</tsl_value>
 		<tsl_simplehelp/>
 		<tsl_short_value/>
 		<tsl_placeholder/>
@@ -9732,6 +10562,18 @@
 		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
 		<tsl_tooltip/>
 	</data>
+	<data>
+		<tsl_typeField>F</tsl_typeField>
+		<tsl_id.fld_name>user_choice</tsl_id.fld_name>
+		<tsl_lang>FRA</tsl_lang>
+		<tsl_value>Souhaitez-vous ajouter d'autres questions ?</tsl_value>
+		<tsl_simplehelp/>
+		<tsl_short_value/>
+		<tsl_placeholder/>
+		<tsl_listhelp/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+		<tsl_tooltip/>
+	</data>
 </object>
 <object>
 	<name>TranslateFieldArea</name>
@@ -9878,6 +10720,13 @@
 	</data>
 	<data>
 		<tsl_typeFieldArea>Z</tsl_typeFieldArea>
+		<tsl_id.ofa_name>QualUsrExamSubjects-1</tsl_id.ofa_name>
+		<tsl_lang>ENU</tsl_lang>
+		<tsl_value>QualUsrExamSubjects-1</tsl_value>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeFieldArea>Z</tsl_typeFieldArea>
 		<tsl_id.ofa_name>QualCertif-1</tsl_id.ofa_name>
 		<tsl_lang>FRA</tsl_lang>
 		<tsl_value>QualCertif-1</tsl_value>
@@ -10014,6 +10863,13 @@
 		<tsl_id.ofa_name>QualUserExam-2</tsl_id.ofa_name>
 		<tsl_lang>FRA</tsl_lang>
 		<tsl_value>Certification du candidat associée</tsl_value>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeFieldArea>Z</tsl_typeFieldArea>
+		<tsl_id.ofa_name>QualUsrExamSubjects-1</tsl_id.ofa_name>
+		<tsl_lang>FRA</tsl_lang>
+		<tsl_value>QualUsrExamSubjects-1</tsl_value>
 		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
 	</data>
 </object>
@@ -10206,6 +11062,14 @@
 	<action>upsert</action>
 	<data>
 		<tsl_typeObject>O</tsl_typeObject>
+		<tsl_id.obe_name>QualCreateCandidate</tsl_id.obe_name>
+		<tsl_lang>ENU</tsl_lang>
+		<tsl_value>QualCreateCandidate</tsl_value>
+		<tsl_help/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeObject>O</tsl_typeObject>
 		<tsl_id.obe_name>QualEndTestExt</tsl_id.obe_name>
 		<tsl_lang>ENU</tsl_lang>
 		<tsl_value>Thank you</tsl_value>
@@ -10233,6 +11097,14 @@
 		<tsl_id.obe_name>QualStartTestExt</tsl_id.obe_name>
 		<tsl_lang>ENU</tsl_lang>
 		<tsl_value>Start the test</tsl_value>
+		<tsl_help/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeObject>O</tsl_typeObject>
+		<tsl_id.obe_name>QualCreateCandidate</tsl_id.obe_name>
+		<tsl_lang>FRA</tsl_lang>
+		<tsl_value>QualCreateCandidate</tsl_value>
 		<tsl_help/>
 		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
 	</data>
@@ -10383,6 +11255,71 @@
 		<tsl_id.obf_order>220</tsl_id.obf_order>
 		<tsl_lang>FRA</tsl_lang>
 		<tsl_value>Énoncé</tsl_value>
+		<tsl_simplehelp/>
+		<tsl_short_value/>
+		<tsl_listhelp/>
+		<tsl_placeholder/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeObjectField>L</tsl_typeObjectField>
+		<tsl_id.obf_object_id.obo_name>QualExamEx</tsl_id.obf_object_id.obo_name>
+		<tsl_id.obf_field_id.fld_name>qualExAnswerText</tsl_id.obf_field_id.fld_name>
+		<tsl_id.obf_order>230</tsl_id.obf_order>
+		<tsl_lang>FRA</tsl_lang>
+		<tsl_value>Réponse ID Exercice</tsl_value>
+		<tsl_simplehelp/>
+		<tsl_short_value/>
+		<tsl_listhelp/>
+		<tsl_placeholder/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeObjectField>L</tsl_typeObjectField>
+		<tsl_id.obf_object_id.obo_name>QualExamEx</tsl_id.obf_object_id.obo_name>
+		<tsl_id.obf_field_id.fld_name>qualExType</tsl_id.obf_field_id.fld_name>
+		<tsl_id.obf_order>240</tsl_id.obf_order>
+		<tsl_lang>FRA</tsl_lang>
+		<tsl_value>Type d'exercice ID Exercice</tsl_value>
+		<tsl_simplehelp/>
+		<tsl_short_value/>
+		<tsl_listhelp/>
+		<tsl_placeholder/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeObjectField>L</tsl_typeObjectField>
+		<tsl_id.obf_object_id.obo_name>QualExamEx</tsl_id.obf_object_id.obo_name>
+		<tsl_id.obf_field_id.fld_name>qualExAnswerType</tsl_id.obf_field_id.fld_name>
+		<tsl_id.obf_order>260</tsl_id.obf_order>
+		<tsl_lang>FRA</tsl_lang>
+		<tsl_value>Type de réponse ID Exercice</tsl_value>
+		<tsl_simplehelp/>
+		<tsl_short_value/>
+		<tsl_listhelp/>
+		<tsl_placeholder/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeObjectField>L</tsl_typeObjectField>
+		<tsl_id.obf_object_id.obo_name>QualExamEx</tsl_id.obf_object_id.obo_name>
+		<tsl_id.obf_field_id.fld_name>qualExAnswerEnumeration</tsl_id.obf_field_id.fld_name>
+		<tsl_id.obf_order>270</tsl_id.obf_order>
+		<tsl_lang>FRA</tsl_lang>
+		<tsl_value>Réponse ID Exercice</tsl_value>
+		<tsl_simplehelp/>
+		<tsl_short_value/>
+		<tsl_listhelp/>
+		<tsl_placeholder/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeObjectField>L</tsl_typeObjectField>
+		<tsl_id.obf_object_id.obo_name>QualExamEx</tsl_id.obf_object_id.obo_name>
+		<tsl_id.obf_field_id.fld_name>qualExChoicesEnumeration</tsl_id.obf_field_id.fld_name>
+		<tsl_id.obf_order>280</tsl_id.obf_order>
+		<tsl_lang>FRA</tsl_lang>
+		<tsl_value>Choix possibles (séparés par: @@@) ID Exercice</tsl_value>
 		<tsl_simplehelp/>
 		<tsl_short_value/>
 		<tsl_listhelp/>
@@ -10623,6 +11560,19 @@
 		<tsl_placeholder/>
 		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
 	</data>
+	<data>
+		<tsl_typeObjectField>L</tsl_typeObjectField>
+		<tsl_id.obf_object_id.obo_name>QualUsrExamSubjects</tsl_id.obf_object_id.obo_name>
+		<tsl_id.obf_field_id.fld_name>usr_login</tsl_id.obf_field_id.fld_name>
+		<tsl_id.obf_order>110</tsl_id.obf_order>
+		<tsl_lang>FRA</tsl_lang>
+		<tsl_value>Login</tsl_value>
+		<tsl_simplehelp/>
+		<tsl_short_value/>
+		<tsl_listhelp/>
+		<tsl_placeholder/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
 </object>
 <object>
 	<name>TranslateResearch</name>
@@ -10715,6 +11665,156 @@
 		<tsl_lang>FRA</tsl_lang>
 		<tsl_value>Qualifcation</tsl_value>
 		<tsl_help/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+</object>
+<object>
+	<name>TranslateActivity</name>
+	<action>upsert</action>
+	<data>
+		<tsl_typeActivity>T</tsl_typeActivity>
+		<tsl_id.acy_step>CQUIZZ-000</tsl_id.acy_step>
+		<tsl_id.acy_process_id.pcs_name>QualCreateQuizz</tsl_id.acy_process_id.pcs_name>
+		<tsl_lang>ENU</tsl_lang>
+		<tsl_value>Begin</tsl_value>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeActivity>T</tsl_typeActivity>
+		<tsl_id.acy_step>CQUIZZ-100</tsl_id.acy_step>
+		<tsl_id.acy_process_id.pcs_name>QualCreateQuizz</tsl_id.acy_process_id.pcs_name>
+		<tsl_lang>ENU</tsl_lang>
+		<tsl_value>Select a quizz</tsl_value>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeActivity>T</tsl_typeActivity>
+		<tsl_id.acy_step>CQUIZZ-200</tsl_id.acy_step>
+		<tsl_id.acy_process_id.pcs_name>QualCreateQuizz</tsl_id.acy_process_id.pcs_name>
+		<tsl_lang>ENU</tsl_lang>
+		<tsl_value>Add a question</tsl_value>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeActivity>T</tsl_typeActivity>
+		<tsl_id.acy_step>CQUIZZ-400</tsl_id.acy_step>
+		<tsl_id.acy_process_id.pcs_name>QualCreateQuizz</tsl_id.acy_process_id.pcs_name>
+		<tsl_lang>ENU</tsl_lang>
+		<tsl_value>Add other question ?</tsl_value>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeActivity>T</tsl_typeActivity>
+		<tsl_id.acy_step>CQUIZZ-500</tsl_id.acy_step>
+		<tsl_id.acy_process_id.pcs_name>QualCreateQuizz</tsl_id.acy_process_id.pcs_name>
+		<tsl_lang>ENU</tsl_lang>
+		<tsl_value>Link the quizz to candidates ?</tsl_value>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeActivity>T</tsl_typeActivity>
+		<tsl_id.acy_step>CQUIZZ-600</tsl_id.acy_step>
+		<tsl_id.acy_process_id.pcs_name>QualCreateQuizz</tsl_id.acy_process_id.pcs_name>
+		<tsl_lang>ENU</tsl_lang>
+		<tsl_value>Select or create the user</tsl_value>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeActivity>T</tsl_typeActivity>
+		<tsl_id.acy_step>CQUIZZ-800</tsl_id.acy_step>
+		<tsl_id.acy_process_id.pcs_name>QualCreateQuizz</tsl_id.acy_process_id.pcs_name>
+		<tsl_lang>ENU</tsl_lang>
+		<tsl_value>Link another user</tsl_value>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeActivity>T</tsl_typeActivity>
+		<tsl_id.acy_step>CQUIZZ-999</tsl_id.acy_step>
+		<tsl_id.acy_process_id.pcs_name>QualCreateQuizz</tsl_id.acy_process_id.pcs_name>
+		<tsl_lang>ENU</tsl_lang>
+		<tsl_value>End</tsl_value>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeActivity>T</tsl_typeActivity>
+		<tsl_id.acy_step>CQUIZZ-000</tsl_id.acy_step>
+		<tsl_id.acy_process_id.pcs_name>QualCreateQuizz</tsl_id.acy_process_id.pcs_name>
+		<tsl_lang>FRA</tsl_lang>
+		<tsl_value>Begin</tsl_value>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeActivity>T</tsl_typeActivity>
+		<tsl_id.acy_step>CQUIZZ-100</tsl_id.acy_step>
+		<tsl_id.acy_process_id.pcs_name>QualCreateQuizz</tsl_id.acy_process_id.pcs_name>
+		<tsl_lang>FRA</tsl_lang>
+		<tsl_value>Sélectionner un questionnaire</tsl_value>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeActivity>T</tsl_typeActivity>
+		<tsl_id.acy_step>CQUIZZ-200</tsl_id.acy_step>
+		<tsl_id.acy_process_id.pcs_name>QualCreateQuizz</tsl_id.acy_process_id.pcs_name>
+		<tsl_lang>FRA</tsl_lang>
+		<tsl_value>Ajouter un énoncé</tsl_value>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeActivity>T</tsl_typeActivity>
+		<tsl_id.acy_step>CQUIZZ-400</tsl_id.acy_step>
+		<tsl_id.acy_process_id.pcs_name>QualCreateQuizz</tsl_id.acy_process_id.pcs_name>
+		<tsl_lang>FRA</tsl_lang>
+		<tsl_value>Ajouter d'autre questions ?</tsl_value>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeActivity>T</tsl_typeActivity>
+		<tsl_id.acy_step>CQUIZZ-500</tsl_id.acy_step>
+		<tsl_id.acy_process_id.pcs_name>QualCreateQuizz</tsl_id.acy_process_id.pcs_name>
+		<tsl_lang>FRA</tsl_lang>
+		<tsl_value>Associer le questionnaire à des candidats ?</tsl_value>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeActivity>T</tsl_typeActivity>
+		<tsl_id.acy_step>CQUIZZ-600</tsl_id.acy_step>
+		<tsl_id.acy_process_id.pcs_name>QualCreateQuizz</tsl_id.acy_process_id.pcs_name>
+		<tsl_lang>FRA</tsl_lang>
+		<tsl_value>Sélectionnez ou créez l'utilistateur</tsl_value>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeActivity>T</tsl_typeActivity>
+		<tsl_id.acy_step>CQUIZZ-800</tsl_id.acy_step>
+		<tsl_id.acy_process_id.pcs_name>QualCreateQuizz</tsl_id.acy_process_id.pcs_name>
+		<tsl_lang>FRA</tsl_lang>
+		<tsl_value>Associer à d'autres candidats ?</tsl_value>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeActivity>T</tsl_typeActivity>
+		<tsl_id.acy_step>CQUIZZ-999</tsl_id.acy_step>
+		<tsl_id.acy_process_id.pcs_name>QualCreateQuizz</tsl_id.acy_process_id.pcs_name>
+		<tsl_lang>FRA</tsl_lang>
+		<tsl_value>End</tsl_value>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+</object>
+<object>
+	<name>TranslateProcess</name>
+	<action>upsert</action>
+	<data>
+		<tsl_typeProcess>P</tsl_typeProcess>
+		<tsl_id.pcs_name>QualCreateQuizz</tsl_id.pcs_name>
+		<tsl_lang>ENU</tsl_lang>
+		<tsl_value>Create a quizz</tsl_value>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeProcess>P</tsl_typeProcess>
+		<tsl_id.pcs_name>QualCreateQuizz</tsl_id.pcs_name>
+		<tsl_lang>FRA</tsl_lang>
+		<tsl_value>Créer un questionnaire</tsl_value>
 		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
 	</data>
 </object>

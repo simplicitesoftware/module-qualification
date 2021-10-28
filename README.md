@@ -49,7 +49,7 @@ Exercise
     - `SIM_CERTIF_PARAM` Certification - Paramétrage
     - `SIM_CERTIF_DEV` Certification - Developpement Java
     - `SIM_CERTIF_DOC` Certification - Documentation
-    - `SIM_CERTIF_INSTAL_EXP` Certification - Installation / Exploitation
+    - `SIM_CERTIF_INSTAL_EXP` Certification - Installation - Exploitation
     - `SIM_CERTIF_BEHAVE` Certification - Comportement
     - `SIM_CERTIF_HOOKS` Certification - Hooks
     - `NA` Non applicable
@@ -156,6 +156,7 @@ Exercise
     - `Certification - Paramétrage-Niveau 1-269_REF_ENUM` 
     - `Certification - Paramétrage-Niveau 1-271_REF_ENUM` 
     - `Certification - Paramétrage-Niveau 1-273_REF_ENUM` 
+    - `SIM_BASE-NA-345_REF_ENUM` 
     - `SIM_CERTIF_INSTAL_EX-Niveau 1-293_REF_ENUM` 
     - `SIM_CERTIF_INSTAL_EX-Niveau 1-295_REF_ENUM` 
     - `SIM_CERTIF_INSTAL_EX-Niveau 1-297_REF_ENUM` 
@@ -195,6 +196,9 @@ Exercise
     - `Simplicité - Retour Formation-Niveau 1-115_REF_ENUM` 
     - `Simplicité - Retour Formation-Niveau 1-119_REF_ENUM` 
     - `Simplicité-Notionsdebase-Nonapplicable-337_REF_ENUM` 
+    - `Simplicité-Notionsdebase-Nonapplicable-339_REF_ENUM` 
+    - `Simplicité-Notionsdebase-Nonapplicable-341_REF_ENUM` 
+    - `Simplicité-Notionsdebase-Nonapplicable-343_REF_ENUM` 
 
 `QualUser` business object definition
 -------------------------------------
@@ -237,7 +241,7 @@ Exercise
     - `SIM_CERTIF_PARAM` Certification - Paramétrage
     - `SIM_CERTIF_DEV` Certification - Developpement Java
     - `SIM_CERTIF_DOC` Certification - Documentation
-    - `SIM_CERTIF_INSTAL_EXP` Certification - Installation / Exploitation
+    - `SIM_CERTIF_INSTAL_EXP` Certification - Installation - Exploitation
     - `SIM_CERTIF_BEHAVE` Certification - Comportement
     - `SIM_CERTIF_HOOKS` Certification - Hooks
     - `NA` Non applicable
@@ -253,7 +257,7 @@ Exercise
 
 ### Custom actions
 
-* `QualGenerateTests`: 07/04/2021 Replaced by 'send notif'
+* `QualCandidateNotify`: 07/04/2021 Replaced by 'send notif'
 
 `QualExam` business object definition
 -------------------------------------
@@ -287,7 +291,7 @@ Exercise
     - `SIM_CERTIF_PARAM` Certification - Paramétrage
     - `SIM_CERTIF_DEV` Certification - Developpement Java
     - `SIM_CERTIF_DOC` Certification - Documentation
-    - `SIM_CERTIF_INSTAL_EXP` Certification - Installation / Exploitation
+    - `SIM_CERTIF_INSTAL_EXP` Certification - Installation - Exploitation
     - `SIM_CERTIF_BEHAVE` Certification - Comportement
     - `SIM_CERTIF_HOOKS` Certification - Hooks
     - `NA` Non applicable
@@ -330,7 +334,7 @@ Exercise
     - `SIM_CERTIF_PARAM` Certification - Paramétrage
     - `SIM_CERTIF_DEV` Certification - Developpement Java
     - `SIM_CERTIF_DOC` Certification - Documentation
-    - `SIM_CERTIF_INSTAL_EXP` Certification - Installation / Exploitation
+    - `SIM_CERTIF_INSTAL_EXP` Certification - Installation - Exploitation
     - `SIM_CERTIF_BEHAVE` Certification - Comportement
     - `SIM_CERTIF_HOOKS` Certification - Hooks
     - `NA` Non applicable
@@ -428,6 +432,7 @@ Exercise
     - `Certification - Paramétrage-Niveau 1-269_REF_ENUM` 
     - `Certification - Paramétrage-Niveau 1-271_REF_ENUM` 
     - `Certification - Paramétrage-Niveau 1-273_REF_ENUM` 
+    - `SIM_BASE-NA-345_REF_ENUM` 
     - `SIM_CERTIF_INSTAL_EX-Niveau 1-293_REF_ENUM` 
     - `SIM_CERTIF_INSTAL_EX-Niveau 1-295_REF_ENUM` 
     - `SIM_CERTIF_INSTAL_EX-Niveau 1-297_REF_ENUM` 
@@ -467,6 +472,9 @@ Exercise
     - `Simplicité - Retour Formation-Niveau 1-115_REF_ENUM` 
     - `Simplicité - Retour Formation-Niveau 1-119_REF_ENUM` 
     - `Simplicité-Notionsdebase-Nonapplicable-337_REF_ENUM` 
+    - `Simplicité-Notionsdebase-Nonapplicable-339_REF_ENUM` 
+    - `Simplicité-Notionsdebase-Nonapplicable-341_REF_ENUM` 
+    - `Simplicité-Notionsdebase-Nonapplicable-343_REF_ENUM` 
 * `QUALEXANWSERTYPE`
     - `TXT` Texte
     - `ENUM` ENUM
@@ -610,6 +618,7 @@ Exercise
     - `Certification - Paramétrage-Niveau 1-269_REF_ENUM` 
     - `Certification - Paramétrage-Niveau 1-271_REF_ENUM` 
     - `Certification - Paramétrage-Niveau 1-273_REF_ENUM` 
+    - `SIM_BASE-NA-345_REF_ENUM` 
     - `SIM_CERTIF_INSTAL_EX-Niveau 1-293_REF_ENUM` 
     - `SIM_CERTIF_INSTAL_EX-Niveau 1-295_REF_ENUM` 
     - `SIM_CERTIF_INSTAL_EX-Niveau 1-297_REF_ENUM` 
@@ -649,6 +658,9 @@ Exercise
     - `Simplicité - Retour Formation-Niveau 1-115_REF_ENUM` 
     - `Simplicité - Retour Formation-Niveau 1-119_REF_ENUM` 
     - `Simplicité-Notionsdebase-Nonapplicable-337_REF_ENUM` 
+    - `Simplicité-Notionsdebase-Nonapplicable-339_REF_ENUM` 
+    - `Simplicité-Notionsdebase-Nonapplicable-341_REF_ENUM` 
+    - `Simplicité-Notionsdebase-Nonapplicable-343_REF_ENUM` 
 * `QUALEXTYPE`
     - `UML` UML
     - `JAVA` JAVA
@@ -663,7 +675,7 @@ Exercise
     - `SIM_CERTIF_PARAM` Certification - Paramétrage
     - `SIM_CERTIF_DEV` Certification - Developpement Java
     - `SIM_CERTIF_DOC` Certification - Documentation
-    - `SIM_CERTIF_INSTAL_EXP` Certification - Installation / Exploitation
+    - `SIM_CERTIF_INSTAL_EXP` Certification - Installation - Exploitation
     - `SIM_CERTIF_BEHAVE` Certification - Comportement
     - `SIM_CERTIF_HOOKS` Certification - Hooks
     - `NA` Non applicable
@@ -755,6 +767,28 @@ Exercise
 | _Ref. `qualUsrexamUsrId.usr_login`_                          | _regexp(100)_                            |          |           | yes      | _Login_                                                                          |
 | `qualUsrexamExamId` link to **`QualExam`**                   | id                                       | yes*     | yes       |          | -                                                                                |
 | _Ref. `qualUsrexamExamId.qualExamName`_                      | _char(100)_                              |          |           |          | -                                                                                |
+
+`QualCreateQuizz` business process definition
+---------------------------------------------
+
+
+
+### Activities
+
+* `Begin`: 
+* `CreateQuizz`: 
+* `SelectQuestions`: 
+* `SelectOtherQuestions`: 
+* `LinkToUser`: 
+* `SelectUsers`: 
+* `SelectOtherUsers`: 
+* `End`: 
+
+`QualCreateCandidate` external object definition
+------------------------------------------------
+
+
+
 
 `QualEndTestExt` external object definition
 -------------------------------------------

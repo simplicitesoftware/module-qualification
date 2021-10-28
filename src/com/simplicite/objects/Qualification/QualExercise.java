@@ -5,106 +5,73 @@ import com.simplicite.util.*;
 import com.simplicite.util.tools.*;
 import com.simplicite.util.exceptions.*;
 
+import org.json.*;
+
 /**
  * Business object QualExercise
  */
 public class QualExercise extends ObjectDB {
 	private static final long serialVersionUID = 1L;
 	
-	
 	@Override
 	public boolean isDeleteEnable(String[] row) {
-		
+		//Can't delete an exercise if it is used in a user exam
 		return !isUsed(getFieldValue("row_id", row));
 	}
 	
+	
+	
 	@Override
 	public List<String> preValidate() {
+		
 		List<String> msgs = new ArrayList<>();
 		
 		if(!isNew()){
 			Grant g = getGrant();
-		
+			
+			
 			if("ENUM".equals(getFieldValue("qualExAnswerType")) && getField("qualExChoicesEnumeration").hasChanged()){
 				
+				//if a enum question is used in a question, it can't be updated to prevent an update of the answers of already completed exams
 				if(isUsed(getRowId())){
-					
+					//Message displayed to the user
 					msgs.add(Message.formatError("ENUM Utilisé", "Vous ne pouvez pas modifier les choix possibles, cette question est déjà utilisée dans un test", "qualExChoicesEnumeration"));
 					
 				}
 				else{
+					
 					//Update enum (delete and recreate all codes + trad of refenum)
 					String refEnum = getFieldValue("qualExRefenum");
+
 					String idChoices = getFieldValue("qualExId") + "_CHOICES_ENUM";
+					deleteCodes(idChoices);
 					
 					String flRowId = g.simpleQuery("select row_id from m_list where lov_name = '"+idChoices+"'");
-				
-					ObjectDB code = g.getTmpObject("FieldListCode");
-					code.resetFilters();
-					code.setFieldFilter("lov_list_id.lov_name", idChoices);
-					code.setFieldFilter("row_module_id", ModuleDB.getModuleId("Qualification_Enum"));
-					List<String[]> rslts = code.search();
-					AppLog.info(getClass(), "preValidate", rslts.toString(), getGrant());
-					if(!Tool.isEmpty(rslts)){
-						for(String[] row : rslts){
-							code.setValues(row, false);
-							AppLog.info(getClass(), "preValidate", code.getFieldValue("lov_code"), getGrant());
-							code.delete();
-							
-						}
-					}
 					createListCodesAndVals(flRowId, idChoices, getFieldValue("qualExChoicesEnumeration").split("@@@"), "FRA");
-					resetEnums(idChoices);
+					
 				}
 			}
 		}
 		else{
+			//Initialize field value
 			setFieldValue("qualExId", getFieldValue("qualExType")+"-"+getFieldValue("qualExDifficulty")+"-0000");
 		}
-		
-		
-		//msgs.add(Message.formatInfo("INFO_CODE", "Message", "fieldName"));
-		//msgs.add(Message.formatWarning("WARNING_CODE", "Message", "fieldName"));
-		//
 		
 		return msgs;
 	}
 	
 	@Override
 	public String preCreate() {
-		setFieldValue("qualExId", getFieldDisplayValue("qualExType")+"-"+getFieldDisplayValue("qualExDifficulty")+"-"+getGrant().getNextIdForColumn(getDBName(), "row_id"));
+		//Set auto-incremented unique id
+		setFieldValue("qualExId", getFieldValue("qualExType")+"-"+getFieldValue("qualExDifficulty")+"-"+getGrant().getNextIdForColumn(getDBName(), "row_id"));
 		return null;
 	}
-	
-	/**
-	 * Unit tests method
-	 */
-	@Override
-	public String unitTests() {
-		try {
-			ObjectDB fl = getGrant().getTmpObject("FieldList");
-			fl.resetValues();
-			fl.setFieldFilter("mdl_name", "Qualification_Enum");
-			
-			for(String[] row : fl.search()){
-				fl.setValues(row, false);
-				String newName = fl.getFieldValue("lov_name").replace(" ", "");
-				fl.setFieldValue("lov_name", newName); 
-				fl.save();
-			}
-			return "Unit tests for" + getName();
-		} catch (Exception e) {
-			AppLog.error(null, e, getGrant());
-			return e.getMessage();
-		}
-	}
-	
 	
 	@Override
 	public String postCreate() {
 		
 		/*
-		if type is enum add id to QUAL_REF_ENUM_CHOICES
+		if type is ENUM add id to QUAL_REF_ENUM_CHOICES
 		
 		create list of values with values in choices field
 		
@@ -113,132 +80,163 @@ public class QualExercise extends ObjectDB {
 		
 		Grant g = Grant.getSystemAdmin();
 		
-		String refRowId = "";
-		
 		String qualifID = ModuleDB.getModuleId("Qualification_Enum");
 		
 		if("ENUM".equals(getFieldValue("qualExAnswerType"))){
 			
-			String idRef = getFieldValue("qualExId") + "_REF_ENUM";
-			
-			ObjectDB lcRef = g.getTmpObject("FieldListCode");
-			
-			String flRefRowId = g.simpleQuery("select row_id from m_list where lov_name = 'QUAL_REF_ENUM_CHOICES'");
-			
-			lcRef.setFieldValue("lov_list_id", flRefRowId);
-			lcRef.setFieldValue("lov_code", idRef.replace(" ", ""));
-			lcRef.setFieldValue("lov_order_by", "999");
-			lcRef.setFieldValue("row_module_id", qualifID);
-			
-			lcRef.create();
-			
-			refRowId = lcRef.getRowId();
-			
-			
-			String[] enumVals = getFieldValue("qualExChoicesEnumeration").split("@@@");
-			String idChoices = getFieldValue("qualExId") + "_CHOICES_ENUM";
-			
-			ObjectDB fl = g.getTmpObject("FieldList");
-			fl.resetValues();
-			fl.setFieldValue("lov_name", idChoices.replace(" ", ""));
-			fl.setFieldValue("row_module_id", qualifID);
-			
-			fl.create();
-			
-			createListCodesAndVals(fl.getRowId(), idChoices,  enumVals, "FRA");
-			setFieldValue("qualExRefenum", idRef);
-			save();
-			
-			/*
-			Original list : 
-				Object : QualExUsr
-				Objectfield = qualExamexExId.qualExRefenum / set : fll_objfield_id
-				Code in Ref list of values / set : fll_code_id
+			try{
 				
-			Linked list :
-				Object : QualExUsr
-				ObjectField = qualExusrAnswerEnumeration / set : fll_linked_id
-				Answers list just created / set : fll_list_id
-			*/
-			
-			
-			ObjectDB fll = g.getTmpObject("FieldListLink");
-			
-			
-			String refOfRowIdSql = "select of.row_id from m_objfield of "+
-				"inner join m_object o on of.OBF_OBJECT_ID = o.row_id "+
-				"inner join m_field f on of.obf_field_id = f.row_id "+
-				"where OBJ_NAME = 'QualExUsr' "+
-				"and FLD_NAME = 'qualExRefenum'";
+				//Create item in reference list and get row id
+				String refRowId = createFieldListCodeInRef();
 				
-			String ansOfRowIdSql = "select of.row_id from m_objfield of "+
-				"inner join m_object o on of.OBF_OBJECT_ID = o.row_id "+
-				"inner join m_field f on of.obf_field_id = f.row_id "+
-				"where OBJ_NAME = 'QualExUsr' "+
-				"and FLD_NAME = 'qualExusrAnswerEnumeration'";
+				//Create list of value
+				String flRowId = createListOfValues();
 				
-			fll.setFieldValue("fll_objfield_id", g.simpleQuery(refOfRowIdSql));
-			fll.setFieldValue("fll_code_id", refRowId);
-			
-			fll.setFieldValue("fll_linked_id", g.simpleQuery(ansOfRowIdSql));
-			fll.setFieldValue("fll_list_id", fl.getRowId());
-			
-			fll.setFieldValue("row_module_id", qualifID);
-			
-			fll.create();
-			
-			
-			resetEnums(idChoices);
+				/*String flRowId = createFieldListObjItem();
+				String idChoices = getFieldValue("qualExId") + "_CHOICES_ENUM";
+				String[] enumVals = getFieldValue("qualExChoicesEnumeration").split("@@@");
+				createListCodesAndVals(flRowId, idChoices,  enumVals, "FRA");*/
+				
+				setFieldValue("qualExRefenum", getFieldValue("qualExId") + "_REF_ENUM");
+				save();
+				
+				/*
+				Original list : 
+					Object : QualExUsr
+					Objectfield = qualExamexExId.qualExRefenum / set : fll_objfield_id
+					Code in Ref list of values / set : fll_code_id
+					
+				Linked list :
+					Object : QualExUsr
+					ObjectField = qualExusrAnswerEnumeration / set : fll_linked_id
+					Answers list just created / set : fll_list_id
+				*/
+				
+				ObjectDB fll = g.getTmpObject("FieldListLink");
+				
+				
+				String refOfRowIdSql = "select of.row_id from m_objfield of "+
+					"inner join m_object o on of.OBF_OBJECT_ID = o.row_id "+
+					"inner join m_field f on of.obf_field_id = f.row_id "+
+					"where OBJ_NAME = 'QualExUsr' "+
+					"and FLD_NAME = 'qualExRefenum'";
+					
+				String ansOfRowIdSql = "select of.row_id from m_objfield of "+
+					"inner join m_object o on of.OBF_OBJECT_ID = o.row_id "+
+					"inner join m_field f on of.obf_field_id = f.row_id "+
+					"where OBJ_NAME = 'QualExUsr' "+
+					"and FLD_NAME = 'qualExusrAnswerEnumeration'";
+					
+				fll.setFieldValue("fll_objfield_id", g.simpleQuery(refOfRowIdSql));
+				fll.setFieldValue("fll_code_id", refRowId);
+				
+				fll.setFieldValue("fll_linked_id", g.simpleQuery(ansOfRowIdSql));
+				fll.setFieldValue("fll_list_id", flRowId);
+				
+				fll.setFieldValue("row_module_id", qualifID);
+				
+				fll.create();
+			}
+			catch(GetException e){
+				AppLog.error(e, getGrant());
+			}
+			catch(ValidateException e){
+				AppLog.error(e, getGrant());
+			}
+			catch(CreateException e){
+				AppLog.error(e, getGrant());
+			}
 			
 		}
 		
 		return null;
 	}
 	
+	private String createListOfValues() throws ValidateException, CreateException, GetException{
+		
+		String flRowId = createFieldListObjItem();
+		
+		String idChoices = getFieldValue("qualExId") + "_CHOICES_ENUM";
+		String[] enumVals = getFieldValue("qualExChoicesEnumeration").split("@@@");
+		
+		createListCodesAndVals(flRowId, idChoices,  enumVals, "FRA");
+		
+		return flRowId;
+		
+	}
+	
+	private String createFieldListObjItem() throws ValidateException, CreateException, GetException{
+		
+		Grant g = getGrant();
+		String idChoices = (getFieldValue("qualExId") + "_CHOICES_ENUM").replace(" ", "");
+		AppLog.info(idChoices, getGrant());
+		ObjectDB fl = g.getTmpObject("FieldList");
+		BusinessObjectTool bot = fl.getTool();
+		bot.getForCreate();
+		fl.setFieldValue("lov_name", idChoices);
+		fl.setFieldValue("row_module_id", ModuleDB.getModuleId("Qualification_Enum"));
+		
+		bot.validateAndCreate();
+		return fl.getRowId();
+		
+	}
+	
+	private String createFieldListCodeInRef(){
+		
+		Grant g = getGrant();
+		
+		String idRef = getFieldValue("qualExId") + "_REF_ENUM";
+			
+		ObjectDB lcRef = g.getTmpObject("FieldListCode");
+		
+		String flRefRowId = g.simpleQuery("select row_id from m_list where lov_name = 'QUAL_REF_ENUM_CHOICES'");
+		
+		lcRef.setFieldValue("lov_list_id", flRefRowId);
+		lcRef.setFieldValue("lov_code", idRef.replace(" ", ""));
+		lcRef.setFieldValue("lov_order_by", "999");
+		lcRef.setFieldValue("row_module_id", ModuleDB.getModuleId("Qualification_Enum"));
+		
+		lcRef.create();
+		return lcRef.getRowId();
+	}
 	
 	@Override
 	public String preDelete() {
 		
-		//Delete FieldListCode where lov_code = val(qualExRefenum)
-		//Delete FieldList where lov_name = getFieldValue("qualExId") + "_CHOICES_ENUM"
-		//Delete Linked list
 		try{
 			
+			Grant g = getGrant().getSystemAdmin();
 			String code = getFieldValue("qualExRefenum");
 			String idChoices = getFieldValue("qualExId") + "_CHOICES_ENUM";
 			
-			Grant g = getGrant().getSystemAdmin();
+			//Delete FieldList where lov_code = val(qualExRefenum)			
+			deleteValuesOfObject("FieldList", new JSONObject().put("lov_name", idChoices).put("row_module_id", ModuleDB.getModuleId("Qualification_Enum")));
 			
-			ObjectDB fl = g.getTmpObject("FieldList");
-			fl.resetFilters();
-			fl.setFieldFilter("lov_name", idChoices);
-			fl.setFieldFilter("row_module_id", ModuleDB.getModuleId("Qualification_Enum"));
-			
-			List<String[]> flRslts = fl.search();
-		
-			deleteLists(fl, flRslts);
-			
-			ObjectDB flc = g.getTmpObject("FieldListCode");
-			flc.resetFilters();
-			flc.setFieldFilter("lov_code", code);
-			flc.setFieldFilter("row_module_id", ModuleDB.getModuleId("Qualification_Enum"));
-			
-			List<String[]> flcRslts = flc.search();
-			
-			deleteLists(flc, flcRslts);
+			//Delete FieldListCode where lov_name = getFieldValue("qualExId") + "_CHOICES_ENUM"
+			deleteValuesOfObject("FieldListCode", new JSONObject().put("lov_code", idChoices).put("row_module_id", ModuleDB.getModuleId("Qualification_Enum")));
 			
 		}
 		catch(DeleteException e){
 			AppLog.error(getClass(), "preDelete", "Delete error", e, getGrant());
 		}
 		
-		
-		//return Message.formatInfo("INFO_CODE", "Message", "fieldName");
-		//return Message.formatWarning("WARNING_CODE", "Message", "fieldName");
-		//return Message.formatError("ERROR_CODE", "Message", "fieldName");
 		return null;
 	}	
 	
+	
+	private void deleteValuesOfObject(String objName, JSONObject filters) throws DeleteException{
+		
+		ObjectDB obj = getGrant().getTmpObject(objName);
+		BusinessObjectTool bot = obj.getTool();
+		try{
+			List<String[]> rows = bot.search(filters);
+			deleteList(obj, rows);
+		}
+		catch(SearchException e){
+			AppLog.error(e, getGrant());
+		}
+		
+	}
 	
 	private void createListCodesAndVals(String flRowId, String idChoices, String[] enumVals, String lang){
 		
@@ -252,7 +250,7 @@ public class QualExercise extends ObjectDB {
 			lcChoice.setFieldValue("lov_order_by", "999");
 			lcChoice.setFieldValue("row_module_id", ModuleDB.getModuleId("Qualification_Enum"));
 			
-			AppLog.info(getClass(), "createListCodesAndVals", "Creating list item : "+code, getGrant());
+			AppLog.info(getClass(), "createListCodesAndVals", "Creating list item : "+ code.replace(" ", ""), getGrant());
 			lcChoice.create();
 			
 			ObjectDB flv = g.getTmpObject("FieldListValue");
@@ -266,15 +264,20 @@ public class QualExercise extends ObjectDB {
 			
 		}
 		
+		resetEnums(idChoices);
+		
 	}
 	
+	/**
+	 * Forces a clearcache of objects
+	 */ 
 	private void resetEnums(String lov){
 		SystemTool.resetCacheList(lov);
 		SystemTool.resetCacheList("QUAL_REF_ENUM_CHOICES");
 	}
 	
-	private BusinessObjectTool.ReturnMessage deleteLists(ObjectDB o, List<String[]> items) throws DeleteException{
-		
+	private BusinessObjectTool.ReturnMessage deleteList(ObjectDB o, List<String[]> items) throws DeleteException{
+
 		if(!Tool.isEmpty(items)){
 			for(String[] row : items){
 				o.setValues(row, false);
@@ -282,8 +285,22 @@ public class QualExercise extends ObjectDB {
 				return bot.delete();
 			}
 		}
-		
 		return null;
+	}
+	
+	private void deleteCodes(String idChoices){
+		
+		ObjectDB code = getGrant().getTmpObject("FieldListCode");
+		code.resetFilters();
+		code.setFieldFilter("lov_list_id.lov_name", idChoices);
+		code.setFieldFilter("row_module_id", ModuleDB.getModuleId("Qualification_Enum"));
+		List<String[]> rslts = code.search();
+		if(!Tool.isEmpty(rslts)){
+			for(String[] row : rslts){
+				code.setValues(row, false);
+				code.delete();
+			}
+		}
 		
 	}
 	

@@ -12,11 +12,7 @@ var QualPostTraining = QualPostTraining || (function($) {
 			if (typeof Vue === 'undefined') throw 'Vue.js not available';
 			
 			if (!params.pub) $('#demovuejsfrontend').css('min-height', '1000px');
-
-			/*app = app || (params.pub
-					? new Simplicite.Ajax(params.root, 'api', 'website', 'simplicite')  // External
-					: Simplicite.Application  // Internal
-				);*/
+			
 			app = new Simplicite.Ajax(params.root, 'uipublic');
 			
 			let output = [];
@@ -43,7 +39,9 @@ var QualPostTraining = QualPostTraining || (function($) {
 			}
 			else{
 				
-				/*if(generic){
+				/*
+				Deactivated to make start of questions more generic
+				if(generic){
 					start = new FlowForm.QuestionModel({
 			            id: 'start',
 			            title: "Bonjour "+String.fromCodePoint("0x1F44B"),
@@ -65,7 +63,8 @@ var QualPostTraining = QualPostTraining || (function($) {
 			            required: true,
 	        		});
 				}*/
-        	
+				
+        		//Creates a 'SectionBreak' element that greets the user befor starting an exam
         		start = new FlowForm.QuestionModel({
 	            	id: 'start',
 		            title:"Bonjour "+String.fromCodePoint("0x1F44B"),
@@ -75,53 +74,27 @@ var QualPostTraining = QualPostTraining || (function($) {
 		            required: true,
         		});
         		
+        		//Add the SectionBreak to the pile of elements to display
 				output.push(start);
 				
+				//For each exam
 				for(let k = 0; k < exams.length; k++){
+					//get questions of exam
 					let input = exams[k].questions;
 					let examTitle = exams[k].examTitle;
+					//for each question, create relevant type of question type
 					for(let i = 0; i < input.length; i++){
 						if(input[i].type == "ENUM"){
-							let choices = [];
-							let iChoices = input[i].enum.split("@@@");
-							for(let j = 0; j<iChoices.length; j++){
-								tmpChoice = new FlowForm.ChoiceOption({
-									label: iChoices[j], 
-								}),
-								choices.push(tmpChoice);
-							}
-							tmp = new FlowForm.QuestionModel({
-								examId : exams[k].examId,
-								id: input[i].id,
-								title: input[i].title,
-								helpTextShow: false,
-								type: FlowForm.QuestionType.MultipleChoice,
-								required: true,
-								multiple: false,
-								options: choices,
-						    })
+							tmp = createEnumElement(input[i], exams[k]);
 						}
 						else if(input[i].type == "TXT"){
-							tmp = new FlowForm.QuestionModel({
-								examId : exams[k].examId,
-								id:input[i].id,
-								title: input[i].title,
-								type: FlowForm.QuestionType.LongText,
-								required: true
-								
-						    })
+							tmp = createTxtElement(input[i], exams[k]);
 						}
 						else if(input[i].type == "QST_BREAK"){
-							tmp = new FlowForm.QuestionModel({
-								id : "exam-"+exams[k].examId +"-break",
-								examId : exams[k].examId,
-					            title: examTitle,
-					            description: exams[k].examDescription,
-					            type: FlowForm.QuestionType.SectionBreak,
-			        		});
+							tmp = createBreakElement(exams[k]);
 						}
 						
-						
+						//add element to output (pile of questions)
 						output.push(tmp);
 					}
 				}
@@ -161,17 +134,18 @@ var QualPostTraining = QualPostTraining || (function($) {
 				
 				 onAnswer(qA) {
 				 	let id = qA.id;
-				 	console.log(id);
-				 	console.log("id= "+qA.id);
+				 	//When a sectionbreak is passed and the id associated to it contains "exam", it's that a user has started an exam.
+				 	//The row is created in the backend
 					if(qA.type == FlowForm.QuestionType.SectionBreak && qA.id.includes("exam")){
-						//create exam in back
 						var usrExObj = app.getBusinessObject("QualUserExam");
 						usrExObj.resetFilters();
 						usrExObj.getForCreate(function () {
 							usrExObj.item.qualUsrexamUsrId = params.userId;
 							usrExObj.item.qualUsrexamExamId = qA.examId;
 							usrExObj.create(function(){
+								//store the exams row id
 								exObjRowId = usrExObj.getRowId();
+								//add the rowid to the list of exam rowids
 								usrExObjIds.push(exObjRowId);
 							}, usrExObj.item);
 							
@@ -179,7 +153,7 @@ var QualPostTraining = QualPostTraining || (function($) {
 					}
 					
 					if(qA.type !== FlowForm.QuestionType.SectionBreak){
-						//question answered -> set value in back
+						//if the type is other than a sectionbreak, it's a question -> set value in back
 						let submittedValue = qA.answer;
 						var usrAnswerObj = app.getBusinessObject("QualExUsr");
 						usrAnswerObj.resetFilters();
@@ -201,6 +175,7 @@ var QualPostTraining = QualPostTraining || (function($) {
 			      onComplete(completed, questionList) {
 			        // This method is called whenever the "completed" status is changed.
 			        this.completed = completed
+			        //if the type of user is 'generic', the quizz is automatically submitted. If not, it is done by a user action
 			        if(this.generic){
 			        	this.onQuizSubmit();
 			        }
@@ -210,28 +185,31 @@ var QualPostTraining = QualPostTraining || (function($) {
 			        // Set `submitted` to true so the form knows not to allow back/forward
 			        // navigation anymore.
 			        this.$refs.flowform.submitted = true
-			        
 			        this.submitted = true
+			        
 			        if(!unknown){
 			        	this.validateExams();
-			        	console.log(exams);
+			        	
+			        	//iterate through each exam
 			        	exams.forEach(exam => {
 			        		examQuestions = [];
+			        		//get all questions of exam
 			        		this.questions.forEach(qst => {
 			        			if(qst.examId == exam.examId && qst.type !== FlowForm.QuestionType.SectionBreak){
 			        				examQuestions.push(qst);
 			        			}
 			        		});
+			        		//Scores are only calculated if the exam has right/wrong answers
 			        		if(exam.examTitle != "Retours Formation"){
 			        			let examScore = this.calculateScore(exam, examQuestions);
 								this.scores.push(examScore);
 			        		}
-			        		//this.store(exam, examQuestions);
 			        	})
 			        	this.scored = true;
 			        }
 			      },
 			      
+			      //Calculate for specific exam
 			      calculateScore(exam, qsts){
 			      	score = 0;
 			      	total = qsts.length;
@@ -243,12 +221,11 @@ var QualPostTraining = QualPostTraining || (function($) {
 			      	});
 			      	score = Math.round((score / total)*100);
 			      	return {"examId": exam.examId, "examTitle": exam.examTitle, "score": score};
-			      	//each exam has a specific score;
 			      },
 			
+				//Set status "DONE" on every exam passed by the user
 				validateExams(){
 					this.loading = true;
-			      	//set ended for all exams
 		    		var obj = app.getBusinessObject("QualUserExam");
 	    			obj.resetFilters();
 			      	usrExObjIds.forEach(id => {
@@ -285,6 +262,48 @@ var QualPostTraining = QualPostTraining || (function($) {
 			console.error('Render error: ' + e.message);
 		}
 		
+		function createEnumElement(input, exam){
+			//create choice options
+			let choices = [];
+			let iChoices = input.enum.split("@@@");
+			for(let j = 0; j<iChoices.length; j++){
+				tmpChoice = new FlowForm.ChoiceOption({
+					label: iChoices[j], 
+				}),
+				choices.push(tmpChoice);
+			}
+			//when all options have been created, create a MultipleChoice
+			return new FlowForm.QuestionModel({
+				examId : exam.examId,
+				id: input.id,
+				title: input.title,
+				helpTextShow: false,
+				type: FlowForm.QuestionType.MultipleChoice,
+				required: true,
+				multiple: false,
+				options: choices,
+		    });
+		}
+		
+		function createTxtElement(input, exam){
+			return new FlowForm.QuestionModel({
+				examId : exam.examId,
+				id:input.id,
+				title: input.title,
+				type: FlowForm.QuestionType.LongText,
+				required: true
+		    });
+		}
+		
+		function createBreakElement(exam){
+			return new FlowForm.QuestionModel({
+				id : "exam-"+exam.examId +"-break",
+				examId : exam.examId,
+	            title: exam.examTitle,
+	            description: exam.examDescription,
+	            type: FlowForm.QuestionType.SectionBreak,
+			});
+		}
 		
 	}
 

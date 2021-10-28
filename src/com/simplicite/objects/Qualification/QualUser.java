@@ -5,6 +5,9 @@ import com.simplicite.util.*;
 import com.simplicite.util.tools.*;
 
 import java.time.LocalDate;
+
+import com.simplicite.util.exceptions.*;
+
 import com.simplicite.objects.System.User;
 
 /**
@@ -14,6 +17,8 @@ public class QualUser extends com.simplicite.objects.System.SimpleUser {
 	private static final long serialVersionUID = 1L;
 	
 		
+		
+	
 	@Override
 	public void postLoad() {
 		super.postLoad();
@@ -69,6 +74,21 @@ public class QualUser extends com.simplicite.objects.System.SimpleUser {
     	
     	return msgs;
     }
+    
+    @Override
+    public String postUpdate() {
+    	
+    	resetUsrPwd(getFieldValue("usr_login"));
+    	
+    	//return Message.formatInfo("INFO_CODE", "Message", "fieldName");
+    	//return Message.formatWarning("WARNING_CODE", "Message", "fieldName");
+    	//return Message.formatError("ERROR_CODE", "Message", "fieldName");
+    	//return HTMLTool.redirectStatement(HTMLTool.getFormURL("Object", null, "123", "nav=add"));
+    	//return HTMLTool.redirectStatement(HTMLTool.getListURL("Object", null, "nav=add"));
+    	//return HTMLTool.javascriptStatement("/* code */");
+    	return null;
+    }
+   
     
     /*
 	Email is sent to candidate after it is registered 
@@ -135,7 +155,7 @@ public class QualUser extends com.simplicite.objects.System.SimpleUser {
 		m.addRcpt(getFieldValue("usr_email"));
 		m.setSubject("[Simplicité] Questionnaire post-formation");
 		
-	/*	List<String> bcc = new ArrayList<String>(Arrays.asList("awheeler@simplicite.fr", "trepolt@simplicite.fr", "cyrille.de-benque@capgemini.com"));
+		/*List<String> bcc = new ArrayList<String>(Arrays.asList("nseitz@simplicite.fr"));
 		m.addBcc(bcc);*/
 		
         String url = g.getSystemParam("DIRECT_URL");
@@ -156,9 +176,9 @@ public class QualUser extends com.simplicite.objects.System.SimpleUser {
 		
 		Grant grant = getGrant();
 		boolean[] rights = grant.changeAccess("QualUser", true, true, true, true);
-		AppLog.info(getClass(), "resetUsrPwd", "===========SETTING PASSWORD============", getGrant());
+		AppLog.info(getClass(), "resetUsrPwd", "===========SETTING PASSWORD "+login+" ============", getGrant());
 		String userLogin = login;
-		String newPassword = grant.changePassword(userLogin, null, true, true);
+		String newPassword = grant.changePassword(userLogin, "54Uyhghjk*", true, true);
 		AppLog.info(getClass(), "resetUsrPwd", newPassword, getGrant());
 		grant.changeAccess("QualUser", rights);
 		return newPassword;
@@ -200,10 +220,9 @@ public class QualUser extends com.simplicite.objects.System.SimpleUser {
         }
     }
 	
-	public String generateTests(){
+	public String qualNotify(){
 		//Notify
 		sendMailNotif("");
-		
 		return Message.formatSimpleInfo("Utilisateur notifié");
 		
 	}
