@@ -1,5 +1,5 @@
 var QualPostTraining = QualPostTraining || (function($) {
-	var app, prd, data = { list: null, item: null };
+	var app;
 
 	/**
 	 * Render
@@ -19,15 +19,11 @@ var QualPostTraining = QualPostTraining || (function($) {
 			let exams = params.exams;
 			let tmp;
 			let unknown = false;
-			let generic = params.generic;
-			
 			let exObjRowId = "";
 			let usrExObjIds = [];
 			
 			if("" == exams){
 				unknown = true;
-				completed = true;
-		    	submitted = true;
 				start =  new FlowForm.QuestionModel({
 					id: 'start',
 					title: "Oups... ",
@@ -133,7 +129,6 @@ var QualPostTraining = QualPostTraining || (function($) {
 				methods: {
 				
 				 onAnswer(qA) {
-				 	let id = qA.id;
 				 	//When a sectionbreak is passed and the id associated to it contains "exam", it's that a user has started an exam.
 				 	//The row is created in the backend
 					if(qA.type == FlowForm.QuestionType.SectionBreak && qA.id.includes("exam")){
@@ -192,7 +187,7 @@ var QualPostTraining = QualPostTraining || (function($) {
 			        	
 			        	//iterate through each exam
 			        	exams.forEach(exam => {
-			        		examQuestions = [];
+			        		let examQuestions = [];
 			        		//get all questions of exam
 			        		this.questions.forEach(qst => {
 			        			if(qst.examId == exam.examId && qst.type !== FlowForm.QuestionType.SectionBreak){
@@ -211,8 +206,8 @@ var QualPostTraining = QualPostTraining || (function($) {
 			      
 			      //Calculate for specific exam
 			      calculateScore(exam, qsts){
-			      	score = 0;
-			      	total = qsts.length;
+			      	let score = 0;
+			      	let total = qsts.length;
 			      	qsts.forEach(qst =>{
 			      		let answer = qst.answer;
 			      		if (answer == exam.answers[qst.id]) {
@@ -267,9 +262,9 @@ var QualPostTraining = QualPostTraining || (function($) {
 			let choices = [];
 			let iChoices = input.enum.split("@@@");
 			for(let j = 0; j<iChoices.length; j++){
-				tmpChoice = new FlowForm.ChoiceOption({
+				let tmpChoice = new FlowForm.ChoiceOption({
 					label: iChoices[j], 
-				}),
+				});
 				choices.push(tmpChoice);
 			}
 			//when all options have been created, create a MultipleChoice

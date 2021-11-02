@@ -56,14 +56,10 @@ var QualStartTestExt = (function($) {
 				"qualExusrSubmitted":false
 			});
 			
-			//$ui.displayForm(null, "QualUserExam", this.id, {nav:"add", showNav:false});
 		});
 		
 	}
 	
-	function displayExt(name){
-		$ui.loadURL("default", "/ui/ext/"+name, { nav:"add", showNav:true });
-	}
 }
 
 

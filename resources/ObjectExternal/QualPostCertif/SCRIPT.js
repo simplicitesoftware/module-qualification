@@ -1,9 +1,11 @@
 var QualPostCertif = QualPostCertif || (function() {
-	var app, prd, data = { list: null, item: null };
+	var app = { list: null, item: null };
 
 	/**
 	 * Render
-	 * @param params Parameters
+	 * 
+	 * @param params
+	 *            Parameters
 	 * @function
 	 */
 	function render(params, qualTemplate) {
@@ -26,8 +28,6 @@ var QualPostCertif = QualPostCertif || (function() {
 			
 			if("" == exams){
 				unknown = true;
-				completed = true;
-		    	submitted = true;
 				start =  new FlowForm.QuestionModel({
 					id: 'start',
 					title: "Oups... ",
@@ -58,14 +58,14 @@ var QualPostCertif = QualPostCertif || (function() {
 				for(let j = 0; j<exams.length; j++){
 					let examTitle = exams[j].examTitle;
 					let examId = "exam-"+exams[j].examId +"-break";
-					tmpChoice = new FlowForm.ChoiceOption({
+					let tmpChoice = new FlowForm.ChoiceOption({
 						label: examTitle, 
 						value: examId,
-					}),
+					});
 					examJumps[examId] = examId;
 					examChoices.push(tmpChoice);
 				}
-				examSelector = new FlowForm.QuestionModel({
+				let examSelector = new FlowForm.QuestionModel({
 					id:"exam_selector",
 					title : "Sélectionnez une catégorie à évaluer :",
 					type: FlowForm.QuestionType.Dropdown,
@@ -76,10 +76,10 @@ var QualPostCertif = QualPostCertif || (function() {
 					jump: examJumps,
 				});
 				let endExamChoices = examChoices;
-				tmpChoice = new FlowForm.ChoiceOption({
+				let tmpChoice = new FlowForm.ChoiceOption({
 					label: "Terminer l\'évaluation", 
 					value: "other",
-				}),
+				});
 				endExamChoices.push(tmpChoice);
 				
 				let endExamJumps = examJumps;
@@ -160,9 +160,8 @@ var QualPostCertif = QualPostCertif || (function() {
 				methods: {
 				
 				 onAnswer(qA) {
-				 	let id = qA.id;
 					if(qA.type !== FlowForm.QuestionType.SectionBreak && qA.id !== "exam_selector" && !(qA.id).includes("break_end")){
-						//question answered -> set value in back
+						// question answered -> set value in back
 						let submittedValue = qA.answer;
 						var usrAnswerObj = app.getBusinessObject("QualExUsr");
 						usrAnswerObj.resetFilters();
@@ -182,7 +181,8 @@ var QualPostCertif = QualPostCertif || (function() {
 				},
 					
 			      onComplete(completed, questionList) {
-			        // This method is called whenever the "completed" status is changed.
+			        // This method is called whenever the "completed" status is
+					// changed.
 			        this.completed = completed
 			        if(this.generic){
 			        	this.onQuizSubmit();
@@ -190,7 +190,8 @@ var QualPostCertif = QualPostCertif || (function() {
 			      },
 			      
 			      onQuizSubmit() {
-			        // Set `submitted` to true so the form knows not to allow back/forward
+			        // Set `submitted` to true so the form knows not to allow
+					// back/forward
 			        // navigation anymore.
 			        this.$refs.flowform.submitted = true
 			        
@@ -200,15 +201,17 @@ var QualPostCertif = QualPostCertif || (function() {
 			        	this.validateExams(this.validateCbk);
 			        	console.log("validation")
 			        	exams.forEach(exam => {
-			        		examQuestions = [];
+			        		let examQuestions = [];
 			        		this.questions.forEach(qst => {
 			        			if(qst.examId == exam.examId && qst.type !== FlowForm.QuestionType.SectionBreak){
 			        				examQuestions.push(qst);
 			        			}
 			        		});
 			        		if(!generic){
-			        			/*let examScore = this.calculateScore(exam, examQuestions);
-								this.scores.push(examScore);*/
+			        			/*
+								 * let examScore = this.calculateScore(exam,
+								 * examQuestions); this.scores.push(examScore);
+								 */
 			        		}
 			        	})
 			        }
@@ -216,33 +219,33 @@ var QualPostCertif = QualPostCertif || (function() {
 			      
 			      calculateScore(exam, qsts){
 			    	let score = 0;
-			      	total = qsts.length;
+			      	let total = qsts.length;
 			      	qsts.forEach(qst =>{
 			      		let answer = qst.answer;
 			      		let correctAnswer = exam.answers[qst.id];
 			      		if (answer > correctAnswer) {
 			              score = score + correctAnswer;
 			            }
-			            else if(answer <= correctAnswer){
+			            else {
 			            	score = score + answer;
 			            }
 			      	});
-			      	//score = Math.round((score / total)*100);
+			      	// score = Math.round((score / total)*100);
 			      	return {"examId": exam.examId, "examTitle": exam.examTitle, "score": score, "total":total};
-			      	//each exam has a specific score;
+			      	// each exam has a specific score;
 			      },
 			
 				validateExams(validateCbk){
 					this.loading = true;
 					let examScores = [];
-			      	//set ended for all exams
+			      	// set ended for all exams
 		    		var obj = app.getBusinessObject("QualUserExam");
 	    			obj.resetFilters();
 			      	usrExObjIds.forEach(function(id, index) {
 						obj.getForUpdate(function(){
 							obj.item.qualUsrexamEtat = "DONE";
 							obj.update(function(){
-								//add score to json
+								// add score to json
 								examScores.push({
 									"examId": id, 
 									"examTitle": obj.item.qualUsrexamExamId__qualExamName, 
@@ -250,14 +253,14 @@ var QualPostCertif = QualPostCertif || (function() {
 									"total":obj.item.qualUsrexamTotalPoints
 								});
 								if(index === usrExObjIds.length - 1){
-									//all exams have been score, display score 
+									// all exams have been score, display score
 									validateCbk(examScores);
 								}
 							});
 						},id);
 					});
 					
-					//display "wait" section
+					// display "wait" section
 					setTimeout(() => {
 						this.loading = false;
 					}, 1000)
@@ -299,9 +302,9 @@ var QualPostCertif = QualPostCertif || (function() {
 			let choices = [];
 			let iChoices = input.enum.split("@@@");
 			for(let j = 0; j<iChoices.length; j++){
-				tmpChoice = new FlowForm.ChoiceOption({
+				let tmpChoice = new FlowForm.ChoiceOption({
 					label: iChoices[j],
-				}),
+				});
 				choices.push(tmpChoice);
 			}
 			
@@ -334,4 +337,4 @@ var QualPostCertif = QualPostCertif || (function() {
 	}
 
 	return { render: render };	
-})(jQuery);
+})();
