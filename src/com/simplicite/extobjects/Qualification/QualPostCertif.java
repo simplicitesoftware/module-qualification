@@ -46,8 +46,11 @@ public class QualPostCertif extends ExternalObject {
 			JSONArray userExamIdsArray = new JSONArray();
 			
 			for(String[] userExamIds : usrCertifExams){
-				
 				examId = userExamIds[1];
+				
+				AppLog.info(examId, getGrant());
+
+				
 				userExamIdsArray.put(userExamIds[0]);
 				
 				ObjectDB examObj = g.getTmpObject("QualExam");
@@ -60,7 +63,6 @@ public class QualPostCertif extends ExternalObject {
 					JSONObject exam = new JSONObject();
 					JSONArray qsts = new JSONArray();
 					JSONObject answers = new JSONObject();
-					//JSONArray answers = new JSONArray();
 					if(!"".equals(examId)){
 						examEx.setFieldFilter("qualExamexExamId", examId);
 						
@@ -77,6 +79,7 @@ public class QualPostCertif extends ExternalObject {
 							qst.put("type", examEx.getFieldValue("qualExamexExId.qualExAnswerType"));
 							qst.put("enum", examEx.getFieldValue("qualExamexExId.qualExChoicesEnumeration"));
 							qst.put("id", examEx.getFieldValue("qualExamexExId.qualExId"));
+							
 							qsts.put(qst);
 							
 							answers.put(examEx.getFieldValue("qualExamexExId.qualExId"), examEx.getFieldValue("qualExamexExId.qualExAnswerEnumeration"));
@@ -104,6 +107,7 @@ public class QualPostCertif extends ExternalObject {
 			
 			renderParams.put("userId", userId);
 			renderParams.put("userExamIds", userExamIdsArray);
+			
 			
 			String render = getName() + ".render(" + renderParams.toString() +",'"+template.replaceAll("(\\r|\\n|\\r\\n)+", "\\\\n")+ "');";
 			if (pub) { // Public page version (standalone Bootstrap page)

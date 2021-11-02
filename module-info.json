@@ -1,9 +1,9 @@
 {
-    "date": "2021-10-28 15:05:48",
+    "date": "2021-11-02 18:49:03",
     "name": "Qualification",
     "format": "xml",
     "files": ["Qualification.xml"],
-    "repository": {"origin": {"uri": "https://github.com/simplicitesoftware/module-quizz.git"}},
-    "version": "0.16",
+    "repository": {},
+    "version": "0.18",
     "platform": "5.1.11"
 }

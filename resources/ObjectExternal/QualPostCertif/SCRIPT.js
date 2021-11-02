@@ -9,7 +9,6 @@ var QualPostCertif = QualPostCertif || (function() {
 	function render(params, qualTemplate) {
 		
 		try {
-			console.log(params)
 			if (typeof Vue === 'undefined') throw 'Vue.js not available';
 			
 			if (!params.pub) $('#demovuejsfrontend').css('min-height', '1000px');
@@ -41,6 +40,8 @@ var QualPostCertif = QualPostCertif || (function() {
 			
 			else{
 				
+				console.log("EXAMS :");
+				console.log(exams);
 				start = new FlowForm.QuestionModel({
 		            id: 'start',
 		            tagline:"Bonjour "+String.fromCodePoint("0x1F44B"),
@@ -91,10 +92,10 @@ var QualPostCertif = QualPostCertif || (function() {
 					let examTitle = exams[k].examTitle;
 					for(let i = 0; i < input.length; i++){
 						if(input[i].type == "ENUM"){
-							createEnumElement(input[i], exams[k]);
+							tmp = createEnumElement(input[i], exams[k]);
 						}
 						else if(input[i].type == "TXT"){
-							createTxtElement(input[i], exams[k]);
+							tmp = createTxtElement(input[i], exams[k]);
 						}
 						else if(input[i].type == "QST_BREAK"){
 							tmp = new FlowForm.QuestionModel({
