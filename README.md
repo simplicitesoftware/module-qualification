@@ -513,6 +513,7 @@ Exercise
 | `qualExusrImage`                                             | document                                 |          | yes       |          | -                                                                                |
 | `qualExusrAnswerEnumeration`                                 | enum(100) using `QUALEXUSRANSWERENUMERATION` list |          | yes       |          | -                                                                                |
 | `qualExusrProgress`                                          | int(100)                                 |          |           |          | -                                                                                |
+| `qualExusrUsrVirtualId` link to **`QualUser`**               | id                                       |          | yes       |          | -                                                                                |
 
 ### Lists
 

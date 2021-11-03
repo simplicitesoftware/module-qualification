@@ -2692,6 +2692,43 @@
 		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
 	</data>
 	<data>
+		<fld_name>qualExusrUsrVirtualId</fld_name>
+		<fld_dbname/>
+		<fld_visible>3</fld_visible>
+		<fld_updatable>1</fld_updatable>
+		<fld_required>0</fld_required>
+		<fld_fonctid>0</fld_fonctid>
+		<fld_research/>
+		<fld_researchreq>0</fld_researchreq>
+		<fld_sort>C</fld_sort>
+		<fld_more>0</fld_more>
+		<fld_listmore>0</fld_listmore>
+		<fld_listsum/>
+		<fld_tray/>
+		<fld_type>0</fld_type>
+		<fld_type_id.flt_code/>
+		<fld_list_id.lov_name/>
+		<fld_copy>1</fld_copy>
+		<fld_size>11</fld_size>
+		<fld_minsize/>
+		<fld_precision/>
+		<fld_fromdate_id.fld_name/>
+		<fld_dfault/>
+		<fld_indexable>0</fld_indexable>
+		<fld_autocomp>0</fld_autocomp>
+		<fld_groupby>0</fld_groupby>
+		<fld_updall>1</fld_updall>
+		<fld_case/>
+		<fld_righttoleft>0</fld_righttoleft>
+		<fld_rendering/>
+		<fld_speech/>
+		<fld_calc/>
+		<fld_objlist/>
+		<fld_comment/>
+		<fld_classification/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
 		<fld_name>qualUsrexamCertusrId</fld_name>
 		<fld_dbname>qual_usrexam_certusr_id</fld_dbname>
 		<fld_visible>3</fld_visible>
@@ -3669,7 +3706,7 @@
 		<obd_name>QualAdmin</obd_name>
 		<obd_comment/>
 		<obd_type>D</obd_type>
-		<obd_view_id.viw_name/>
+		<obd_view_id.viw_name>QualAdminScope</obd_view_id.viw_name>
 		<obd_nohome>0</obd_nohome>
 		<obd_icon>img/color/view_admin</obd_icon>
 		<obd_order>1000</obd_order>
@@ -5495,7 +5532,7 @@
 		<obf_ref_export>1</obf_ref_export>
 		<obf_copy/>
 		<obf_ref_order/>
-		<obf_fld_visible>3</obf_fld_visible>
+		<obf_fld_visible>0</obf_fld_visible>
 		<obf_fld_required/>
 		<obf_fld_updatable/>
 		<obf_fld_research/>
@@ -5542,7 +5579,7 @@
 		<obf_field_id.fld_name>usr_login</obf_field_id.fld_name>
 		<obf_field_id.fld_type>15</obf_field_id.fld_type>
 		<obf_order>40</obf_order>
-		<obf_group_by/>
+		<obf_group_by>10</obf_group_by>
 		<obf_dfault_order/>
 		<obf_input/>
 		<obf_ref_field_id.fld_name>qualUsrexamUsrId</obf_ref_field_id.fld_name>
@@ -5582,7 +5619,7 @@
 		<obf_ref_export>1</obf_ref_export>
 		<obf_copy/>
 		<obf_ref_order/>
-		<obf_fld_visible>3</obf_fld_visible>
+		<obf_fld_visible>0</obf_fld_visible>
 		<obf_fld_required/>
 		<obf_fld_updatable/>
 		<obf_fld_research/>
@@ -5629,7 +5666,7 @@
 		<obf_field_id.fld_name>qualExamName</obf_field_id.fld_name>
 		<obf_field_id.fld_type>3</obf_field_id.fld_type>
 		<obf_order>70</obf_order>
-		<obf_group_by/>
+		<obf_group_by>20</obf_group_by>
 		<obf_dfault_order/>
 		<obf_input/>
 		<obf_ref_field_id.fld_name>qualUsrexamExamId</obf_ref_field_id.fld_name>
@@ -5756,7 +5793,7 @@
 		<obf_ref_export>1</obf_ref_export>
 		<obf_copy/>
 		<obf_ref_order/>
-		<obf_fld_visible/>
+		<obf_fld_visible>0</obf_fld_visible>
 		<obf_fld_required/>
 		<obf_fld_updatable/>
 		<obf_fld_research/>
@@ -5832,7 +5869,7 @@
 		<obf_field_id.fld_name>qualExusrCheck</obf_field_id.fld_name>
 		<obf_field_id.fld_type>7</obf_field_id.fld_type>
 		<obf_order>150</obf_order>
-		<obf_group_by>1</obf_group_by>
+		<obf_group_by>30</obf_group_by>
 		<obf_dfault_order/>
 		<obf_input/>
 		<obf_ref_field_id.fld_name/>
@@ -6144,6 +6181,35 @@
 		<obf_field_id.fld_dfault/>
 		<obf_area_id.ofa_name>QualExUsr-31</obf_area_id.ofa_name>
 		<obf_area_id.ofa_position>31</obf_area_id.ofa_position>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<obf_object_id.obo_name>QualExUsr</obf_object_id.obo_name>
+		<obf_field_id.fld_name>qualExusrUsrVirtualId</obf_field_id.fld_name>
+		<obf_field_id.fld_type>0</obf_field_id.fld_type>
+		<obf_order>300</obf_order>
+		<obf_group_by/>
+		<obf_dfault_order/>
+		<obf_input/>
+		<obf_ref_field_id.fld_name/>
+		<obf_ref_object_id.obo_name>QualUser</obf_ref_object_id.obo_name>
+		<obf_cascad>Z</obf_cascad>
+		<obf_card>0,n</obf_card>
+		<obf_visible>1</obf_visible>
+		<obf_ref_export>1</obf_ref_export>
+		<obf_copy>0</obf_copy>
+		<obf_ref_order/>
+		<obf_fld_visible/>
+		<obf_fld_required/>
+		<obf_fld_updatable/>
+		<obf_fld_research/>
+		<obf_fld_more/>
+		<obf_fld_listmore/>
+		<obf_fld_researchreq/>
+		<obf_fld_dfault/>
+		<obf_field_id.fld_dfault/>
+		<obf_area_id.ofa_name>QualExUsr-1</obf_area_id.ofa_name>
+		<obf_area_id.ofa_position>1</obf_area_id.ofa_position>
 		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
 	</data>
 	<data>
@@ -7286,6 +7352,30 @@
 		<obf_rendering/>
 		<obf_treedepth/>
 		<obf_area_id.ofa_name>QualCertUsr-1</obf_area_id.ofa_name>
+		<obf_area_id.ofa_position>1</obf_area_id.ofa_position>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<obf_ref_object_id.obo_name>QualUser</obf_ref_object_id.obo_name>
+		<obf_order>300</obf_order>
+		<obf_ref_order/>
+		<obf_object_id.obj_name>QualExUsr</obf_object_id.obj_name>
+		<obf_field_id.fld_name>qualExusrUsrVirtualId</obf_field_id.fld_name>
+		<obf_field_id.fld_dbname/>
+		<obf_field_id.fld_updatable>1</obf_field_id.fld_updatable>
+		<obf_field_id.fld_required>0</obf_field_id.fld_required>
+		<obf_field_id.fld_fonctid>0</obf_field_id.fld_fonctid>
+		<obf_cascad>Z</obf_cascad>
+		<obf_card>0,n</obf_card>
+		<obf_query><![CDATA[t.row_id in (select ex.row_id from qual_ex_usr ex join qual_user_exam uex on ex.qual_exusr_usrexam_id = uex.row_id and uex.qual_usrexam_usr_id = [ROWID])]]></obf_query>
+		<obf_visible>1</obf_visible>
+		<obf_ref_export>1</obf_ref_export>
+		<obf_copy>0</obf_copy>
+		<obf_associate/>
+		<obf_inline>0</obf_inline>
+		<obf_rendering/>
+		<obf_treedepth/>
+		<obf_area_id.ofa_name>QualExUsr-1</obf_area_id.ofa_name>
 		<obf_area_id.ofa_position>1</obf_area_id.ofa_position>
 		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
 	</data>
@@ -9889,6 +9979,18 @@
 	</data>
 	<data>
 		<tsl_typeField>F</tsl_typeField>
+		<tsl_id.fld_name>qualExusrUsrVirtualId</tsl_id.fld_name>
+		<tsl_lang>ENU</tsl_lang>
+		<tsl_value>Candidate|Candidates</tsl_value>
+		<tsl_simplehelp/>
+		<tsl_short_value/>
+		<tsl_placeholder/>
+		<tsl_listhelp/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+		<tsl_tooltip/>
+	</data>
+	<data>
+		<tsl_typeField>F</tsl_typeField>
 		<tsl_id.fld_name>qualUsrexamCertusrId</tsl_id.fld_name>
 		<tsl_lang>ENU</tsl_lang>
 		<tsl_value>Qual cert usr</tsl_value>
@@ -10432,6 +10534,18 @@
 		<tsl_id.fld_name>qualExusrUsrexamId</tsl_id.fld_name>
 		<tsl_lang>FRA</tsl_lang>
 		<tsl_value>Examen de l'utilisateur|Examens de l'utilisateur</tsl_value>
+		<tsl_simplehelp/>
+		<tsl_short_value/>
+		<tsl_placeholder/>
+		<tsl_listhelp/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+		<tsl_tooltip/>
+	</data>
+	<data>
+		<tsl_typeField>F</tsl_typeField>
+		<tsl_id.fld_name>qualExusrUsrVirtualId</tsl_id.fld_name>
+		<tsl_lang>FRA</tsl_lang>
+		<tsl_value>Candidat|Candidats</tsl_value>
 		<tsl_simplehelp/>
 		<tsl_short_value/>
 		<tsl_placeholder/>
@@ -11624,6 +11738,30 @@
 		<tsl_short_value/>
 		<tsl_listhelp/>
 		<tsl_placeholder/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+</object>
+<object>
+	<name>TranslateLink</name>
+	<action>upsert</action>
+	<data>
+		<tsl_typeLink>K</tsl_typeLink>
+		<tsl_id.obf_object_id.obj_name>QualExUsr</tsl_id.obf_object_id.obj_name>
+		<tsl_id.obf_field_id.fld_name>qualExusrUsrVirtualId</tsl_id.obf_field_id.fld_name>
+		<tsl_id.obf_order>300</tsl_id.obf_order>
+		<tsl_lang>ENU</tsl_lang>
+		<tsl_value>Candidate's answers</tsl_value>
+		<tsl_simplehelp/>
+		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
+	</data>
+	<data>
+		<tsl_typeLink>K</tsl_typeLink>
+		<tsl_id.obf_object_id.obj_name>QualExUsr</tsl_id.obf_object_id.obj_name>
+		<tsl_id.obf_field_id.fld_name>qualExusrUsrVirtualId</tsl_id.obf_field_id.fld_name>
+		<tsl_id.obf_order>300</tsl_id.obf_order>
+		<tsl_lang>FRA</tsl_lang>
+		<tsl_value>Réponses du candidat</tsl_value>
+		<tsl_simplehelp/>
 		<row_module_id.mdl_name>Qualification</row_module_id.mdl_name>
 	</data>
 </object>
