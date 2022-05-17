@@ -83,6 +83,7 @@ paths:
         enum:
         - TXT
         - ENUM
+        - MULTI_ENUM
         - DIAG
       - in: query
         name: qualExAnswerText
@@ -111,7 +112,7 @@ paths:
         required: false
       - in: query
         name: qualExAnswerEnumeration
-        description: Search filter for Réponse
+        description: Search filter for Réponse (séparées par @@@ si multiple)
         type: string
         required: false
       - in: query
@@ -120,41 +121,185 @@ paths:
         type: string
         required: false
         enum:
-        - Certification - Paramétrage-Niveau 1-261_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-263_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-265_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-267_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-269_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-271_REF_ENUM
+        - SIM_BASE-NA-385_REF_ENUM
+        - SIM_BASE-NA-383_REF_ENUM
+        - SIM_BASE-NA-381_REF_ENUM
+        - SIM_BASE-NA-379_REF_ENUM
+        - SIM_BASE-NA-387_REF_ENUM
+        - SIM_BASE-NA-375_REF_ENUM
+        - SIM_BASE-NA-373_REF_ENUM
+        - SIM_BASE-NA-371_REF_ENUM
+        - SIM_BASE-NA-369_REF_ENUM
+        - SIM_BASE-NA-377_REF_ENUM
+        - SIM_BASE-NA-407_REF_ENUM
+        - SIM_BASE-NA-405_REF_ENUM
+        - SIM_BASE-NA-403_REF_ENUM
+        - SIM_BASE-NA-401_REF_ENUM
+        - SIM_BASE-NA-389_REF_ENUM
+        - SIM_BASE-NA-397_REF_ENUM
+        - SIM_BASE-NA-395_REF_ENUM
+        - SIM_BASE-NA-393_REF_ENUM
+        - SIM_BASE-NA-391_REF_ENUM
+        - SIM_BASE-NA-399_REF_ENUM
+        - SIM_BASE-NA-409_REF_ENUM
+        - SIM_BASE-NA-367_REF_ENUM
+        - SIM_BASE-NA-365_REF_ENUM
+        - SIM_BASE-1-451_REF_ENUM
+        - SIM_BASE-1-449_REF_ENUM
+        - SIM_BASE-1-447_REF_ENUM
+        - SIM_BASE-1-445_REF_ENUM
+        - SIM_BASE-1-453_REF_ENUM
         - Certification - Paramétrage-Niveau 1-273_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-259_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-293_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-295_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-297_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-299_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-301_REF_ENUM
-        - Simplicité - Conception-Niveau 1-43_REF_ENUM
-        - Simplicité - Conception-Niveau 1-45_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-271_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-269_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-267_REF_ENUM
+        - JAVA-1-351_REF_ENUM
+        - SIM_BASE-1-455_REF_ENUM
+        - SIM_BASE-NA-363_REF_ENUM
+        - SIM_BASE-NA-361_REF_ENUM
+        - SIM_BASE-NA-359_REF_ENUM
+        - SIM_BASE-NA-357_REF_ENUM
+        - SIM_BASE-NA-353_REF_ENUM
         - SIM_BASE-NA-345_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-227_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-229_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-231_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-233_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-235_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-237_REF_ENUM
+        - SIM_BASE-1-461_REF_ENUM
+        - SIM_BASE-1-459_REF_ENUM
+        - SIM_BASE-NA-355_REF_ENUM
+        - SIM_BASE-NA-411_REF_ENUM
+        - SIM_CONCEPTION-1-481_REF_ENUM
+        - SIM_CONCEPTION-1-479_REF_ENUM
+        - SIM_CONCEPTION-1-477_REF_ENUM
+        - SIM_CONCEPTION-1-475_REF_ENUM
+        - SIM_CONCEPTION-1-473_REF_ENUM
+        - SIM_CONCEPTION-1-471_REF_ENUM
+        - SIM_CONCEPTION-1-469_REF_ENUM
+        - SIM_CONCEPTION-1-467_REF_ENUM
+        - SIM_CONCEPTION-1-465_REF_ENUM
+        - SIM_CONCEPTION-1-463_REF_ENUM
+        - SIM_CONCEPTION-1-483_REF_ENUM
+        - SIM_CONCEPTION-1-485_REF_ENUM
+        - Simplicité - Conception-Niveau 1-43_REF_ENUM
+        - SIM_REX-1-507_REF_ENUM
+        - SIM_REX-1-503_REF_ENUM
+        - SIM_REX-1-501_REF_ENUM
+        - SIM_REX-1-499_REF_ENUM
+        - SIM_REX-1-493_REF_ENUM
+        - SIM_CONCEPTION-1-491_REF_ENUM
+        - SIM_CONCEPTION-1-489_REF_ENUM
+        - SIM_CONCEPTION-1-487_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-301_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-299_REF_ENUM
+        - SIM_BASE-NA-429_REF_ENUM
+        - SIM_BASE-NA-427_REF_ENUM
+        - SIM_BASE-NA-425_REF_ENUM
+        - SIM_BASE-NA-423_REF_ENUM
+        - SIM_BASE-NA-431_REF_ENUM
+        - SIM_BASE-NA-419_REF_ENUM
+        - SIM_BASE-NA-417_REF_ENUM
+        - SIM_BASE-NA-415_REF_ENUM
+        - SIM_BASE-NA-413_REF_ENUM
+        - SIM_BASE-NA-421_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-297_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-295_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-293_REF_ENUM
+        - SIM_BASE-NA-513_REF_ENUM
+        - SIM_BASE-NA-433_REF_ENUM
+        - SIM_BASE-NA-441_REF_ENUM
+        - SIM_BASE-NA-439_REF_ENUM
+        - SIM_BASE-NA-437_REF_ENUM
+        - SIM_BASE-NA-435_REF_ENUM
+        - SIM_BASE-NA-443_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-265_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-263_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-149_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-147_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-145_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-329_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-151_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-325_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-323_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-321_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-319_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-327_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-171_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-169_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-167_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-165_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-153_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-161_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-159_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-157_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-155_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-163_REF_ENUM
+        - Certification - Hooks-Niveau 1-275_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-173_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-135_REF_ENUM
+        - Certification - Comportement-Niveau 1-317_REF_ENUM
+        - Certification - Comportement-Niveau 1-315_REF_ENUM
+        - Certification - Comportement-Niveau 1-313_REF_ENUM
+        - Certification - Comportement-Niveau 1-311_REF_ENUM
+        - Certification - Comportement-Niveau 1-309_REF_ENUM
+        - Certification - Comportement-Niveau 1-307_REF_ENUM
+        - Certification - Comportement-Niveau 1-305_REF_ENUM
+        - Certification - Comportement-Niveau 1-303_REF_ENUM
+        - Certification - Documentation-Niveau 1-291_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-137_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-139_REF_ENUM
+        - Certification - Documentation-Niveau 1-289_REF_ENUM
+        - Certification - Documentation-Niveau 1-287_REF_ENUM
+        - Certification - Documentation-Niveau 1-285_REF_ENUM
+        - Certification - Documentation-Niveau 1-283_REF_ENUM
+        - Certification - Developpement Java-Niveau 1-281_REF_ENUM
+        - Certification - Developpement Java-Niveau 1-279_REF_ENUM
+        - Certification - Developpement Java-Niveau 1-277_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-143_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-141_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-175_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-177_REF_ENUM
         - Certification - Paramétrage-Niveau 1-239_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-257_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-243_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-245_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-247_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-249_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-251_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-253_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-255_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-237_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-235_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-233_REF_ENUM
         - Certification - Paramétrage-Niveau 1-241_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-229_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-227_REF_ENUM
         - Certification - Paramétrage-Niveau 1-225_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-223_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-231_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-261_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-259_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-257_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-255_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-243_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-251_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-249_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-247_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-245_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-253_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-221_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-195_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-193_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-191_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-189_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-187_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-185_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-183_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-181_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-179_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-219_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-197_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-199_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-217_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-215_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-213_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-211_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-209_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-207_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-205_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-203_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-201_REF_ENUM
+        - Simplicité - Conception-Niveau 1-45_REF_ENUM
+        - SIM_BASE-1-457_REF_ENUM
         - Simplicité - Conception-Niveau 1-47_REF_ENUM
-        - Simplicité - Conception-Niveau 1-53_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-23_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-27_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-331_REF_ENUM
@@ -163,6 +308,7 @@ paths:
         - Simplicité - Notions de base-Niveau 1-7_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-9_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-21_REF_ENUM
+        - Simplicité - Retour Formation-Niveau 1-105_REF_ENUM
         - Simplicité - Retour Formation-Niveau 1-111_REF_ENUM
         - Simplicité - Retour Formation-Niveau 1-113_REF_ENUM
         - Simplicité - Retour Formation-Niveau 1-115_REF_ENUM
@@ -170,7 +316,10 @@ paths:
         - Simplicité-Notionsdebase-Nonapplicable-337_REF_ENUM
         - Simplicité-Notionsdebase-Nonapplicable-339_REF_ENUM
         - Simplicité-Notionsdebase-Nonapplicable-341_REF_ENUM
-        - Simplicité - Retour Formation-Niveau 1-105_REF_ENUM
+        - Simplicité-Notionsdebase-Nonapplicable-343_REF_ENUM
+        - Simplicité - Notions de base-Niveau 1-19_REF_ENUM
+        - Simplicité - Notions de base-Niveau 1-15_REF_ENUM
+        - Simplicité - Conception-Niveau 1-53_REF_ENUM
         - Simplicité - Conception-Niveau 1-55_REF_ENUM
         - Simplicité - Conception-Niveau 1-57_REF_ENUM
         - Simplicité - Conception-Niveau 1-59_REF_ENUM
@@ -178,84 +327,21 @@ paths:
         - Simplicité - Conception-Niveau 1-65_REF_ENUM
         - Simplicité - Conception-Niveau 1-75_REF_ENUM
         - Simplicité - Conception-Niveau 1-77_REF_ENUM
-        - Simplicité - Notions de base-Niveau 1-19_REF_ENUM
+        - Simplicité - Conception-Niveau 1-83_REF_ENUM
         - Simplicité - Conception-Niveau 1-85_REF_ENUM
         - Simplicité - Conception-Niveau 1-93_REF_ENUM
         - Simplicité - Conception-Niveau 1-95_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-11_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-125_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-131_REF_ENUM
-        - Simplicité - Notions de base-Niveau 1-15_REF_ENUM
-        - Simplicité - Conception-Niveau 1-83_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-223_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-221_REF_ENUM
-        - Certification - Documentation-Niveau 1-285_REF_ENUM
-        - Certification - Documentation-Niveau 1-287_REF_ENUM
-        - Certification - Documentation-Niveau 1-289_REF_ENUM
-        - Certification - Documentation-Niveau 1-291_REF_ENUM
-        - Certification - Hooks-Niveau 1-275_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-319_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-321_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-323_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-325_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-327_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-329_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-145_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-147_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-149_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-151_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-153_REF_ENUM
-        - Certification - Documentation-Niveau 1-283_REF_ENUM
-        - Certification - Developpement Java-Niveau 1-281_REF_ENUM
-        - Certification - Comportement-Niveau 1-303_REF_ENUM
-        - Certification - Comportement-Niveau 1-305_REF_ENUM
-        - Certification - Comportement-Niveau 1-307_REF_ENUM
-        - Certification - Comportement-Niveau 1-309_REF_ENUM
-        - Certification - Comportement-Niveau 1-311_REF_ENUM
-        - Certification - Comportement-Niveau 1-313_REF_ENUM
-        - Certification - Comportement-Niveau 1-315_REF_ENUM
-        - Certification - Comportement-Niveau 1-317_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-135_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-137_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-139_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-141_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-143_REF_ENUM
-        - Certification - Developpement Java-Niveau 1-277_REF_ENUM
-        - Certification - Developpement Java-Niveau 1-279_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-191_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-193_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-195_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-197_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-199_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-201_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-203_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-205_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-207_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-209_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-211_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-213_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-215_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-217_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-219_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-155_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-189_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-187_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-157_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-159_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-161_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-163_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-165_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-167_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-169_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-171_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-173_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-175_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-177_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-179_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-181_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-183_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-185_REF_ENUM
-        - Simplicité-Notionsdebase-Nonapplicable-343_REF_ENUM
+      - in: query
+        name: qualExLangue
+        description: Search filter for Langue
+        type: string
+        required: false
+        enum:
+        - FRA
+        - ENU
       tags:
       - QualExercise
   /rest/QualExUsr:
@@ -297,6 +383,22 @@ paths:
         type: boolean
         required: false
       - in: query
+        name: _crosstab
+        description: Apply pivot table
+        type: string
+        required: false
+        enum:
+        - QualTCTrainingLength
+        - QualTCTrainingLevel
+        - QualTCTrainingObjectives
+        - QualTCTrainingContent
+        - QualTCTrainingAutonomous
+      - in: query
+        name: _crosstabcubes
+        description: Pivot table data as cubes?
+        type: boolean
+        required: false
+      - in: query
         name: qualExusrUsrexamId
         description: Search filter for Examen de l'utilisateur|Examens de l'utilisateur
         type: string
@@ -333,16 +435,6 @@ paths:
         type: string
         required: false
       - in: query
-        name: qualExusrExamexId
-        description: Search filter for Question de l'examen|Questions de l'examen
-        type: string
-        required: false
-      - in: query
-        name: qualExusrExamexId__qualExamexExamId
-        description: Search filter for Exam id Question de l'examen|Questions de l'examen
-        type: string
-        required: false
-      - in: query
         name: qualExusrExamexId__qualExamexExId
         description: Search filter for ID Exercice Question de l'examen|Questions
           de l'examen
@@ -354,6 +446,21 @@ paths:
         type: string
         required: false
       - in: query
+        name: qualExusrUsrVirtualId
+        description: Search filter for Candidat|Candidats
+        type: string
+        required: false
+      - in: query
+        name: qualExusrExamexId
+        description: Search filter for Question de l'examen|Questions de l'examen
+        type: string
+        required: false
+      - in: query
+        name: qualExusrExamexId__qualExamexExamId
+        description: Search filter for Exam id Question de l'examen|Questions de l'examen
+        type: string
+        required: false
+      - in: query
         name: qualExusrExamexId__qualExamexExId__qualExAnswerType
         description: Search filter for Type de réponse
         type: string
@@ -361,6 +468,7 @@ paths:
         enum:
         - TXT
         - ENUM
+        - MULTI_ENUM
         - DIAG
       - in: query
         name: qualExusrExamexId__qualExamexExId__qualExQuestion
@@ -388,41 +496,185 @@ paths:
         type: string
         required: false
         enum:
-        - Certification - Paramétrage-Niveau 1-261_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-263_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-265_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-267_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-269_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-271_REF_ENUM
+        - SIM_BASE-NA-385_REF_ENUM
+        - SIM_BASE-NA-383_REF_ENUM
+        - SIM_BASE-NA-381_REF_ENUM
+        - SIM_BASE-NA-379_REF_ENUM
+        - SIM_BASE-NA-387_REF_ENUM
+        - SIM_BASE-NA-375_REF_ENUM
+        - SIM_BASE-NA-373_REF_ENUM
+        - SIM_BASE-NA-371_REF_ENUM
+        - SIM_BASE-NA-369_REF_ENUM
+        - SIM_BASE-NA-377_REF_ENUM
+        - SIM_BASE-NA-407_REF_ENUM
+        - SIM_BASE-NA-405_REF_ENUM
+        - SIM_BASE-NA-403_REF_ENUM
+        - SIM_BASE-NA-401_REF_ENUM
+        - SIM_BASE-NA-389_REF_ENUM
+        - SIM_BASE-NA-397_REF_ENUM
+        - SIM_BASE-NA-395_REF_ENUM
+        - SIM_BASE-NA-393_REF_ENUM
+        - SIM_BASE-NA-391_REF_ENUM
+        - SIM_BASE-NA-399_REF_ENUM
+        - SIM_BASE-NA-409_REF_ENUM
+        - SIM_BASE-NA-367_REF_ENUM
+        - SIM_BASE-NA-365_REF_ENUM
+        - SIM_BASE-1-451_REF_ENUM
+        - SIM_BASE-1-449_REF_ENUM
+        - SIM_BASE-1-447_REF_ENUM
+        - SIM_BASE-1-445_REF_ENUM
+        - SIM_BASE-1-453_REF_ENUM
         - Certification - Paramétrage-Niveau 1-273_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-259_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-293_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-295_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-297_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-299_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-301_REF_ENUM
-        - Simplicité - Conception-Niveau 1-43_REF_ENUM
-        - Simplicité - Conception-Niveau 1-45_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-271_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-269_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-267_REF_ENUM
+        - JAVA-1-351_REF_ENUM
+        - SIM_BASE-1-455_REF_ENUM
+        - SIM_BASE-NA-363_REF_ENUM
+        - SIM_BASE-NA-361_REF_ENUM
+        - SIM_BASE-NA-359_REF_ENUM
+        - SIM_BASE-NA-357_REF_ENUM
+        - SIM_BASE-NA-353_REF_ENUM
         - SIM_BASE-NA-345_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-227_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-229_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-231_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-233_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-235_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-237_REF_ENUM
+        - SIM_BASE-1-461_REF_ENUM
+        - SIM_BASE-1-459_REF_ENUM
+        - SIM_BASE-NA-355_REF_ENUM
+        - SIM_BASE-NA-411_REF_ENUM
+        - SIM_CONCEPTION-1-481_REF_ENUM
+        - SIM_CONCEPTION-1-479_REF_ENUM
+        - SIM_CONCEPTION-1-477_REF_ENUM
+        - SIM_CONCEPTION-1-475_REF_ENUM
+        - SIM_CONCEPTION-1-473_REF_ENUM
+        - SIM_CONCEPTION-1-471_REF_ENUM
+        - SIM_CONCEPTION-1-469_REF_ENUM
+        - SIM_CONCEPTION-1-467_REF_ENUM
+        - SIM_CONCEPTION-1-465_REF_ENUM
+        - SIM_CONCEPTION-1-463_REF_ENUM
+        - SIM_CONCEPTION-1-483_REF_ENUM
+        - SIM_CONCEPTION-1-485_REF_ENUM
+        - Simplicité - Conception-Niveau 1-43_REF_ENUM
+        - SIM_REX-1-507_REF_ENUM
+        - SIM_REX-1-503_REF_ENUM
+        - SIM_REX-1-501_REF_ENUM
+        - SIM_REX-1-499_REF_ENUM
+        - SIM_REX-1-493_REF_ENUM
+        - SIM_CONCEPTION-1-491_REF_ENUM
+        - SIM_CONCEPTION-1-489_REF_ENUM
+        - SIM_CONCEPTION-1-487_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-301_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-299_REF_ENUM
+        - SIM_BASE-NA-429_REF_ENUM
+        - SIM_BASE-NA-427_REF_ENUM
+        - SIM_BASE-NA-425_REF_ENUM
+        - SIM_BASE-NA-423_REF_ENUM
+        - SIM_BASE-NA-431_REF_ENUM
+        - SIM_BASE-NA-419_REF_ENUM
+        - SIM_BASE-NA-417_REF_ENUM
+        - SIM_BASE-NA-415_REF_ENUM
+        - SIM_BASE-NA-413_REF_ENUM
+        - SIM_BASE-NA-421_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-297_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-295_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-293_REF_ENUM
+        - SIM_BASE-NA-513_REF_ENUM
+        - SIM_BASE-NA-433_REF_ENUM
+        - SIM_BASE-NA-441_REF_ENUM
+        - SIM_BASE-NA-439_REF_ENUM
+        - SIM_BASE-NA-437_REF_ENUM
+        - SIM_BASE-NA-435_REF_ENUM
+        - SIM_BASE-NA-443_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-265_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-263_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-149_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-147_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-145_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-329_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-151_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-325_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-323_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-321_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-319_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-327_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-171_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-169_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-167_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-165_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-153_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-161_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-159_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-157_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-155_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-163_REF_ENUM
+        - Certification - Hooks-Niveau 1-275_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-173_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-135_REF_ENUM
+        - Certification - Comportement-Niveau 1-317_REF_ENUM
+        - Certification - Comportement-Niveau 1-315_REF_ENUM
+        - Certification - Comportement-Niveau 1-313_REF_ENUM
+        - Certification - Comportement-Niveau 1-311_REF_ENUM
+        - Certification - Comportement-Niveau 1-309_REF_ENUM
+        - Certification - Comportement-Niveau 1-307_REF_ENUM
+        - Certification - Comportement-Niveau 1-305_REF_ENUM
+        - Certification - Comportement-Niveau 1-303_REF_ENUM
+        - Certification - Documentation-Niveau 1-291_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-137_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-139_REF_ENUM
+        - Certification - Documentation-Niveau 1-289_REF_ENUM
+        - Certification - Documentation-Niveau 1-287_REF_ENUM
+        - Certification - Documentation-Niveau 1-285_REF_ENUM
+        - Certification - Documentation-Niveau 1-283_REF_ENUM
+        - Certification - Developpement Java-Niveau 1-281_REF_ENUM
+        - Certification - Developpement Java-Niveau 1-279_REF_ENUM
+        - Certification - Developpement Java-Niveau 1-277_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-143_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-141_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-175_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-177_REF_ENUM
         - Certification - Paramétrage-Niveau 1-239_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-257_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-243_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-245_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-247_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-249_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-251_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-253_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-255_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-237_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-235_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-233_REF_ENUM
         - Certification - Paramétrage-Niveau 1-241_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-229_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-227_REF_ENUM
         - Certification - Paramétrage-Niveau 1-225_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-223_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-231_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-261_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-259_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-257_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-255_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-243_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-251_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-249_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-247_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-245_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-253_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-221_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-195_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-193_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-191_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-189_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-187_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-185_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-183_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-181_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-179_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-219_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-197_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-199_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-217_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-215_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-213_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-211_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-209_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-207_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-205_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-203_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-201_REF_ENUM
+        - Simplicité - Conception-Niveau 1-45_REF_ENUM
+        - SIM_BASE-1-457_REF_ENUM
         - Simplicité - Conception-Niveau 1-47_REF_ENUM
-        - Simplicité - Conception-Niveau 1-53_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-23_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-27_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-331_REF_ENUM
@@ -431,6 +683,7 @@ paths:
         - Simplicité - Notions de base-Niveau 1-7_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-9_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-21_REF_ENUM
+        - Simplicité - Retour Formation-Niveau 1-105_REF_ENUM
         - Simplicité - Retour Formation-Niveau 1-111_REF_ENUM
         - Simplicité - Retour Formation-Niveau 1-113_REF_ENUM
         - Simplicité - Retour Formation-Niveau 1-115_REF_ENUM
@@ -438,7 +691,10 @@ paths:
         - Simplicité-Notionsdebase-Nonapplicable-337_REF_ENUM
         - Simplicité-Notionsdebase-Nonapplicable-339_REF_ENUM
         - Simplicité-Notionsdebase-Nonapplicable-341_REF_ENUM
-        - Simplicité - Retour Formation-Niveau 1-105_REF_ENUM
+        - Simplicité-Notionsdebase-Nonapplicable-343_REF_ENUM
+        - Simplicité - Notions de base-Niveau 1-19_REF_ENUM
+        - Simplicité - Notions de base-Niveau 1-15_REF_ENUM
+        - Simplicité - Conception-Niveau 1-53_REF_ENUM
         - Simplicité - Conception-Niveau 1-55_REF_ENUM
         - Simplicité - Conception-Niveau 1-57_REF_ENUM
         - Simplicité - Conception-Niveau 1-59_REF_ENUM
@@ -446,84 +702,13 @@ paths:
         - Simplicité - Conception-Niveau 1-65_REF_ENUM
         - Simplicité - Conception-Niveau 1-75_REF_ENUM
         - Simplicité - Conception-Niveau 1-77_REF_ENUM
-        - Simplicité - Notions de base-Niveau 1-19_REF_ENUM
+        - Simplicité - Conception-Niveau 1-83_REF_ENUM
         - Simplicité - Conception-Niveau 1-85_REF_ENUM
         - Simplicité - Conception-Niveau 1-93_REF_ENUM
         - Simplicité - Conception-Niveau 1-95_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-11_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-125_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-131_REF_ENUM
-        - Simplicité - Notions de base-Niveau 1-15_REF_ENUM
-        - Simplicité - Conception-Niveau 1-83_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-223_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-221_REF_ENUM
-        - Certification - Documentation-Niveau 1-285_REF_ENUM
-        - Certification - Documentation-Niveau 1-287_REF_ENUM
-        - Certification - Documentation-Niveau 1-289_REF_ENUM
-        - Certification - Documentation-Niveau 1-291_REF_ENUM
-        - Certification - Hooks-Niveau 1-275_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-319_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-321_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-323_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-325_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-327_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-329_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-145_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-147_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-149_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-151_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-153_REF_ENUM
-        - Certification - Documentation-Niveau 1-283_REF_ENUM
-        - Certification - Developpement Java-Niveau 1-281_REF_ENUM
-        - Certification - Comportement-Niveau 1-303_REF_ENUM
-        - Certification - Comportement-Niveau 1-305_REF_ENUM
-        - Certification - Comportement-Niveau 1-307_REF_ENUM
-        - Certification - Comportement-Niveau 1-309_REF_ENUM
-        - Certification - Comportement-Niveau 1-311_REF_ENUM
-        - Certification - Comportement-Niveau 1-313_REF_ENUM
-        - Certification - Comportement-Niveau 1-315_REF_ENUM
-        - Certification - Comportement-Niveau 1-317_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-135_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-137_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-139_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-141_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-143_REF_ENUM
-        - Certification - Developpement Java-Niveau 1-277_REF_ENUM
-        - Certification - Developpement Java-Niveau 1-279_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-191_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-193_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-195_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-197_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-199_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-201_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-203_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-205_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-207_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-209_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-211_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-213_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-215_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-217_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-219_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-155_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-189_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-187_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-157_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-159_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-161_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-163_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-165_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-167_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-169_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-171_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-173_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-175_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-177_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-179_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-181_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-183_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-185_REF_ENUM
-        - Simplicité-Notionsdebase-Nonapplicable-343_REF_ENUM
       - in: query
         name: qualExusrExamexId__qualExamexExId__qualExAnswerEnumeration
         description: Search filter for Réponse - QCM
@@ -587,11 +772,6 @@ paths:
         name: qualExusrProgress
         description: Search filter for Avancement
         type: integer
-        required: false
-      - in: query
-        name: qualExusrUsrVirtualId
-        description: Search filter for Candidat|Candidats
-        type: string
         required: false
       tags:
       - QualExUsr
@@ -1851,12 +2031,12 @@ paths:
         required: false
       - in: query
         name: qualUsrexamExamId__qualExamName
-        description: Search filter for Examen
+        description: Search filter for qualUsrexamExamId Nom
         type: string
         required: false
       - in: query
         name: qualUsrexamExamId__qualExamPublic
-        description: Search filter for Public
+        description: Search filter for qualUsrexamExamId Public
         type: boolean
         required: false
       - in: query
@@ -1890,17 +2070,17 @@ paths:
         required: false
       - in: query
         name: qualUsrexamCertusrId__qualCertusrCertId
-        description: Search filter for ID Certification Certification du candidat
+        description: Search filter for qualUsrexamCertusrId ID Certification
         type: string
         required: false
       - in: query
         name: qualUsrexamCertusrId__qualCertusrCertId__qualCertNom
-        description: Search filter for Nom ID Certification Certification du candidat
+        description: Search filter for qualUsrexamCertusrId qualCertusrCertId Nom
         type: string
         required: false
       - in: query
         name: qualUsrexamCertusrId__qualCertusrUsrId
-        description: Search filter for ID Utilisateur Certification du candidat
+        description: Search filter for qualUsrexamCertusrId ID Utilisateur
         type: string
         required: false
       - in: query
@@ -2796,41 +2976,185 @@ paths:
         type: string
         required: false
         enum:
-        - Certification - Paramétrage-Niveau 1-261_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-263_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-265_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-267_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-269_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-271_REF_ENUM
+        - SIM_BASE-NA-385_REF_ENUM
+        - SIM_BASE-NA-383_REF_ENUM
+        - SIM_BASE-NA-381_REF_ENUM
+        - SIM_BASE-NA-379_REF_ENUM
+        - SIM_BASE-NA-387_REF_ENUM
+        - SIM_BASE-NA-375_REF_ENUM
+        - SIM_BASE-NA-373_REF_ENUM
+        - SIM_BASE-NA-371_REF_ENUM
+        - SIM_BASE-NA-369_REF_ENUM
+        - SIM_BASE-NA-377_REF_ENUM
+        - SIM_BASE-NA-407_REF_ENUM
+        - SIM_BASE-NA-405_REF_ENUM
+        - SIM_BASE-NA-403_REF_ENUM
+        - SIM_BASE-NA-401_REF_ENUM
+        - SIM_BASE-NA-389_REF_ENUM
+        - SIM_BASE-NA-397_REF_ENUM
+        - SIM_BASE-NA-395_REF_ENUM
+        - SIM_BASE-NA-393_REF_ENUM
+        - SIM_BASE-NA-391_REF_ENUM
+        - SIM_BASE-NA-399_REF_ENUM
+        - SIM_BASE-NA-409_REF_ENUM
+        - SIM_BASE-NA-367_REF_ENUM
+        - SIM_BASE-NA-365_REF_ENUM
+        - SIM_BASE-1-451_REF_ENUM
+        - SIM_BASE-1-449_REF_ENUM
+        - SIM_BASE-1-447_REF_ENUM
+        - SIM_BASE-1-445_REF_ENUM
+        - SIM_BASE-1-453_REF_ENUM
         - Certification - Paramétrage-Niveau 1-273_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-259_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-293_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-295_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-297_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-299_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-301_REF_ENUM
-        - Simplicité - Conception-Niveau 1-43_REF_ENUM
-        - Simplicité - Conception-Niveau 1-45_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-271_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-269_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-267_REF_ENUM
+        - JAVA-1-351_REF_ENUM
+        - SIM_BASE-1-455_REF_ENUM
+        - SIM_BASE-NA-363_REF_ENUM
+        - SIM_BASE-NA-361_REF_ENUM
+        - SIM_BASE-NA-359_REF_ENUM
+        - SIM_BASE-NA-357_REF_ENUM
+        - SIM_BASE-NA-353_REF_ENUM
         - SIM_BASE-NA-345_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-227_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-229_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-231_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-233_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-235_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-237_REF_ENUM
+        - SIM_BASE-1-461_REF_ENUM
+        - SIM_BASE-1-459_REF_ENUM
+        - SIM_BASE-NA-355_REF_ENUM
+        - SIM_BASE-NA-411_REF_ENUM
+        - SIM_CONCEPTION-1-481_REF_ENUM
+        - SIM_CONCEPTION-1-479_REF_ENUM
+        - SIM_CONCEPTION-1-477_REF_ENUM
+        - SIM_CONCEPTION-1-475_REF_ENUM
+        - SIM_CONCEPTION-1-473_REF_ENUM
+        - SIM_CONCEPTION-1-471_REF_ENUM
+        - SIM_CONCEPTION-1-469_REF_ENUM
+        - SIM_CONCEPTION-1-467_REF_ENUM
+        - SIM_CONCEPTION-1-465_REF_ENUM
+        - SIM_CONCEPTION-1-463_REF_ENUM
+        - SIM_CONCEPTION-1-483_REF_ENUM
+        - SIM_CONCEPTION-1-485_REF_ENUM
+        - Simplicité - Conception-Niveau 1-43_REF_ENUM
+        - SIM_REX-1-507_REF_ENUM
+        - SIM_REX-1-503_REF_ENUM
+        - SIM_REX-1-501_REF_ENUM
+        - SIM_REX-1-499_REF_ENUM
+        - SIM_REX-1-493_REF_ENUM
+        - SIM_CONCEPTION-1-491_REF_ENUM
+        - SIM_CONCEPTION-1-489_REF_ENUM
+        - SIM_CONCEPTION-1-487_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-301_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-299_REF_ENUM
+        - SIM_BASE-NA-429_REF_ENUM
+        - SIM_BASE-NA-427_REF_ENUM
+        - SIM_BASE-NA-425_REF_ENUM
+        - SIM_BASE-NA-423_REF_ENUM
+        - SIM_BASE-NA-431_REF_ENUM
+        - SIM_BASE-NA-419_REF_ENUM
+        - SIM_BASE-NA-417_REF_ENUM
+        - SIM_BASE-NA-415_REF_ENUM
+        - SIM_BASE-NA-413_REF_ENUM
+        - SIM_BASE-NA-421_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-297_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-295_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-293_REF_ENUM
+        - SIM_BASE-NA-513_REF_ENUM
+        - SIM_BASE-NA-433_REF_ENUM
+        - SIM_BASE-NA-441_REF_ENUM
+        - SIM_BASE-NA-439_REF_ENUM
+        - SIM_BASE-NA-437_REF_ENUM
+        - SIM_BASE-NA-435_REF_ENUM
+        - SIM_BASE-NA-443_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-265_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-263_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-149_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-147_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-145_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-329_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-151_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-325_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-323_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-321_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-319_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-327_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-171_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-169_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-167_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-165_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-153_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-161_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-159_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-157_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-155_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-163_REF_ENUM
+        - Certification - Hooks-Niveau 1-275_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-173_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-135_REF_ENUM
+        - Certification - Comportement-Niveau 1-317_REF_ENUM
+        - Certification - Comportement-Niveau 1-315_REF_ENUM
+        - Certification - Comportement-Niveau 1-313_REF_ENUM
+        - Certification - Comportement-Niveau 1-311_REF_ENUM
+        - Certification - Comportement-Niveau 1-309_REF_ENUM
+        - Certification - Comportement-Niveau 1-307_REF_ENUM
+        - Certification - Comportement-Niveau 1-305_REF_ENUM
+        - Certification - Comportement-Niveau 1-303_REF_ENUM
+        - Certification - Documentation-Niveau 1-291_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-137_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-139_REF_ENUM
+        - Certification - Documentation-Niveau 1-289_REF_ENUM
+        - Certification - Documentation-Niveau 1-287_REF_ENUM
+        - Certification - Documentation-Niveau 1-285_REF_ENUM
+        - Certification - Documentation-Niveau 1-283_REF_ENUM
+        - Certification - Developpement Java-Niveau 1-281_REF_ENUM
+        - Certification - Developpement Java-Niveau 1-279_REF_ENUM
+        - Certification - Developpement Java-Niveau 1-277_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-143_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-141_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-175_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-177_REF_ENUM
         - Certification - Paramétrage-Niveau 1-239_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-257_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-243_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-245_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-247_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-249_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-251_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-253_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-255_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-237_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-235_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-233_REF_ENUM
         - Certification - Paramétrage-Niveau 1-241_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-229_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-227_REF_ENUM
         - Certification - Paramétrage-Niveau 1-225_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-223_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-231_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-261_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-259_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-257_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-255_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-243_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-251_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-249_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-247_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-245_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-253_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-221_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-195_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-193_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-191_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-189_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-187_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-185_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-183_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-181_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-179_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-219_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-197_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-199_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-217_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-215_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-213_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-211_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-209_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-207_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-205_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-203_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-201_REF_ENUM
+        - Simplicité - Conception-Niveau 1-45_REF_ENUM
+        - SIM_BASE-1-457_REF_ENUM
         - Simplicité - Conception-Niveau 1-47_REF_ENUM
-        - Simplicité - Conception-Niveau 1-53_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-23_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-27_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-331_REF_ENUM
@@ -2839,6 +3163,7 @@ paths:
         - Simplicité - Notions de base-Niveau 1-7_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-9_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-21_REF_ENUM
+        - Simplicité - Retour Formation-Niveau 1-105_REF_ENUM
         - Simplicité - Retour Formation-Niveau 1-111_REF_ENUM
         - Simplicité - Retour Formation-Niveau 1-113_REF_ENUM
         - Simplicité - Retour Formation-Niveau 1-115_REF_ENUM
@@ -2846,7 +3171,10 @@ paths:
         - Simplicité-Notionsdebase-Nonapplicable-337_REF_ENUM
         - Simplicité-Notionsdebase-Nonapplicable-339_REF_ENUM
         - Simplicité-Notionsdebase-Nonapplicable-341_REF_ENUM
-        - Simplicité - Retour Formation-Niveau 1-105_REF_ENUM
+        - Simplicité-Notionsdebase-Nonapplicable-343_REF_ENUM
+        - Simplicité - Notions de base-Niveau 1-19_REF_ENUM
+        - Simplicité - Notions de base-Niveau 1-15_REF_ENUM
+        - Simplicité - Conception-Niveau 1-53_REF_ENUM
         - Simplicité - Conception-Niveau 1-55_REF_ENUM
         - Simplicité - Conception-Niveau 1-57_REF_ENUM
         - Simplicité - Conception-Niveau 1-59_REF_ENUM
@@ -2854,84 +3182,13 @@ paths:
         - Simplicité - Conception-Niveau 1-65_REF_ENUM
         - Simplicité - Conception-Niveau 1-75_REF_ENUM
         - Simplicité - Conception-Niveau 1-77_REF_ENUM
-        - Simplicité - Notions de base-Niveau 1-19_REF_ENUM
+        - Simplicité - Conception-Niveau 1-83_REF_ENUM
         - Simplicité - Conception-Niveau 1-85_REF_ENUM
         - Simplicité - Conception-Niveau 1-93_REF_ENUM
         - Simplicité - Conception-Niveau 1-95_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-11_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-125_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-131_REF_ENUM
-        - Simplicité - Notions de base-Niveau 1-15_REF_ENUM
-        - Simplicité - Conception-Niveau 1-83_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-223_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-221_REF_ENUM
-        - Certification - Documentation-Niveau 1-285_REF_ENUM
-        - Certification - Documentation-Niveau 1-287_REF_ENUM
-        - Certification - Documentation-Niveau 1-289_REF_ENUM
-        - Certification - Documentation-Niveau 1-291_REF_ENUM
-        - Certification - Hooks-Niveau 1-275_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-319_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-321_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-323_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-325_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-327_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-329_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-145_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-147_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-149_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-151_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-153_REF_ENUM
-        - Certification - Documentation-Niveau 1-283_REF_ENUM
-        - Certification - Developpement Java-Niveau 1-281_REF_ENUM
-        - Certification - Comportement-Niveau 1-303_REF_ENUM
-        - Certification - Comportement-Niveau 1-305_REF_ENUM
-        - Certification - Comportement-Niveau 1-307_REF_ENUM
-        - Certification - Comportement-Niveau 1-309_REF_ENUM
-        - Certification - Comportement-Niveau 1-311_REF_ENUM
-        - Certification - Comportement-Niveau 1-313_REF_ENUM
-        - Certification - Comportement-Niveau 1-315_REF_ENUM
-        - Certification - Comportement-Niveau 1-317_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-135_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-137_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-139_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-141_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-143_REF_ENUM
-        - Certification - Developpement Java-Niveau 1-277_REF_ENUM
-        - Certification - Developpement Java-Niveau 1-279_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-191_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-193_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-195_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-197_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-199_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-201_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-203_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-205_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-207_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-209_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-211_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-213_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-215_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-217_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-219_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-155_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-189_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-187_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-157_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-159_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-161_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-163_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-165_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-167_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-169_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-171_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-173_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-175_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-177_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-179_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-181_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-183_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-185_REF_ENUM
-        - Simplicité-Notionsdebase-Nonapplicable-343_REF_ENUM
       - in: query
         name: qualExamexExId__qualExAnswerType
         description: Search filter for Type de réponse ID Exercice
@@ -2940,6 +3197,7 @@ paths:
         enum:
         - TXT
         - ENUM
+        - MULTI_ENUM
         - DIAG
       - in: query
         name: qualExamexExId__qualExAnswerEnumeration
@@ -3093,7 +3351,7 @@ definitions:
     type: object
     properties:
       qualUsrexamCertusrId__qualCertusrCertId:
-        description: ID Certification Certification du candidat
+        description: qualUsrexamCertusrId ID Certification
         type: string
       qualUsrexamUsrId__usr_last_name:
         description: Last name
@@ -3102,16 +3360,16 @@ definitions:
         description: Certification du candidat
         type: string
       qualUsrexamExamId__qualExamName:
-        description: Examen
+        description: qualUsrexamExamId Nom
         type: string
       qualUsrexamExamId__qualExamPublic:
-        description: Public
+        description: qualUsrexamExamId Public
         type: boolean
       qualUsrexamId:
         description: Id
         type: string
       qualUsrexamCertusrId__qualCertusrCertId__qualCertNom:
-        description: Nom ID Certification Certification du candidat
+        description: qualUsrexamCertusrId qualCertusrCertId Nom
         type: string
       qualUsrexamDateLimite:
         description: Date limite
@@ -3130,7 +3388,7 @@ definitions:
         description: Login
         type: string
       qualUsrexamCertusrId__qualCertusrUsrId:
-        description: ID Utilisateur Certification du candidat
+        description: qualUsrexamCertusrId ID Utilisateur
         type: string
       qualUsrexamUsrId__usr_first_name:
         description: First name
@@ -3164,6 +3422,38 @@ definitions:
     type: array
     items:
       $ref: '#/definitions/QualUser'
+  PlaceData:
+    type: object
+    properties:
+      coord:
+        description: Geographical coordinates
+        type: string
+      address:
+        description: Address
+        type: string
+      row_id:
+        description: Row ID
+        type: string
+      label1:
+        description: 'Label #1'
+        type: string
+      label2:
+        description: 'Label #2'
+        type: string
+      label3:
+        description: 'Label #3'
+        type: string
+  PlaceMapData:
+    type: object
+    properties:
+      places:
+        description: Places
+        type: array
+        items:
+          $ref: '#/definitions/PlaceData'
+      name:
+        description: Name
+        type: string
   QualCertUsr:
     type: object
     properties:
@@ -3307,41 +3597,185 @@ definitions:
           l'examen
         type: string
         enum:
-        - Certification - Paramétrage-Niveau 1-261_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-263_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-265_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-267_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-269_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-271_REF_ENUM
+        - SIM_BASE-NA-385_REF_ENUM
+        - SIM_BASE-NA-383_REF_ENUM
+        - SIM_BASE-NA-381_REF_ENUM
+        - SIM_BASE-NA-379_REF_ENUM
+        - SIM_BASE-NA-387_REF_ENUM
+        - SIM_BASE-NA-375_REF_ENUM
+        - SIM_BASE-NA-373_REF_ENUM
+        - SIM_BASE-NA-371_REF_ENUM
+        - SIM_BASE-NA-369_REF_ENUM
+        - SIM_BASE-NA-377_REF_ENUM
+        - SIM_BASE-NA-407_REF_ENUM
+        - SIM_BASE-NA-405_REF_ENUM
+        - SIM_BASE-NA-403_REF_ENUM
+        - SIM_BASE-NA-401_REF_ENUM
+        - SIM_BASE-NA-389_REF_ENUM
+        - SIM_BASE-NA-397_REF_ENUM
+        - SIM_BASE-NA-395_REF_ENUM
+        - SIM_BASE-NA-393_REF_ENUM
+        - SIM_BASE-NA-391_REF_ENUM
+        - SIM_BASE-NA-399_REF_ENUM
+        - SIM_BASE-NA-409_REF_ENUM
+        - SIM_BASE-NA-367_REF_ENUM
+        - SIM_BASE-NA-365_REF_ENUM
+        - SIM_BASE-1-451_REF_ENUM
+        - SIM_BASE-1-449_REF_ENUM
+        - SIM_BASE-1-447_REF_ENUM
+        - SIM_BASE-1-445_REF_ENUM
+        - SIM_BASE-1-453_REF_ENUM
         - Certification - Paramétrage-Niveau 1-273_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-259_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-293_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-295_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-297_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-299_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-301_REF_ENUM
-        - Simplicité - Conception-Niveau 1-43_REF_ENUM
-        - Simplicité - Conception-Niveau 1-45_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-271_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-269_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-267_REF_ENUM
+        - JAVA-1-351_REF_ENUM
+        - SIM_BASE-1-455_REF_ENUM
+        - SIM_BASE-NA-363_REF_ENUM
+        - SIM_BASE-NA-361_REF_ENUM
+        - SIM_BASE-NA-359_REF_ENUM
+        - SIM_BASE-NA-357_REF_ENUM
+        - SIM_BASE-NA-353_REF_ENUM
         - SIM_BASE-NA-345_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-227_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-229_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-231_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-233_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-235_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-237_REF_ENUM
+        - SIM_BASE-1-461_REF_ENUM
+        - SIM_BASE-1-459_REF_ENUM
+        - SIM_BASE-NA-355_REF_ENUM
+        - SIM_BASE-NA-411_REF_ENUM
+        - SIM_CONCEPTION-1-481_REF_ENUM
+        - SIM_CONCEPTION-1-479_REF_ENUM
+        - SIM_CONCEPTION-1-477_REF_ENUM
+        - SIM_CONCEPTION-1-475_REF_ENUM
+        - SIM_CONCEPTION-1-473_REF_ENUM
+        - SIM_CONCEPTION-1-471_REF_ENUM
+        - SIM_CONCEPTION-1-469_REF_ENUM
+        - SIM_CONCEPTION-1-467_REF_ENUM
+        - SIM_CONCEPTION-1-465_REF_ENUM
+        - SIM_CONCEPTION-1-463_REF_ENUM
+        - SIM_CONCEPTION-1-483_REF_ENUM
+        - SIM_CONCEPTION-1-485_REF_ENUM
+        - Simplicité - Conception-Niveau 1-43_REF_ENUM
+        - SIM_REX-1-507_REF_ENUM
+        - SIM_REX-1-503_REF_ENUM
+        - SIM_REX-1-501_REF_ENUM
+        - SIM_REX-1-499_REF_ENUM
+        - SIM_REX-1-493_REF_ENUM
+        - SIM_CONCEPTION-1-491_REF_ENUM
+        - SIM_CONCEPTION-1-489_REF_ENUM
+        - SIM_CONCEPTION-1-487_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-301_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-299_REF_ENUM
+        - SIM_BASE-NA-429_REF_ENUM
+        - SIM_BASE-NA-427_REF_ENUM
+        - SIM_BASE-NA-425_REF_ENUM
+        - SIM_BASE-NA-423_REF_ENUM
+        - SIM_BASE-NA-431_REF_ENUM
+        - SIM_BASE-NA-419_REF_ENUM
+        - SIM_BASE-NA-417_REF_ENUM
+        - SIM_BASE-NA-415_REF_ENUM
+        - SIM_BASE-NA-413_REF_ENUM
+        - SIM_BASE-NA-421_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-297_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-295_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-293_REF_ENUM
+        - SIM_BASE-NA-513_REF_ENUM
+        - SIM_BASE-NA-433_REF_ENUM
+        - SIM_BASE-NA-441_REF_ENUM
+        - SIM_BASE-NA-439_REF_ENUM
+        - SIM_BASE-NA-437_REF_ENUM
+        - SIM_BASE-NA-435_REF_ENUM
+        - SIM_BASE-NA-443_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-265_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-263_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-149_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-147_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-145_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-329_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-151_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-325_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-323_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-321_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-319_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-327_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-171_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-169_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-167_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-165_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-153_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-161_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-159_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-157_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-155_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-163_REF_ENUM
+        - Certification - Hooks-Niveau 1-275_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-173_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-135_REF_ENUM
+        - Certification - Comportement-Niveau 1-317_REF_ENUM
+        - Certification - Comportement-Niveau 1-315_REF_ENUM
+        - Certification - Comportement-Niveau 1-313_REF_ENUM
+        - Certification - Comportement-Niveau 1-311_REF_ENUM
+        - Certification - Comportement-Niveau 1-309_REF_ENUM
+        - Certification - Comportement-Niveau 1-307_REF_ENUM
+        - Certification - Comportement-Niveau 1-305_REF_ENUM
+        - Certification - Comportement-Niveau 1-303_REF_ENUM
+        - Certification - Documentation-Niveau 1-291_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-137_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-139_REF_ENUM
+        - Certification - Documentation-Niveau 1-289_REF_ENUM
+        - Certification - Documentation-Niveau 1-287_REF_ENUM
+        - Certification - Documentation-Niveau 1-285_REF_ENUM
+        - Certification - Documentation-Niveau 1-283_REF_ENUM
+        - Certification - Developpement Java-Niveau 1-281_REF_ENUM
+        - Certification - Developpement Java-Niveau 1-279_REF_ENUM
+        - Certification - Developpement Java-Niveau 1-277_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-143_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-141_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-175_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-177_REF_ENUM
         - Certification - Paramétrage-Niveau 1-239_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-257_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-243_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-245_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-247_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-249_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-251_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-253_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-255_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-237_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-235_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-233_REF_ENUM
         - Certification - Paramétrage-Niveau 1-241_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-229_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-227_REF_ENUM
         - Certification - Paramétrage-Niveau 1-225_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-223_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-231_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-261_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-259_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-257_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-255_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-243_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-251_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-249_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-247_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-245_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-253_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-221_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-195_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-193_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-191_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-189_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-187_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-185_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-183_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-181_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-179_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-219_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-197_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-199_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-217_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-215_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-213_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-211_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-209_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-207_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-205_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-203_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-201_REF_ENUM
+        - Simplicité - Conception-Niveau 1-45_REF_ENUM
+        - SIM_BASE-1-457_REF_ENUM
         - Simplicité - Conception-Niveau 1-47_REF_ENUM
-        - Simplicité - Conception-Niveau 1-53_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-23_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-27_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-331_REF_ENUM
@@ -3350,6 +3784,7 @@ definitions:
         - Simplicité - Notions de base-Niveau 1-7_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-9_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-21_REF_ENUM
+        - Simplicité - Retour Formation-Niveau 1-105_REF_ENUM
         - Simplicité - Retour Formation-Niveau 1-111_REF_ENUM
         - Simplicité - Retour Formation-Niveau 1-113_REF_ENUM
         - Simplicité - Retour Formation-Niveau 1-115_REF_ENUM
@@ -3357,7 +3792,10 @@ definitions:
         - Simplicité-Notionsdebase-Nonapplicable-337_REF_ENUM
         - Simplicité-Notionsdebase-Nonapplicable-339_REF_ENUM
         - Simplicité-Notionsdebase-Nonapplicable-341_REF_ENUM
-        - Simplicité - Retour Formation-Niveau 1-105_REF_ENUM
+        - Simplicité-Notionsdebase-Nonapplicable-343_REF_ENUM
+        - Simplicité - Notions de base-Niveau 1-19_REF_ENUM
+        - Simplicité - Notions de base-Niveau 1-15_REF_ENUM
+        - Simplicité - Conception-Niveau 1-53_REF_ENUM
         - Simplicité - Conception-Niveau 1-55_REF_ENUM
         - Simplicité - Conception-Niveau 1-57_REF_ENUM
         - Simplicité - Conception-Niveau 1-59_REF_ENUM
@@ -3365,84 +3803,13 @@ definitions:
         - Simplicité - Conception-Niveau 1-65_REF_ENUM
         - Simplicité - Conception-Niveau 1-75_REF_ENUM
         - Simplicité - Conception-Niveau 1-77_REF_ENUM
-        - Simplicité - Notions de base-Niveau 1-19_REF_ENUM
+        - Simplicité - Conception-Niveau 1-83_REF_ENUM
         - Simplicité - Conception-Niveau 1-85_REF_ENUM
         - Simplicité - Conception-Niveau 1-93_REF_ENUM
         - Simplicité - Conception-Niveau 1-95_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-11_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-125_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-131_REF_ENUM
-        - Simplicité - Notions de base-Niveau 1-15_REF_ENUM
-        - Simplicité - Conception-Niveau 1-83_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-223_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-221_REF_ENUM
-        - Certification - Documentation-Niveau 1-285_REF_ENUM
-        - Certification - Documentation-Niveau 1-287_REF_ENUM
-        - Certification - Documentation-Niveau 1-289_REF_ENUM
-        - Certification - Documentation-Niveau 1-291_REF_ENUM
-        - Certification - Hooks-Niveau 1-275_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-319_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-321_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-323_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-325_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-327_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-329_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-145_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-147_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-149_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-151_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-153_REF_ENUM
-        - Certification - Documentation-Niveau 1-283_REF_ENUM
-        - Certification - Developpement Java-Niveau 1-281_REF_ENUM
-        - Certification - Comportement-Niveau 1-303_REF_ENUM
-        - Certification - Comportement-Niveau 1-305_REF_ENUM
-        - Certification - Comportement-Niveau 1-307_REF_ENUM
-        - Certification - Comportement-Niveau 1-309_REF_ENUM
-        - Certification - Comportement-Niveau 1-311_REF_ENUM
-        - Certification - Comportement-Niveau 1-313_REF_ENUM
-        - Certification - Comportement-Niveau 1-315_REF_ENUM
-        - Certification - Comportement-Niveau 1-317_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-135_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-137_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-139_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-141_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-143_REF_ENUM
-        - Certification - Developpement Java-Niveau 1-277_REF_ENUM
-        - Certification - Developpement Java-Niveau 1-279_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-191_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-193_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-195_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-197_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-199_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-201_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-203_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-205_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-207_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-209_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-211_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-213_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-215_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-217_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-219_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-155_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-189_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-187_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-157_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-159_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-161_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-163_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-165_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-167_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-169_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-171_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-173_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-175_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-177_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-179_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-181_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-183_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-185_REF_ENUM
-        - Simplicité-Notionsdebase-Nonapplicable-343_REF_ENUM
       qualExusrExamexId__qualExamexExId:
         description: ID Exercice Question de l'examen|Questions de l'examen
         type: string
@@ -3470,6 +3837,7 @@ definitions:
         enum:
         - TXT
         - ENUM
+        - MULTI_ENUM
         - DIAG
       qualExusrUsrexamId__qualUsrexamExamId:
         description: Examen Examen de l'utilisateur|Examens de l'utilisateur
@@ -3556,41 +3924,185 @@ definitions:
         description: qual ex refenum ID Exercice
         type: string
         enum:
-        - Certification - Paramétrage-Niveau 1-261_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-263_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-265_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-267_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-269_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-271_REF_ENUM
+        - SIM_BASE-NA-385_REF_ENUM
+        - SIM_BASE-NA-383_REF_ENUM
+        - SIM_BASE-NA-381_REF_ENUM
+        - SIM_BASE-NA-379_REF_ENUM
+        - SIM_BASE-NA-387_REF_ENUM
+        - SIM_BASE-NA-375_REF_ENUM
+        - SIM_BASE-NA-373_REF_ENUM
+        - SIM_BASE-NA-371_REF_ENUM
+        - SIM_BASE-NA-369_REF_ENUM
+        - SIM_BASE-NA-377_REF_ENUM
+        - SIM_BASE-NA-407_REF_ENUM
+        - SIM_BASE-NA-405_REF_ENUM
+        - SIM_BASE-NA-403_REF_ENUM
+        - SIM_BASE-NA-401_REF_ENUM
+        - SIM_BASE-NA-389_REF_ENUM
+        - SIM_BASE-NA-397_REF_ENUM
+        - SIM_BASE-NA-395_REF_ENUM
+        - SIM_BASE-NA-393_REF_ENUM
+        - SIM_BASE-NA-391_REF_ENUM
+        - SIM_BASE-NA-399_REF_ENUM
+        - SIM_BASE-NA-409_REF_ENUM
+        - SIM_BASE-NA-367_REF_ENUM
+        - SIM_BASE-NA-365_REF_ENUM
+        - SIM_BASE-1-451_REF_ENUM
+        - SIM_BASE-1-449_REF_ENUM
+        - SIM_BASE-1-447_REF_ENUM
+        - SIM_BASE-1-445_REF_ENUM
+        - SIM_BASE-1-453_REF_ENUM
         - Certification - Paramétrage-Niveau 1-273_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-259_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-293_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-295_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-297_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-299_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-301_REF_ENUM
-        - Simplicité - Conception-Niveau 1-43_REF_ENUM
-        - Simplicité - Conception-Niveau 1-45_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-271_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-269_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-267_REF_ENUM
+        - JAVA-1-351_REF_ENUM
+        - SIM_BASE-1-455_REF_ENUM
+        - SIM_BASE-NA-363_REF_ENUM
+        - SIM_BASE-NA-361_REF_ENUM
+        - SIM_BASE-NA-359_REF_ENUM
+        - SIM_BASE-NA-357_REF_ENUM
+        - SIM_BASE-NA-353_REF_ENUM
         - SIM_BASE-NA-345_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-227_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-229_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-231_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-233_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-235_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-237_REF_ENUM
+        - SIM_BASE-1-461_REF_ENUM
+        - SIM_BASE-1-459_REF_ENUM
+        - SIM_BASE-NA-355_REF_ENUM
+        - SIM_BASE-NA-411_REF_ENUM
+        - SIM_CONCEPTION-1-481_REF_ENUM
+        - SIM_CONCEPTION-1-479_REF_ENUM
+        - SIM_CONCEPTION-1-477_REF_ENUM
+        - SIM_CONCEPTION-1-475_REF_ENUM
+        - SIM_CONCEPTION-1-473_REF_ENUM
+        - SIM_CONCEPTION-1-471_REF_ENUM
+        - SIM_CONCEPTION-1-469_REF_ENUM
+        - SIM_CONCEPTION-1-467_REF_ENUM
+        - SIM_CONCEPTION-1-465_REF_ENUM
+        - SIM_CONCEPTION-1-463_REF_ENUM
+        - SIM_CONCEPTION-1-483_REF_ENUM
+        - SIM_CONCEPTION-1-485_REF_ENUM
+        - Simplicité - Conception-Niveau 1-43_REF_ENUM
+        - SIM_REX-1-507_REF_ENUM
+        - SIM_REX-1-503_REF_ENUM
+        - SIM_REX-1-501_REF_ENUM
+        - SIM_REX-1-499_REF_ENUM
+        - SIM_REX-1-493_REF_ENUM
+        - SIM_CONCEPTION-1-491_REF_ENUM
+        - SIM_CONCEPTION-1-489_REF_ENUM
+        - SIM_CONCEPTION-1-487_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-301_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-299_REF_ENUM
+        - SIM_BASE-NA-429_REF_ENUM
+        - SIM_BASE-NA-427_REF_ENUM
+        - SIM_BASE-NA-425_REF_ENUM
+        - SIM_BASE-NA-423_REF_ENUM
+        - SIM_BASE-NA-431_REF_ENUM
+        - SIM_BASE-NA-419_REF_ENUM
+        - SIM_BASE-NA-417_REF_ENUM
+        - SIM_BASE-NA-415_REF_ENUM
+        - SIM_BASE-NA-413_REF_ENUM
+        - SIM_BASE-NA-421_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-297_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-295_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-293_REF_ENUM
+        - SIM_BASE-NA-513_REF_ENUM
+        - SIM_BASE-NA-433_REF_ENUM
+        - SIM_BASE-NA-441_REF_ENUM
+        - SIM_BASE-NA-439_REF_ENUM
+        - SIM_BASE-NA-437_REF_ENUM
+        - SIM_BASE-NA-435_REF_ENUM
+        - SIM_BASE-NA-443_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-265_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-263_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-149_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-147_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-145_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-329_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-151_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-325_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-323_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-321_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-319_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-327_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-171_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-169_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-167_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-165_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-153_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-161_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-159_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-157_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-155_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-163_REF_ENUM
+        - Certification - Hooks-Niveau 1-275_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-173_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-135_REF_ENUM
+        - Certification - Comportement-Niveau 1-317_REF_ENUM
+        - Certification - Comportement-Niveau 1-315_REF_ENUM
+        - Certification - Comportement-Niveau 1-313_REF_ENUM
+        - Certification - Comportement-Niveau 1-311_REF_ENUM
+        - Certification - Comportement-Niveau 1-309_REF_ENUM
+        - Certification - Comportement-Niveau 1-307_REF_ENUM
+        - Certification - Comportement-Niveau 1-305_REF_ENUM
+        - Certification - Comportement-Niveau 1-303_REF_ENUM
+        - Certification - Documentation-Niveau 1-291_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-137_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-139_REF_ENUM
+        - Certification - Documentation-Niveau 1-289_REF_ENUM
+        - Certification - Documentation-Niveau 1-287_REF_ENUM
+        - Certification - Documentation-Niveau 1-285_REF_ENUM
+        - Certification - Documentation-Niveau 1-283_REF_ENUM
+        - Certification - Developpement Java-Niveau 1-281_REF_ENUM
+        - Certification - Developpement Java-Niveau 1-279_REF_ENUM
+        - Certification - Developpement Java-Niveau 1-277_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-143_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-141_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-175_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-177_REF_ENUM
         - Certification - Paramétrage-Niveau 1-239_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-257_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-243_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-245_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-247_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-249_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-251_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-253_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-255_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-237_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-235_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-233_REF_ENUM
         - Certification - Paramétrage-Niveau 1-241_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-229_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-227_REF_ENUM
         - Certification - Paramétrage-Niveau 1-225_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-223_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-231_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-261_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-259_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-257_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-255_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-243_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-251_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-249_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-247_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-245_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-253_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-221_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-195_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-193_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-191_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-189_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-187_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-185_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-183_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-181_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-179_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-219_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-197_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-199_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-217_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-215_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-213_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-211_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-209_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-207_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-205_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-203_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-201_REF_ENUM
+        - Simplicité - Conception-Niveau 1-45_REF_ENUM
+        - SIM_BASE-1-457_REF_ENUM
         - Simplicité - Conception-Niveau 1-47_REF_ENUM
-        - Simplicité - Conception-Niveau 1-53_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-23_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-27_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-331_REF_ENUM
@@ -3599,6 +4111,7 @@ definitions:
         - Simplicité - Notions de base-Niveau 1-7_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-9_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-21_REF_ENUM
+        - Simplicité - Retour Formation-Niveau 1-105_REF_ENUM
         - Simplicité - Retour Formation-Niveau 1-111_REF_ENUM
         - Simplicité - Retour Formation-Niveau 1-113_REF_ENUM
         - Simplicité - Retour Formation-Niveau 1-115_REF_ENUM
@@ -3606,7 +4119,10 @@ definitions:
         - Simplicité-Notionsdebase-Nonapplicable-337_REF_ENUM
         - Simplicité-Notionsdebase-Nonapplicable-339_REF_ENUM
         - Simplicité-Notionsdebase-Nonapplicable-341_REF_ENUM
-        - Simplicité - Retour Formation-Niveau 1-105_REF_ENUM
+        - Simplicité-Notionsdebase-Nonapplicable-343_REF_ENUM
+        - Simplicité - Notions de base-Niveau 1-19_REF_ENUM
+        - Simplicité - Notions de base-Niveau 1-15_REF_ENUM
+        - Simplicité - Conception-Niveau 1-53_REF_ENUM
         - Simplicité - Conception-Niveau 1-55_REF_ENUM
         - Simplicité - Conception-Niveau 1-57_REF_ENUM
         - Simplicité - Conception-Niveau 1-59_REF_ENUM
@@ -3614,84 +4130,13 @@ definitions:
         - Simplicité - Conception-Niveau 1-65_REF_ENUM
         - Simplicité - Conception-Niveau 1-75_REF_ENUM
         - Simplicité - Conception-Niveau 1-77_REF_ENUM
-        - Simplicité - Notions de base-Niveau 1-19_REF_ENUM
+        - Simplicité - Conception-Niveau 1-83_REF_ENUM
         - Simplicité - Conception-Niveau 1-85_REF_ENUM
         - Simplicité - Conception-Niveau 1-93_REF_ENUM
         - Simplicité - Conception-Niveau 1-95_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-11_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-125_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-131_REF_ENUM
-        - Simplicité - Notions de base-Niveau 1-15_REF_ENUM
-        - Simplicité - Conception-Niveau 1-83_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-223_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-221_REF_ENUM
-        - Certification - Documentation-Niveau 1-285_REF_ENUM
-        - Certification - Documentation-Niveau 1-287_REF_ENUM
-        - Certification - Documentation-Niveau 1-289_REF_ENUM
-        - Certification - Documentation-Niveau 1-291_REF_ENUM
-        - Certification - Hooks-Niveau 1-275_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-319_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-321_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-323_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-325_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-327_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-329_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-145_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-147_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-149_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-151_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-153_REF_ENUM
-        - Certification - Documentation-Niveau 1-283_REF_ENUM
-        - Certification - Developpement Java-Niveau 1-281_REF_ENUM
-        - Certification - Comportement-Niveau 1-303_REF_ENUM
-        - Certification - Comportement-Niveau 1-305_REF_ENUM
-        - Certification - Comportement-Niveau 1-307_REF_ENUM
-        - Certification - Comportement-Niveau 1-309_REF_ENUM
-        - Certification - Comportement-Niveau 1-311_REF_ENUM
-        - Certification - Comportement-Niveau 1-313_REF_ENUM
-        - Certification - Comportement-Niveau 1-315_REF_ENUM
-        - Certification - Comportement-Niveau 1-317_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-135_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-137_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-139_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-141_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-143_REF_ENUM
-        - Certification - Developpement Java-Niveau 1-277_REF_ENUM
-        - Certification - Developpement Java-Niveau 1-279_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-191_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-193_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-195_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-197_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-199_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-201_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-203_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-205_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-207_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-209_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-211_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-213_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-215_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-217_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-219_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-155_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-189_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-187_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-157_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-159_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-161_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-163_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-165_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-167_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-169_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-171_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-173_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-175_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-177_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-179_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-181_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-183_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-185_REF_ENUM
-        - Simplicité-Notionsdebase-Nonapplicable-343_REF_ENUM
       qualExamexExamId:
         description: Exam id
         type: string
@@ -3713,6 +4158,7 @@ definitions:
         enum:
         - TXT
         - ENUM
+        - MULTI_ENUM
         - DIAG
       qualExamexExId__qualExAnswerEnumeration:
         description: Réponse ID Exercice
@@ -3756,7 +4202,7 @@ definitions:
         - '3'
         - NA
       qualExAnswerEnumeration:
-        description: Réponse
+        description: Réponse (séparées par @@@ si multiple)
         type: string
       qualExImage:
         description: Diagramme
@@ -3773,6 +4219,7 @@ definitions:
         enum:
         - TXT
         - ENUM
+        - MULTI_ENUM
         - DIAG
       qualExId:
         description: Id
@@ -3798,6 +4245,12 @@ definitions:
         - SIM_CERTIF_BEHAVE
         - SIM_CERTIF_HOOKS
         - NA
+      qualExLangue:
+        description: Langue
+        type: string
+        enum:
+        - FRA
+        - ENU
       row_id:
         description: Unique technical row ID
         type: string
@@ -3808,41 +4261,185 @@ definitions:
         description: qual ex refenum
         type: string
         enum:
-        - Certification - Paramétrage-Niveau 1-261_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-263_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-265_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-267_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-269_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-271_REF_ENUM
+        - SIM_BASE-NA-385_REF_ENUM
+        - SIM_BASE-NA-383_REF_ENUM
+        - SIM_BASE-NA-381_REF_ENUM
+        - SIM_BASE-NA-379_REF_ENUM
+        - SIM_BASE-NA-387_REF_ENUM
+        - SIM_BASE-NA-375_REF_ENUM
+        - SIM_BASE-NA-373_REF_ENUM
+        - SIM_BASE-NA-371_REF_ENUM
+        - SIM_BASE-NA-369_REF_ENUM
+        - SIM_BASE-NA-377_REF_ENUM
+        - SIM_BASE-NA-407_REF_ENUM
+        - SIM_BASE-NA-405_REF_ENUM
+        - SIM_BASE-NA-403_REF_ENUM
+        - SIM_BASE-NA-401_REF_ENUM
+        - SIM_BASE-NA-389_REF_ENUM
+        - SIM_BASE-NA-397_REF_ENUM
+        - SIM_BASE-NA-395_REF_ENUM
+        - SIM_BASE-NA-393_REF_ENUM
+        - SIM_BASE-NA-391_REF_ENUM
+        - SIM_BASE-NA-399_REF_ENUM
+        - SIM_BASE-NA-409_REF_ENUM
+        - SIM_BASE-NA-367_REF_ENUM
+        - SIM_BASE-NA-365_REF_ENUM
+        - SIM_BASE-1-451_REF_ENUM
+        - SIM_BASE-1-449_REF_ENUM
+        - SIM_BASE-1-447_REF_ENUM
+        - SIM_BASE-1-445_REF_ENUM
+        - SIM_BASE-1-453_REF_ENUM
         - Certification - Paramétrage-Niveau 1-273_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-259_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-293_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-295_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-297_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-299_REF_ENUM
-        - SIM_CERTIF_INSTAL_EX-Niveau 1-301_REF_ENUM
-        - Simplicité - Conception-Niveau 1-43_REF_ENUM
-        - Simplicité - Conception-Niveau 1-45_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-271_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-269_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-267_REF_ENUM
+        - JAVA-1-351_REF_ENUM
+        - SIM_BASE-1-455_REF_ENUM
+        - SIM_BASE-NA-363_REF_ENUM
+        - SIM_BASE-NA-361_REF_ENUM
+        - SIM_BASE-NA-359_REF_ENUM
+        - SIM_BASE-NA-357_REF_ENUM
+        - SIM_BASE-NA-353_REF_ENUM
         - SIM_BASE-NA-345_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-227_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-229_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-231_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-233_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-235_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-237_REF_ENUM
+        - SIM_BASE-1-461_REF_ENUM
+        - SIM_BASE-1-459_REF_ENUM
+        - SIM_BASE-NA-355_REF_ENUM
+        - SIM_BASE-NA-411_REF_ENUM
+        - SIM_CONCEPTION-1-481_REF_ENUM
+        - SIM_CONCEPTION-1-479_REF_ENUM
+        - SIM_CONCEPTION-1-477_REF_ENUM
+        - SIM_CONCEPTION-1-475_REF_ENUM
+        - SIM_CONCEPTION-1-473_REF_ENUM
+        - SIM_CONCEPTION-1-471_REF_ENUM
+        - SIM_CONCEPTION-1-469_REF_ENUM
+        - SIM_CONCEPTION-1-467_REF_ENUM
+        - SIM_CONCEPTION-1-465_REF_ENUM
+        - SIM_CONCEPTION-1-463_REF_ENUM
+        - SIM_CONCEPTION-1-483_REF_ENUM
+        - SIM_CONCEPTION-1-485_REF_ENUM
+        - Simplicité - Conception-Niveau 1-43_REF_ENUM
+        - SIM_REX-1-507_REF_ENUM
+        - SIM_REX-1-503_REF_ENUM
+        - SIM_REX-1-501_REF_ENUM
+        - SIM_REX-1-499_REF_ENUM
+        - SIM_REX-1-493_REF_ENUM
+        - SIM_CONCEPTION-1-491_REF_ENUM
+        - SIM_CONCEPTION-1-489_REF_ENUM
+        - SIM_CONCEPTION-1-487_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-301_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-299_REF_ENUM
+        - SIM_BASE-NA-429_REF_ENUM
+        - SIM_BASE-NA-427_REF_ENUM
+        - SIM_BASE-NA-425_REF_ENUM
+        - SIM_BASE-NA-423_REF_ENUM
+        - SIM_BASE-NA-431_REF_ENUM
+        - SIM_BASE-NA-419_REF_ENUM
+        - SIM_BASE-NA-417_REF_ENUM
+        - SIM_BASE-NA-415_REF_ENUM
+        - SIM_BASE-NA-413_REF_ENUM
+        - SIM_BASE-NA-421_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-297_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-295_REF_ENUM
+        - SIM_CERTIF_INSTAL_EX-Niveau 1-293_REF_ENUM
+        - SIM_BASE-NA-513_REF_ENUM
+        - SIM_BASE-NA-433_REF_ENUM
+        - SIM_BASE-NA-441_REF_ENUM
+        - SIM_BASE-NA-439_REF_ENUM
+        - SIM_BASE-NA-437_REF_ENUM
+        - SIM_BASE-NA-435_REF_ENUM
+        - SIM_BASE-NA-443_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-265_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-263_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-149_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-147_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-145_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-329_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-151_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-325_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-323_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-321_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-319_REF_ENUM
+        - Certification - Installation / Exploitation-Niveau 1-327_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-171_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-169_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-167_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-165_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-153_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-161_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-159_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-157_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-155_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-163_REF_ENUM
+        - Certification - Hooks-Niveau 1-275_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-173_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-135_REF_ENUM
+        - Certification - Comportement-Niveau 1-317_REF_ENUM
+        - Certification - Comportement-Niveau 1-315_REF_ENUM
+        - Certification - Comportement-Niveau 1-313_REF_ENUM
+        - Certification - Comportement-Niveau 1-311_REF_ENUM
+        - Certification - Comportement-Niveau 1-309_REF_ENUM
+        - Certification - Comportement-Niveau 1-307_REF_ENUM
+        - Certification - Comportement-Niveau 1-305_REF_ENUM
+        - Certification - Comportement-Niveau 1-303_REF_ENUM
+        - Certification - Documentation-Niveau 1-291_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-137_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-139_REF_ENUM
+        - Certification - Documentation-Niveau 1-289_REF_ENUM
+        - Certification - Documentation-Niveau 1-287_REF_ENUM
+        - Certification - Documentation-Niveau 1-285_REF_ENUM
+        - Certification - Documentation-Niveau 1-283_REF_ENUM
+        - Certification - Developpement Java-Niveau 1-281_REF_ENUM
+        - Certification - Developpement Java-Niveau 1-279_REF_ENUM
+        - Certification - Developpement Java-Niveau 1-277_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-143_REF_ENUM
+        - Certification - Concepts généraux-Niveau 1-141_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-175_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-177_REF_ENUM
         - Certification - Paramétrage-Niveau 1-239_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-257_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-243_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-245_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-247_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-249_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-251_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-253_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-255_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-237_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-235_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-233_REF_ENUM
         - Certification - Paramétrage-Niveau 1-241_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-229_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-227_REF_ENUM
         - Certification - Paramétrage-Niveau 1-225_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-223_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-231_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-261_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-259_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-257_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-255_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-243_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-251_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-249_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-247_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-245_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-253_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-221_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-195_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-193_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-191_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-189_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-187_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-185_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-183_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-181_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-179_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-219_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-197_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-199_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-217_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-215_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-213_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-211_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-209_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-207_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-205_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-203_REF_ENUM
+        - Certification - Paramétrage-Niveau 1-201_REF_ENUM
+        - Simplicité - Conception-Niveau 1-45_REF_ENUM
+        - SIM_BASE-1-457_REF_ENUM
         - Simplicité - Conception-Niveau 1-47_REF_ENUM
-        - Simplicité - Conception-Niveau 1-53_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-23_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-27_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-331_REF_ENUM
@@ -3851,6 +4448,7 @@ definitions:
         - Simplicité - Notions de base-Niveau 1-7_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-9_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-21_REF_ENUM
+        - Simplicité - Retour Formation-Niveau 1-105_REF_ENUM
         - Simplicité - Retour Formation-Niveau 1-111_REF_ENUM
         - Simplicité - Retour Formation-Niveau 1-113_REF_ENUM
         - Simplicité - Retour Formation-Niveau 1-115_REF_ENUM
@@ -3858,7 +4456,10 @@ definitions:
         - Simplicité-Notionsdebase-Nonapplicable-337_REF_ENUM
         - Simplicité-Notionsdebase-Nonapplicable-339_REF_ENUM
         - Simplicité-Notionsdebase-Nonapplicable-341_REF_ENUM
-        - Simplicité - Retour Formation-Niveau 1-105_REF_ENUM
+        - Simplicité-Notionsdebase-Nonapplicable-343_REF_ENUM
+        - Simplicité - Notions de base-Niveau 1-19_REF_ENUM
+        - Simplicité - Notions de base-Niveau 1-15_REF_ENUM
+        - Simplicité - Conception-Niveau 1-53_REF_ENUM
         - Simplicité - Conception-Niveau 1-55_REF_ENUM
         - Simplicité - Conception-Niveau 1-57_REF_ENUM
         - Simplicité - Conception-Niveau 1-59_REF_ENUM
@@ -3866,84 +4467,13 @@ definitions:
         - Simplicité - Conception-Niveau 1-65_REF_ENUM
         - Simplicité - Conception-Niveau 1-75_REF_ENUM
         - Simplicité - Conception-Niveau 1-77_REF_ENUM
-        - Simplicité - Notions de base-Niveau 1-19_REF_ENUM
+        - Simplicité - Conception-Niveau 1-83_REF_ENUM
         - Simplicité - Conception-Niveau 1-85_REF_ENUM
         - Simplicité - Conception-Niveau 1-93_REF_ENUM
         - Simplicité - Conception-Niveau 1-95_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-11_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-125_REF_ENUM
         - Simplicité - Notions de base-Niveau 1-131_REF_ENUM
-        - Simplicité - Notions de base-Niveau 1-15_REF_ENUM
-        - Simplicité - Conception-Niveau 1-83_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-223_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-221_REF_ENUM
-        - Certification - Documentation-Niveau 1-285_REF_ENUM
-        - Certification - Documentation-Niveau 1-287_REF_ENUM
-        - Certification - Documentation-Niveau 1-289_REF_ENUM
-        - Certification - Documentation-Niveau 1-291_REF_ENUM
-        - Certification - Hooks-Niveau 1-275_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-319_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-321_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-323_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-325_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-327_REF_ENUM
-        - Certification - Installation / Exploitation-Niveau 1-329_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-145_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-147_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-149_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-151_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-153_REF_ENUM
-        - Certification - Documentation-Niveau 1-283_REF_ENUM
-        - Certification - Developpement Java-Niveau 1-281_REF_ENUM
-        - Certification - Comportement-Niveau 1-303_REF_ENUM
-        - Certification - Comportement-Niveau 1-305_REF_ENUM
-        - Certification - Comportement-Niveau 1-307_REF_ENUM
-        - Certification - Comportement-Niveau 1-309_REF_ENUM
-        - Certification - Comportement-Niveau 1-311_REF_ENUM
-        - Certification - Comportement-Niveau 1-313_REF_ENUM
-        - Certification - Comportement-Niveau 1-315_REF_ENUM
-        - Certification - Comportement-Niveau 1-317_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-135_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-137_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-139_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-141_REF_ENUM
-        - Certification - Concepts généraux-Niveau 1-143_REF_ENUM
-        - Certification - Developpement Java-Niveau 1-277_REF_ENUM
-        - Certification - Developpement Java-Niveau 1-279_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-191_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-193_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-195_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-197_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-199_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-201_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-203_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-205_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-207_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-209_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-211_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-213_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-215_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-217_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-219_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-155_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-189_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-187_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-157_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-159_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-161_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-163_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-165_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-167_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-169_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-171_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-173_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-175_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-177_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-179_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-181_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-183_REF_ENUM
-        - Certification - Paramétrage-Niveau 1-185_REF_ENUM
-        - Simplicité-Notionsdebase-Nonapplicable-343_REF_ENUM
   QualExam:
     type: object
     properties:
@@ -4004,16 +4534,16 @@ tags:
 - name: QualCertUsr
   description: Certification du candidat
 - name: QualExam
-  description: Examen
+  description: Questionnaire
 - name: QualExamEx
   description: Question de l'examen
 - name: QualExercise
   description: Énoncé
 - name: QualExUsr
-  description: Test
+  description: Réponses enregistrées
 - name: QualUser
   description: Candidat
 - name: QualUserExam
-  description: Examen de l'utilisateur
+  description: QualUserExam
 - name: QualUsrExamSubjects
   description: Sujets du candidat

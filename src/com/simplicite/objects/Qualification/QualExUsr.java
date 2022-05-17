@@ -114,7 +114,7 @@ public class QualExUsr extends ObjectDB {
 
         List<String> msgs = new ArrayList<>();
 
-        if (!isNew() && "ENUM".equals(getFieldValue("qualExusrExamexId.qualExamexExId.qualExAnswerType"))) {
+        if (!isNew() && ("ENUM".equals(getFieldValue("qualExusrExamexId.qualExamexExId.qualExAnswerType")) || "MULTI_ENUM".equals(getFieldValue("qualExusrExamexId.qualExamexExId.qualExAnswerType")))) {
             setFieldValue("qualExusrCheck", checkAnswer());
         }
 
@@ -125,18 +125,32 @@ public class QualExUsr extends ObjectDB {
 
         String correctAnswer = getFieldValue("qualExusrExamexId.qualExamexExId.qualExAnswerEnumeration")
                 .replaceAll("(^\\h*)|(\\h*$)|\\s", "");
+                
         String submittedAnswerEnum = getFieldDisplayValue("qualExusrAnswerEnumeration")
                 .replaceAll("(^\\h*)|(\\h*$)|\\s", "");
+                
         String submittedAnswerTxt = getFieldValue("qualExusrAnswer").replaceAll("(^\\h*)|(\\h*$)|\\s", "");
+        
         if (!"".equals(submittedAnswerEnum)) {
             return correctAnswer.equals(submittedAnswerEnum) ? "OK" : "KO";
         } else if (!"".equals(submittedAnswerTxt)) {
-            return correctAnswer.equals(submittedAnswerTxt) ? "OK" : "KO";
+        	if(submittedAnswerTxt.contains("@@@"))
+        		return sameChars(submittedAnswerTxt, correctAnswer) ? "OK" :"KO";
+        	else
+            	return correctAnswer.equals(submittedAnswerTxt) ? "OK" : "KO";
         } else {
             return "KO";
         }
 
     }
+    
+     private boolean sameChars(String firstStr, String secondStr) {
+	  char[] first = firstStr.toCharArray();
+	  char[] second = secondStr.toCharArray();
+	  Arrays.sort(first);
+	  Arrays.sort(second);
+	  return Arrays.equals(first, second);
+	}
 
     public static boolean isCandidate(Grant g) {
 

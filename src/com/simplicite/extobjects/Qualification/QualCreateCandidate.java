@@ -42,6 +42,7 @@ public class QualCreateCandidate extends RESTServiceExternalObject {
 			
 			stag.setFieldValue("usr_login", data.getString("usr_login"));
 			stag.setFieldValue("usr_email", data.getString("usr_email"));
+			stag.setFieldValue("usr_lang", data.getString("usr_lang"));
 			stag.setFieldValue("qualUsrTypedutilisateur", "CAND");
 			
 			stagBot.validateAndCreate();

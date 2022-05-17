@@ -32,6 +32,7 @@ Exercise
 | `qualExChoicesEnumeration`                                   | text(10000)                              |          | yes       |          | -                                                                                |
 | `qualExAnswerEnumeration`                                    | char(200)                                |          | yes       |          | -                                                                                |
 | `qualExRefenum`                                              | enum(100) using `QUAL_REF_ENUM_CHOICES` list |          | yes       |          | -                                                                                |
+| `qualExLangue`                                               | enum(100) using `QUALEXLANGUE` list      |          | yes       |          | -                                                                                |
 
 ### Lists
 
@@ -55,7 +56,8 @@ Exercise
     - `NA` Non applicable
 * `QUALEXANWSERTYPE`
     - `TXT` Texte
-    - `ENUM` ENUM
+    - `ENUM` Énuméré
+    - `MULTI_ENUM` Énuméré multiple
     - `DIAG` Diagramme
 * `QUALEXDIFFICULTY`
     - `1` Niveau 1
@@ -156,12 +158,89 @@ Exercise
     - `Certification - Paramétrage-Niveau 1-269_REF_ENUM` 
     - `Certification - Paramétrage-Niveau 1-271_REF_ENUM` 
     - `Certification - Paramétrage-Niveau 1-273_REF_ENUM` 
+    - `JAVA-1-351_REF_ENUM` 
+    - `SIM_BASE-1-445_REF_ENUM` 
+    - `SIM_BASE-1-447_REF_ENUM` 
+    - `SIM_BASE-1-449_REF_ENUM` 
+    - `SIM_BASE-1-451_REF_ENUM` 
+    - `SIM_BASE-1-453_REF_ENUM` 
+    - `SIM_BASE-1-455_REF_ENUM` 
+    - `SIM_BASE-1-457_REF_ENUM` 
+    - `SIM_BASE-1-459_REF_ENUM` 
+    - `SIM_BASE-1-461_REF_ENUM` 
     - `SIM_BASE-NA-345_REF_ENUM` 
+    - `SIM_BASE-NA-353_REF_ENUM` 
+    - `SIM_BASE-NA-355_REF_ENUM` 
+    - `SIM_BASE-NA-357_REF_ENUM` 
+    - `SIM_BASE-NA-359_REF_ENUM` 
+    - `SIM_BASE-NA-361_REF_ENUM` 
+    - `SIM_BASE-NA-363_REF_ENUM` 
+    - `SIM_BASE-NA-365_REF_ENUM` 
+    - `SIM_BASE-NA-367_REF_ENUM` 
+    - `SIM_BASE-NA-369_REF_ENUM` 
+    - `SIM_BASE-NA-371_REF_ENUM` 
+    - `SIM_BASE-NA-373_REF_ENUM` 
+    - `SIM_BASE-NA-375_REF_ENUM` 
+    - `SIM_BASE-NA-377_REF_ENUM` 
+    - `SIM_BASE-NA-379_REF_ENUM` 
+    - `SIM_BASE-NA-381_REF_ENUM` 
+    - `SIM_BASE-NA-383_REF_ENUM` 
+    - `SIM_BASE-NA-385_REF_ENUM` 
+    - `SIM_BASE-NA-387_REF_ENUM` 
+    - `SIM_BASE-NA-389_REF_ENUM` 
+    - `SIM_BASE-NA-391_REF_ENUM` 
+    - `SIM_BASE-NA-393_REF_ENUM` 
+    - `SIM_BASE-NA-395_REF_ENUM` 
+    - `SIM_BASE-NA-397_REF_ENUM` 
+    - `SIM_BASE-NA-399_REF_ENUM` 
+    - `SIM_BASE-NA-401_REF_ENUM` 
+    - `SIM_BASE-NA-403_REF_ENUM` 
+    - `SIM_BASE-NA-405_REF_ENUM` 
+    - `SIM_BASE-NA-407_REF_ENUM` 
+    - `SIM_BASE-NA-409_REF_ENUM` 
+    - `SIM_BASE-NA-411_REF_ENUM` 
+    - `SIM_BASE-NA-413_REF_ENUM` 
+    - `SIM_BASE-NA-415_REF_ENUM` 
+    - `SIM_BASE-NA-417_REF_ENUM` 
+    - `SIM_BASE-NA-419_REF_ENUM` 
+    - `SIM_BASE-NA-421_REF_ENUM` 
+    - `SIM_BASE-NA-423_REF_ENUM` 
+    - `SIM_BASE-NA-425_REF_ENUM` 
+    - `SIM_BASE-NA-427_REF_ENUM` 
+    - `SIM_BASE-NA-429_REF_ENUM` 
+    - `SIM_BASE-NA-431_REF_ENUM` 
+    - `SIM_BASE-NA-433_REF_ENUM` 
+    - `SIM_BASE-NA-435_REF_ENUM` 
+    - `SIM_BASE-NA-437_REF_ENUM` 
+    - `SIM_BASE-NA-439_REF_ENUM` 
+    - `SIM_BASE-NA-441_REF_ENUM` 
+    - `SIM_BASE-NA-443_REF_ENUM` 
+    - `SIM_BASE-NA-513_REF_ENUM` 
     - `SIM_CERTIF_INSTAL_EX-Niveau 1-293_REF_ENUM` 
     - `SIM_CERTIF_INSTAL_EX-Niveau 1-295_REF_ENUM` 
     - `SIM_CERTIF_INSTAL_EX-Niveau 1-297_REF_ENUM` 
     - `SIM_CERTIF_INSTAL_EX-Niveau 1-299_REF_ENUM` 
     - `SIM_CERTIF_INSTAL_EX-Niveau 1-301_REF_ENUM` 
+    - `SIM_CONCEPTION-1-463_REF_ENUM` 
+    - `SIM_CONCEPTION-1-465_REF_ENUM` 
+    - `SIM_CONCEPTION-1-467_REF_ENUM` 
+    - `SIM_CONCEPTION-1-469_REF_ENUM` 
+    - `SIM_CONCEPTION-1-471_REF_ENUM` 
+    - `SIM_CONCEPTION-1-473_REF_ENUM` 
+    - `SIM_CONCEPTION-1-475_REF_ENUM` 
+    - `SIM_CONCEPTION-1-477_REF_ENUM` 
+    - `SIM_CONCEPTION-1-479_REF_ENUM` 
+    - `SIM_CONCEPTION-1-481_REF_ENUM` 
+    - `SIM_CONCEPTION-1-483_REF_ENUM` 
+    - `SIM_CONCEPTION-1-485_REF_ENUM` 
+    - `SIM_CONCEPTION-1-487_REF_ENUM` 
+    - `SIM_CONCEPTION-1-489_REF_ENUM` 
+    - `SIM_CONCEPTION-1-491_REF_ENUM` 
+    - `SIM_REX-1-493_REF_ENUM` 
+    - `SIM_REX-1-499_REF_ENUM` 
+    - `SIM_REX-1-501_REF_ENUM` 
+    - `SIM_REX-1-503_REF_ENUM` 
+    - `SIM_REX-1-507_REF_ENUM` 
     - `Simplicité - Conception-Niveau 1-43_REF_ENUM` 
     - `Simplicité - Conception-Niveau 1-45_REF_ENUM` 
     - `Simplicité - Conception-Niveau 1-47_REF_ENUM` 
@@ -199,6 +278,9 @@ Exercise
     - `Simplicité-Notionsdebase-Nonapplicable-339_REF_ENUM` 
     - `Simplicité-Notionsdebase-Nonapplicable-341_REF_ENUM` 
     - `Simplicité-Notionsdebase-Nonapplicable-343_REF_ENUM` 
+* `QUALEXLANGUE`
+    - `FRA` FRA
+    - `ENU` ENU
 
 `QualUser` business object definition
 -------------------------------------
@@ -213,7 +295,8 @@ Exercise
 | `usr_last_name`                                              | char(50)                                 |          | yes       | yes      | Last name                                                                        |
 | `usr_active`                                                 | enum(1) using `USER_STATUS` list         |          | yes       |          | -                                                                                |
 | `usr_first_name`                                             | char(50)                                 |          | yes       | yes      | First name                                                                       |
-| `qualUsrTests`                                               | multi(100) using `QUALEXTYPE` list       |          | yes       |          | -                                                                                |
+| `qualUsrTests`                                               | multi(256) using `QUALEXTYPE` list       |          | yes       |          | -                                                                                |
+| `usr_lang`                                                   | enum(3) using `LANG` list                | yes      | yes       | yes      | Language                                                                         |
 | `usr_email`                                                  | email(100)                               |          | yes       | yes      | Email address                                                                    |
 | `qualUsrLevel`                                               | multi(100) using `QUALEXDIFFICULTY` list |          | yes       |          | -                                                                                |
 | `qualUsrTypedutilisateur`                                    | enum(100) using `QUALUSRTYPEDUTILISATEUR` list | yes      | yes       |          | -                                                                                |
@@ -245,6 +328,9 @@ Exercise
     - `SIM_CERTIF_BEHAVE` Certification - Comportement
     - `SIM_CERTIF_HOOKS` Certification - Hooks
     - `NA` Non applicable
+* `LANG`
+    - `ENU` English language
+    - `FRA` French language
 * `QUALEXDIFFICULTY`
     - `1` Niveau 1
     - `2` Niveau 2
@@ -432,12 +518,89 @@ Exercise
     - `Certification - Paramétrage-Niveau 1-269_REF_ENUM` 
     - `Certification - Paramétrage-Niveau 1-271_REF_ENUM` 
     - `Certification - Paramétrage-Niveau 1-273_REF_ENUM` 
+    - `JAVA-1-351_REF_ENUM` 
+    - `SIM_BASE-1-445_REF_ENUM` 
+    - `SIM_BASE-1-447_REF_ENUM` 
+    - `SIM_BASE-1-449_REF_ENUM` 
+    - `SIM_BASE-1-451_REF_ENUM` 
+    - `SIM_BASE-1-453_REF_ENUM` 
+    - `SIM_BASE-1-455_REF_ENUM` 
+    - `SIM_BASE-1-457_REF_ENUM` 
+    - `SIM_BASE-1-459_REF_ENUM` 
+    - `SIM_BASE-1-461_REF_ENUM` 
     - `SIM_BASE-NA-345_REF_ENUM` 
+    - `SIM_BASE-NA-353_REF_ENUM` 
+    - `SIM_BASE-NA-355_REF_ENUM` 
+    - `SIM_BASE-NA-357_REF_ENUM` 
+    - `SIM_BASE-NA-359_REF_ENUM` 
+    - `SIM_BASE-NA-361_REF_ENUM` 
+    - `SIM_BASE-NA-363_REF_ENUM` 
+    - `SIM_BASE-NA-365_REF_ENUM` 
+    - `SIM_BASE-NA-367_REF_ENUM` 
+    - `SIM_BASE-NA-369_REF_ENUM` 
+    - `SIM_BASE-NA-371_REF_ENUM` 
+    - `SIM_BASE-NA-373_REF_ENUM` 
+    - `SIM_BASE-NA-375_REF_ENUM` 
+    - `SIM_BASE-NA-377_REF_ENUM` 
+    - `SIM_BASE-NA-379_REF_ENUM` 
+    - `SIM_BASE-NA-381_REF_ENUM` 
+    - `SIM_BASE-NA-383_REF_ENUM` 
+    - `SIM_BASE-NA-385_REF_ENUM` 
+    - `SIM_BASE-NA-387_REF_ENUM` 
+    - `SIM_BASE-NA-389_REF_ENUM` 
+    - `SIM_BASE-NA-391_REF_ENUM` 
+    - `SIM_BASE-NA-393_REF_ENUM` 
+    - `SIM_BASE-NA-395_REF_ENUM` 
+    - `SIM_BASE-NA-397_REF_ENUM` 
+    - `SIM_BASE-NA-399_REF_ENUM` 
+    - `SIM_BASE-NA-401_REF_ENUM` 
+    - `SIM_BASE-NA-403_REF_ENUM` 
+    - `SIM_BASE-NA-405_REF_ENUM` 
+    - `SIM_BASE-NA-407_REF_ENUM` 
+    - `SIM_BASE-NA-409_REF_ENUM` 
+    - `SIM_BASE-NA-411_REF_ENUM` 
+    - `SIM_BASE-NA-413_REF_ENUM` 
+    - `SIM_BASE-NA-415_REF_ENUM` 
+    - `SIM_BASE-NA-417_REF_ENUM` 
+    - `SIM_BASE-NA-419_REF_ENUM` 
+    - `SIM_BASE-NA-421_REF_ENUM` 
+    - `SIM_BASE-NA-423_REF_ENUM` 
+    - `SIM_BASE-NA-425_REF_ENUM` 
+    - `SIM_BASE-NA-427_REF_ENUM` 
+    - `SIM_BASE-NA-429_REF_ENUM` 
+    - `SIM_BASE-NA-431_REF_ENUM` 
+    - `SIM_BASE-NA-433_REF_ENUM` 
+    - `SIM_BASE-NA-435_REF_ENUM` 
+    - `SIM_BASE-NA-437_REF_ENUM` 
+    - `SIM_BASE-NA-439_REF_ENUM` 
+    - `SIM_BASE-NA-441_REF_ENUM` 
+    - `SIM_BASE-NA-443_REF_ENUM` 
+    - `SIM_BASE-NA-513_REF_ENUM` 
     - `SIM_CERTIF_INSTAL_EX-Niveau 1-293_REF_ENUM` 
     - `SIM_CERTIF_INSTAL_EX-Niveau 1-295_REF_ENUM` 
     - `SIM_CERTIF_INSTAL_EX-Niveau 1-297_REF_ENUM` 
     - `SIM_CERTIF_INSTAL_EX-Niveau 1-299_REF_ENUM` 
     - `SIM_CERTIF_INSTAL_EX-Niveau 1-301_REF_ENUM` 
+    - `SIM_CONCEPTION-1-463_REF_ENUM` 
+    - `SIM_CONCEPTION-1-465_REF_ENUM` 
+    - `SIM_CONCEPTION-1-467_REF_ENUM` 
+    - `SIM_CONCEPTION-1-469_REF_ENUM` 
+    - `SIM_CONCEPTION-1-471_REF_ENUM` 
+    - `SIM_CONCEPTION-1-473_REF_ENUM` 
+    - `SIM_CONCEPTION-1-475_REF_ENUM` 
+    - `SIM_CONCEPTION-1-477_REF_ENUM` 
+    - `SIM_CONCEPTION-1-479_REF_ENUM` 
+    - `SIM_CONCEPTION-1-481_REF_ENUM` 
+    - `SIM_CONCEPTION-1-483_REF_ENUM` 
+    - `SIM_CONCEPTION-1-485_REF_ENUM` 
+    - `SIM_CONCEPTION-1-487_REF_ENUM` 
+    - `SIM_CONCEPTION-1-489_REF_ENUM` 
+    - `SIM_CONCEPTION-1-491_REF_ENUM` 
+    - `SIM_REX-1-493_REF_ENUM` 
+    - `SIM_REX-1-499_REF_ENUM` 
+    - `SIM_REX-1-501_REF_ENUM` 
+    - `SIM_REX-1-503_REF_ENUM` 
+    - `SIM_REX-1-507_REF_ENUM` 
     - `Simplicité - Conception-Niveau 1-43_REF_ENUM` 
     - `Simplicité - Conception-Niveau 1-45_REF_ENUM` 
     - `Simplicité - Conception-Niveau 1-47_REF_ENUM` 
@@ -477,7 +640,8 @@ Exercise
     - `Simplicité-Notionsdebase-Nonapplicable-343_REF_ENUM` 
 * `QUALEXANWSERTYPE`
     - `TXT` Texte
-    - `ENUM` ENUM
+    - `ENUM` Énuméré
+    - `MULTI_ENUM` Énuméré multiple
     - `DIAG` Diagramme
 
 `QualExUsr` business object definition
@@ -496,10 +660,11 @@ Exercise
 | _Ref. `qualExusrUsrexamId.qualUsrexamDateLimite`_            | _date_                                   |          |           |          | -                                                                                |
 | _Ref. `qualExusrUsrexamId.qualUsrexamExamId`_                | _id_                                     |          |           |          | -                                                                                |
 | _Ref. `qualUsrexamExamId.qualExamName`_                      | _char(100)_                              |          |           |          | -                                                                                |
-| `qualExusrExamexId` link to **`QualExamEx`**                 | id                                       | yes*     | yes       |          | -                                                                                |
-| _Ref. `qualExusrExamexId.qualExamexExamId`_                  | _id_                                     |          |           |          | -                                                                                |
 | _Ref. `qualExusrExamexId.qualExamexExId`_                    | _id_                                     |          |           |          | -                                                                                |
 | _Ref. `qualExamexExId.qualExId`_                             | _char(100)_                              |          |           |          | -                                                                                |
+| `qualExusrUsrVirtualId` link to **`QualUser`**               | id                                       |          | yes       |          | -                                                                                |
+| `qualExusrExamexId` link to **`QualExamEx`**                 | id                                       | yes*     | yes       |          | -                                                                                |
+| _Ref. `qualExusrExamexId.qualExamexExamId`_                  | _id_                                     |          |           |          | -                                                                                |
 | _Ref. `qualExamexExId.qualExAnswerType`_                     | _enum(100) using `QUALEXANWSERTYPE` list_ |          |           |          | -                                                                                |
 | _Ref. `qualExamexExId.qualExQuestion`_                       | _text(10000)_                            |          |           |          | -                                                                                |
 | `qualExusrCheck`                                             | enum(100) using `QUALEXUSRCHECK` list    |          |           |          | -                                                                                |
@@ -513,13 +678,13 @@ Exercise
 | `qualExusrImage`                                             | document                                 |          | yes       |          | -                                                                                |
 | `qualExusrAnswerEnumeration`                                 | enum(100) using `QUALEXUSRANSWERENUMERATION` list |          | yes       |          | -                                                                                |
 | `qualExusrProgress`                                          | int(100)                                 |          |           |          | -                                                                                |
-| `qualExusrUsrVirtualId` link to **`QualUser`**               | id                                       |          | yes       |          | -                                                                                |
 
 ### Lists
 
 * `QUALEXANWSERTYPE`
     - `TXT` Texte
-    - `ENUM` ENUM
+    - `ENUM` Énuméré
+    - `MULTI_ENUM` Énuméré multiple
     - `DIAG` Diagramme
 * `QUALEXUSRCHECK`
     - `OK` OK
@@ -619,12 +784,89 @@ Exercise
     - `Certification - Paramétrage-Niveau 1-269_REF_ENUM` 
     - `Certification - Paramétrage-Niveau 1-271_REF_ENUM` 
     - `Certification - Paramétrage-Niveau 1-273_REF_ENUM` 
+    - `JAVA-1-351_REF_ENUM` 
+    - `SIM_BASE-1-445_REF_ENUM` 
+    - `SIM_BASE-1-447_REF_ENUM` 
+    - `SIM_BASE-1-449_REF_ENUM` 
+    - `SIM_BASE-1-451_REF_ENUM` 
+    - `SIM_BASE-1-453_REF_ENUM` 
+    - `SIM_BASE-1-455_REF_ENUM` 
+    - `SIM_BASE-1-457_REF_ENUM` 
+    - `SIM_BASE-1-459_REF_ENUM` 
+    - `SIM_BASE-1-461_REF_ENUM` 
     - `SIM_BASE-NA-345_REF_ENUM` 
+    - `SIM_BASE-NA-353_REF_ENUM` 
+    - `SIM_BASE-NA-355_REF_ENUM` 
+    - `SIM_BASE-NA-357_REF_ENUM` 
+    - `SIM_BASE-NA-359_REF_ENUM` 
+    - `SIM_BASE-NA-361_REF_ENUM` 
+    - `SIM_BASE-NA-363_REF_ENUM` 
+    - `SIM_BASE-NA-365_REF_ENUM` 
+    - `SIM_BASE-NA-367_REF_ENUM` 
+    - `SIM_BASE-NA-369_REF_ENUM` 
+    - `SIM_BASE-NA-371_REF_ENUM` 
+    - `SIM_BASE-NA-373_REF_ENUM` 
+    - `SIM_BASE-NA-375_REF_ENUM` 
+    - `SIM_BASE-NA-377_REF_ENUM` 
+    - `SIM_BASE-NA-379_REF_ENUM` 
+    - `SIM_BASE-NA-381_REF_ENUM` 
+    - `SIM_BASE-NA-383_REF_ENUM` 
+    - `SIM_BASE-NA-385_REF_ENUM` 
+    - `SIM_BASE-NA-387_REF_ENUM` 
+    - `SIM_BASE-NA-389_REF_ENUM` 
+    - `SIM_BASE-NA-391_REF_ENUM` 
+    - `SIM_BASE-NA-393_REF_ENUM` 
+    - `SIM_BASE-NA-395_REF_ENUM` 
+    - `SIM_BASE-NA-397_REF_ENUM` 
+    - `SIM_BASE-NA-399_REF_ENUM` 
+    - `SIM_BASE-NA-401_REF_ENUM` 
+    - `SIM_BASE-NA-403_REF_ENUM` 
+    - `SIM_BASE-NA-405_REF_ENUM` 
+    - `SIM_BASE-NA-407_REF_ENUM` 
+    - `SIM_BASE-NA-409_REF_ENUM` 
+    - `SIM_BASE-NA-411_REF_ENUM` 
+    - `SIM_BASE-NA-413_REF_ENUM` 
+    - `SIM_BASE-NA-415_REF_ENUM` 
+    - `SIM_BASE-NA-417_REF_ENUM` 
+    - `SIM_BASE-NA-419_REF_ENUM` 
+    - `SIM_BASE-NA-421_REF_ENUM` 
+    - `SIM_BASE-NA-423_REF_ENUM` 
+    - `SIM_BASE-NA-425_REF_ENUM` 
+    - `SIM_BASE-NA-427_REF_ENUM` 
+    - `SIM_BASE-NA-429_REF_ENUM` 
+    - `SIM_BASE-NA-431_REF_ENUM` 
+    - `SIM_BASE-NA-433_REF_ENUM` 
+    - `SIM_BASE-NA-435_REF_ENUM` 
+    - `SIM_BASE-NA-437_REF_ENUM` 
+    - `SIM_BASE-NA-439_REF_ENUM` 
+    - `SIM_BASE-NA-441_REF_ENUM` 
+    - `SIM_BASE-NA-443_REF_ENUM` 
+    - `SIM_BASE-NA-513_REF_ENUM` 
     - `SIM_CERTIF_INSTAL_EX-Niveau 1-293_REF_ENUM` 
     - `SIM_CERTIF_INSTAL_EX-Niveau 1-295_REF_ENUM` 
     - `SIM_CERTIF_INSTAL_EX-Niveau 1-297_REF_ENUM` 
     - `SIM_CERTIF_INSTAL_EX-Niveau 1-299_REF_ENUM` 
     - `SIM_CERTIF_INSTAL_EX-Niveau 1-301_REF_ENUM` 
+    - `SIM_CONCEPTION-1-463_REF_ENUM` 
+    - `SIM_CONCEPTION-1-465_REF_ENUM` 
+    - `SIM_CONCEPTION-1-467_REF_ENUM` 
+    - `SIM_CONCEPTION-1-469_REF_ENUM` 
+    - `SIM_CONCEPTION-1-471_REF_ENUM` 
+    - `SIM_CONCEPTION-1-473_REF_ENUM` 
+    - `SIM_CONCEPTION-1-475_REF_ENUM` 
+    - `SIM_CONCEPTION-1-477_REF_ENUM` 
+    - `SIM_CONCEPTION-1-479_REF_ENUM` 
+    - `SIM_CONCEPTION-1-481_REF_ENUM` 
+    - `SIM_CONCEPTION-1-483_REF_ENUM` 
+    - `SIM_CONCEPTION-1-485_REF_ENUM` 
+    - `SIM_CONCEPTION-1-487_REF_ENUM` 
+    - `SIM_CONCEPTION-1-489_REF_ENUM` 
+    - `SIM_CONCEPTION-1-491_REF_ENUM` 
+    - `SIM_REX-1-493_REF_ENUM` 
+    - `SIM_REX-1-499_REF_ENUM` 
+    - `SIM_REX-1-501_REF_ENUM` 
+    - `SIM_REX-1-503_REF_ENUM` 
+    - `SIM_REX-1-507_REF_ENUM` 
     - `Simplicité - Conception-Niveau 1-43_REF_ENUM` 
     - `Simplicité - Conception-Niveau 1-45_REF_ENUM` 
     - `Simplicité - Conception-Niveau 1-47_REF_ENUM` 

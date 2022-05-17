@@ -49,15 +49,13 @@ public class QualUser extends com.simplicite.objects.System.SimpleUser {
         if (isNew()) {
             setFieldValue("row_module_id", ModuleDB.getModuleId("ApplicationUsers"));
         }
-
         if ("".equals(getFieldValue("qualUsrToken")))
             setFieldValue("qualUsrToken", Tool.randomUUID());
-
         if ("".equals(getFieldValue("qualUsrUrlQuest")))
             setFieldValue("qualUsrUrlQuest", "https://qualification5.dev.simplicite.io/ext/QualPostTraining?token="
                     + getFieldValue("qualUsrToken"));
 
-        return msgs;
+        return super.preValidate();
     }
 
     @Override
@@ -109,7 +107,7 @@ public class QualUser extends com.simplicite.objects.System.SimpleUser {
 
         String url = g.getSystemParam("DIRECT_URL");
 
-        String c = HTMLTool.getResourceHTMLContent(this, "QUAL_USR_NOTIF");
+        String c = HTMLTool.getResourceHTMLContent(this, "FRA".equals(getFieldValue("usr_lang")) ? "QUAL_USR_NOTIF_FRA" : "QUAL_USR_NOTIF_ENU");
 
         /*
          * c = c.replace("[NOM]", getFieldValue("usr_last_name")); c =

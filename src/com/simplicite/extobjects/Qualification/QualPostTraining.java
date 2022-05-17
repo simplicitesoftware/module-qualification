@@ -26,6 +26,8 @@ public class QualPostTraining extends ExternalObject {
 			
 			String token = params.getParameter("token");
 			String userId = g.simpleQuery("select row_id from m_user where qual_usr_token = '"+token+"'");
+			String lang = g.simpleQuery("select usr_lang from m_user where qual_usr_token = '"+token+"'");
+			boolean fra = "FRA".equals(lang);
 			ObjectDB examEx = g.getTmpObject("QualExamEx");
 			examEx.resetValues();
 			examEx.resetFilters();
@@ -68,6 +70,7 @@ public class QualPostTraining extends ExternalObject {
 							qst.put("type", examEx.getFieldValue("qualExamexExId.qualExAnswerType"));
 							qst.put("enum", examEx.getFieldValue("qualExamexExId.qualExChoicesEnumeration"));
 							qst.put("id", examEx.getFieldValue("qualExamexExId.qualExId"));
+							
 							qsts.put(qst);
 							
 							answers.put(examEx.getFieldValue("qualExamexExId.qualExId"), examEx.getFieldValue("qualExamexExId.qualExAnswerEnumeration"));
@@ -93,6 +96,8 @@ public class QualPostTraining extends ExternalObject {
 			
 			renderParams.put("generic", generic);
 			renderParams.put("userId", userId);
+			//language of the user definies the text displayed to him
+			renderParams.put("lang", buildLanguageJson(fra));
 			
 			String render = getName() + ".render(" + renderParams.toString() +",'"+template.replaceAll("(\\r|\\n|\\r\\n)+", "\\\\n")+ "');";
 			if (pub) { // Public page version (standalone Bootstrap page)
@@ -116,4 +121,12 @@ public class QualPostTraining extends ExternalObject {
 			return e.getMessage();
 		}
 	} 
+	
+	
+	
+	private JSONObject buildLanguageJson(boolean isFrench){
+		Grant g = getGrant();
+		JSONObject eng = new JSONObject(g.getSystemParam("QUAL_FRONT_ENU"));
+		return isFrench ? new JSONObject(g.getSystemParam("QUAL_FRONT_FRA")) : new JSONObject(g.getSystemParam("QUAL_FRONT_ENU"));
+	}
 }

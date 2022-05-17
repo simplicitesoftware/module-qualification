@@ -9,20 +9,20 @@
      >
       <template v-slot:complete>
          <p v-if="isValid && generic">
-            <span class="fh2">Vous avez terminé !</span>
+            <span class="fh2">{{params.lang.completed.title}}</span>
             <span class="f-section-text">
-            Merci d\'avoir pris le temps de répondre à nos questions &#x1F64F;
+            {{params.lang.completed.thankyou}}
             </span>
          </p>
          <p v-if="!submitted && isValid && !generic">
-            <span class="fh2">Vous avez terminé !</span>
+            <span class="fh2">{{params.lang.completed.title}}</span>
             <span class="f-section-text">
-            Vous pouvez modifier vos réponses ou cliquer sur \'Calculer mon score\' pour afficher votre score et enregistrer vos réponses.
+            {{params.lang.completed.editOrCalc}}
             </span>
          </p>
          <p>
             <span v-if="!isValid" class="f-section-text">
-            Vous n\'avez pas réussi à compléter le questionnaire, merci de nous communiquer votre problème sur notre forum <a href="https://community.simplicite.io/">community.simplicite.io</a>
+            {{params.lang.completed.error}} <a href="https://community.simplicite.io/">community.simplicite.io</a>
             </span>
          </p>
       </template>
@@ -35,7 +35,7 @@
                href="#"
                v-on:click.prevent="onQuizSubmit()"
                aria-label="Press to submit">
-            <span>Calculer mon score</span>
+            <span>{{params.lang.completed.calculate}}</span>
             </button>
             <a 
                class="f-enter-desc"
@@ -50,12 +50,12 @@
       
       <div v-if="submitted && scored && !generic">
       	<div v-if="loading">
-          <span class="fh2">Veuillez patienter...</span>
+          <span class="fh2">{{params.lang.completed.wait}}</span>
         </div>
         <div v-else>
-        	<span class="fh2">Votre score :</span>
+        	<span class="fh2">{{params.lang.completed.yourScore}}</span>
 	      	<div  v-for="scoreEl in scores">
-	      		<p>{{ scoreEl.examTitle }} : <b>{{ scoreEl.score }}%</b> de bonnes réponses</p>
+	      		<p>{{ scoreEl.examTitle }} : <b>{{ scoreEl.score }}/{{ scoreEl.total }}</b></p>
 	      	</div>
         </div>
       </div>

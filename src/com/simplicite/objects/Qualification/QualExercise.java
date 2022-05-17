@@ -14,6 +14,12 @@ public class QualExercise extends ObjectDB {
 
     private static final long serialVersionUID = 1L;
 
+	@Override
+	public void initRefSelect(ObjectDB parent) {
+		AppLog.info(parent.getRowId(), getGrant());
+	}
+
+
     @Override
     public boolean isDeleteEnable(String[] row) {
 
@@ -35,9 +41,7 @@ public class QualExercise extends ObjectDB {
                 // update of the answers of already completed exams
                 if (isUsed(getRowId())) {
                     // Message displayed to the user
-                    msgs.add(Message.formatError("ENUM Utilisé",
-                            "Vous ne pouvez pas modifier les choix possibles, cette question est déjà utilisée dans un test",
-                            "qualExChoicesEnumeration"));
+                    msgs.add(Message.formatSimpleError("Vous ne pouvez pas modifier les choix possibles, cette question est déjà utilisée dans un test"));
 
                 } else {
 
@@ -51,6 +55,12 @@ public class QualExercise extends ObjectDB {
 
                 }
             }
+            
+            //Check that if answer is multiple, type of exercice is multiple
+            if(getFieldValue("qualExAnswerEnumeration").contains("@@@") && !"MULTI_ENUM".equals(getFieldValue("qualExAnswerType"))){
+            	msgs.add(Message.formatSimpleError("Le champ réponse contient des @@@ mais l'énoncé est de type Énuméré. Changez le type à Énuméré multiple ou enlevez les @@@ de la réponse."));
+            } 
+            
         } else {
             // Initialize field value
             setFieldValue("qualExId", getFieldValue("qualExType") + "-" + getFieldValue("qualExDifficulty") + "-0000");

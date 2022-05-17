@@ -1,9 +1,9 @@
 {
-    "date": "2021-11-03 16:37:35",
+    "date": "2022-05-16 15:18:55",
     "name": "Qualification",
-    "format": "xml",
-    "files": ["Qualification.xml"],
+    "format": "json",
+    "files": ["Qualification.json"],
     "repository": {},
     "version": "0.18",
-    "platform": "5.1.11"
+    "platform": "5.2.3"
 }
