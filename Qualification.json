@@ -4,7 +4,7 @@
  "item": {
   "mdl_name": "Qualification",
   "mdl_prefix": "qual",
-  "mdl_version": "0.18",
+  "mdl_version": "0.19",
   "mdl_type": null,
   "mdl_url": null,
   "mdl_comment": null
@@ -18020,6 +18020,37 @@
    "icon": "img/system/resource",
    "field": "row_module_id",
    "list": [
+    {
+     "object": "Resource",
+     "userkey": "Disposition(default)~ANY~qualif-module",
+     "item": {
+      "res_object": {
+       "item": {"dis_code": "default"},
+       "icon": "img/system/disposition",
+       "label": "Disposition",
+       "row_id": "6",
+       "userkeylabel": "default",
+       "object": "Disposition"
+      },
+      "res_type": "IMG",
+      "res_lang": "ANY",
+      "res_code": "qualif-module",
+      "res_cached": false,
+      "res_file": null,
+      "res_file_compiled": null,
+      "res_image": {
+       "path": "resources/Disposition/default/qualif-module.svg",
+       "size": 7027,
+       "field": "res_image",
+       "mime": "image/svg+xml",
+       "name": "qa-module.svg",
+       "id": "11134",
+       "object": "Resource",
+       "rowid": "299"
+      },
+      "row_module_id__mdl_name": "Qualification"
+     }
+    },
     {
      "object": "Resource",
      "userkey": "ObjectExternal(QualEndTestExt)~ANY~STYLES",
