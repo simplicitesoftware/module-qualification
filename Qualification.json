@@ -521,17 +521,17 @@
      "object": "ObjectInternal",
      "userkey": "QualCertUsr",
      "item": {
-      "obo_name": "QualCertUsr",
+      "obo_name": {"value": "QualCertUsr"},
       "obo_dbtable": "qual_cert_usr",
       "obo_role": "OBJ",
       "obo_class": null,
       "obo_script_id": {
        "path": "src/com/simplicite/objects/Qualification/QualCertUsr.java",
-       "size": 2937,
+       "size": 2939,
        "field": "obo_script_id",
        "mime": "text/plain",
        "name": "QualCertUsr.java",
-       "id": "6049",
+       "id": "11137",
        "object": "ObjectInternal",
        "rowid": "2013"
       },
@@ -8810,17 +8810,17 @@
      "object": "ObjectInternal",
      "userkey": "QualUser",
      "item": {
-      "obo_name": "QualUser",
+      "obo_name": {"value": "QualUser"},
       "obo_dbtable": "m_user",
       "obo_role": "OBJ",
       "obo_class": null,
       "obo_script_id": {
        "path": "src/com/simplicite/objects/Qualification/QualUser.java",
-       "size": 4949,
+       "size": 4950,
        "field": "obo_script_id",
        "mime": "text/plain",
        "name": "QualUser.java",
-       "id": "11133",
+       "id": "11136",
        "object": "ObjectInternal",
        "rowid": "2007"
       },

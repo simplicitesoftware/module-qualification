@@ -22,7 +22,7 @@ public class QualCertUsr extends ObjectDB {
         // msgs.add(Message.formatError("ERROR_CODE", "Message", "fieldName"));
 
         if ("".equals(getFieldValue("qualCertusrUrlEval")))
-            setFieldValue("qualCertusrUrlEval", "https://qualification5.dev.simplicite.io/ext/QualPostCertif?token="
+            setFieldValue("qualCertusrUrlEval", getGrant().getSystemParam("DIRECT_URL") + "/ext/QualPostCertif?token="
                     + getFieldValue("qualUsrToken"));
         List<String[]> note = getGrant().query(
                 "select sum(cast(QUAL_USREXAM_SCORE as int)), sum(cast(QUAL_USREXAM_TOTAL_POINTS as int)) from qual_user_exam where QUAL_USREXAM_ETAT='SCORED' and QUAL_USREXAM_CERTUSR_ID = "

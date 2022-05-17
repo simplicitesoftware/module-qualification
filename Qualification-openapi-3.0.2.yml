@@ -137,7 +137,7 @@ components:
       type: object
       properties:
         qualUsrexamCertusrId__qualCertusrCertId:
-          description: qualUsrexamCertusrId ID Certification
+          description: ID Certification Certification du candidat
           type: string
         qualUsrexamUsrId__usr_last_name:
           description: Last name
@@ -146,16 +146,16 @@ components:
           description: Certification du candidat
           type: string
         qualUsrexamExamId__qualExamName:
-          description: qualUsrexamExamId Nom
+          description: Examen
           type: string
         qualUsrexamExamId__qualExamPublic:
-          description: qualUsrexamExamId Public
+          description: Public
           type: boolean
         qualUsrexamId:
           description: Id
           type: string
         qualUsrexamCertusrId__qualCertusrCertId__qualCertNom:
-          description: qualUsrexamCertusrId qualCertusrCertId Nom
+          description: Nom ID Certification Certification du candidat
           type: string
         qualUsrexamDateLimite:
           description: Date limite
@@ -174,7 +174,7 @@ components:
           description: Login
           type: string
         qualUsrexamCertusrId__qualCertusrUsrId:
-          description: qualUsrexamCertusrId ID Utilisateur
+          description: ID Utilisateur Certification du candidat
           type: string
         qualUsrexamUsrId__usr_first_name:
           description: First name
@@ -379,7 +379,8 @@ components:
           - SQL_QST_1_CHOICES_ENUM_0
           - SQL_QST_1_CHOICES_ENUM_1
         qualExusrExamexId__qualExamexExId__qualExRefenum:
-          description: qualExusrExamexId qualExamexExId qual ex refenum
+          description: qual ex refenum ID Exercice Question de l'examen|Questions
+            de l'examen
           type: string
           enum:
           - SIM_BASE-NA-435_REF_ENUM
@@ -597,20 +598,19 @@ components:
           - Certification - Paramétrage-Niveau 1-233_REF_ENUM
           - Simplicité-Notionsdebase-Nonapplicable-343_REF_ENUM
         qualExusrExamexId__qualExamexExId:
-          description: qualExusrExamexId ID Exercice
+          description: ID Exercice Question de l'examen|Questions de l'examen
           type: string
         qualExusrExamexId__qualExamexExId__qualExAnswerText:
-          description: qualExusrExamexId qualExamexExId Réponse
+          description: Réponse - Texte
           type: string
         qualExusrExamexId:
           description: Question de l'examen|Questions de l'examen
           type: string
         qualExusrExamexId__qualExamexExId__qualExId:
-          description: qualExusrExamexId qualExamexExId Id
+          description: ID Question
           type: string
         qualExusrExamexId__qualExamexExId__qualExAnswerEnumeration:
-          description: qualExusrExamexId qualExamexExId Réponse (séparées par @@@
-            si multiple)
+          description: Réponse - QCM
           type: string
         qualExusrProgress:
           description: Avancement
@@ -619,7 +619,7 @@ components:
           description: Examen de l'utilisateur|Examens de l'utilisateur
           type: string
         qualExusrExamexId__qualExamexExId__qualExAnswerType:
-          description: qualExusrExamexId qualExamexExId Type de réponse
+          description: Type de réponse
           type: string
           enum:
           - TXT
@@ -627,23 +627,23 @@ components:
           - MULTI_ENUM
           - DIAG
         qualExusrUsrexamId__qualUsrexamExamId:
-          description: qualExusrUsrexamId Examen
+          description: Examen Examen de l'utilisateur|Examens de l'utilisateur
           type: string
         qualExusrExamexId__qualExamexExamId:
-          description: qualExusrExamexId Exam id
+          description: Exam id Question de l'examen|Questions de l'examen
           type: string
         qualExusrUsrexamId__qualUsrexamExamId__qualExamName:
-          description: qualExusrUsrexamId qualUsrexamExamId Nom
+          description: Nom de l'examen
           type: string
         qualExusrUsrexamId__qualUsrexamDateLimite:
-          description: qualExusrUsrexamId Date limite
+          description: Date limite
           type: string
           example: yyyy-MM-dd
         qualExusrUsrexamId__qualUsrexamUsrId:
-          description: qualExusrUsrexamId Candidat|Candidats
+          description: Candidat|Candidats Examen de l'utilisateur|Examens de l'utilisateur
           type: string
         qualExusrExamexId__qualExamexExId__qualExType:
-          description: qualExusrExamexId qualExamexExId Type d'exercice
+          description: Type d'exercice
           type: string
           enum:
           - UML
@@ -667,13 +667,13 @@ components:
           description: Candidat|Candidats
           type: string
         qualExusrUsrexamId__qualUsrexamId:
-          description: qualExusrUsrexamId Id
+          description: Identifiant de l'examen
           type: string
         qualExusrExamexId__qualExamexExId__qualExQuestion:
-          description: qualExusrExamexId qualExamexExId Énoncé
+          description: Énoncé
           type: string
         qualExusrExamexId__qualExamexScore:
-          description: qualExusrExamexId Coefficient
+          description: Score
           type: integer
         row_id:
           description: Unique technical row ID
@@ -1747,13 +1747,14 @@ paths:
           type: string
         in: query
         name: qualExusrUsrexamId__qualUsrexamId
-        description: Search filter for qualExusrUsrexamId Id
+        description: Search filter for Identifiant de l'examen
         required: false
       - schema:
           type: string
         in: query
         name: qualExusrUsrexamId__qualUsrexamUsrId
-        description: Search filter for qualExusrUsrexamId Candidat|Candidats
+        description: Search filter for Candidat|Candidats Examen de l'utilisateur|Examens
+          de l'utilisateur
         required: false
       - schema:
           type: string
@@ -1765,31 +1766,32 @@ paths:
           type: string
         in: query
         name: qualExusrUsrexamId__qualUsrexamDateLimite
-        description: Search filter for qualExusrUsrexamId Date limite
+        description: Search filter for Date limite
         required: false
       - schema:
           type: string
         in: query
         name: qualExusrUsrexamId__qualUsrexamExamId
-        description: Search filter for qualExusrUsrexamId Examen
+        description: Search filter for Examen Examen de l'utilisateur|Examens de l'utilisateur
         required: false
       - schema:
           type: string
         in: query
         name: qualExusrUsrexamId__qualUsrexamExamId__qualExamName
-        description: Search filter for qualExusrUsrexamId qualUsrexamExamId Nom
+        description: Search filter for Nom de l'examen
         required: false
       - schema:
           type: string
         in: query
         name: qualExusrExamexId__qualExamexExId
-        description: Search filter for qualExusrExamexId ID Exercice
+        description: Search filter for ID Exercice Question de l'examen|Questions
+          de l'examen
         required: false
       - schema:
           type: string
         in: query
         name: qualExusrExamexId__qualExamexExId__qualExId
-        description: Search filter for qualExusrExamexId qualExamexExId Id
+        description: Search filter for ID Question
         required: false
       - schema:
           type: string
@@ -1807,7 +1809,7 @@ paths:
           type: string
         in: query
         name: qualExusrExamexId__qualExamexExamId
-        description: Search filter for qualExusrExamexId Exam id
+        description: Search filter for Exam id Question de l'examen|Questions de l'examen
         required: false
       - schema:
           type: string
@@ -1818,13 +1820,13 @@ paths:
           - DIAG
         in: query
         name: qualExusrExamexId__qualExamexExId__qualExAnswerType
-        description: Search filter for qualExusrExamexId qualExamexExId Type de réponse
+        description: Search filter for Type de réponse
         required: false
       - schema:
           type: string
         in: query
         name: qualExusrExamexId__qualExamexExId__qualExQuestion
-        description: Search filter for qualExusrExamexId qualExamexExId Énoncé
+        description: Search filter for Énoncé
         required: false
       - schema:
           type: string
@@ -2061,26 +2063,26 @@ paths:
           - Simplicité-Notionsdebase-Nonapplicable-343_REF_ENUM
         in: query
         name: qualExusrExamexId__qualExamexExId__qualExRefenum
-        description: Search filter for qualExusrExamexId qualExamexExId qual ex refenum
+        description: Search filter for qual ex refenum ID Exercice Question de l'examen|Questions
+          de l'examen
         required: false
       - schema:
           type: string
         in: query
         name: qualExusrExamexId__qualExamexExId__qualExAnswerEnumeration
-        description: Search filter for qualExusrExamexId qualExamexExId Réponse (séparées
-          par @@@ si multiple)
+        description: Search filter for Réponse - QCM
         required: false
       - schema:
           type: string
         in: query
         name: qualExusrExamexId__qualExamexExId__qualExAnswerText
-        description: Search filter for qualExusrExamexId qualExamexExId Réponse
+        description: Search filter for Réponse - Texte
         required: false
       - schema:
           type: integer
         in: query
         name: qualExusrExamexId__qualExamexScore
-        description: Search filter for qualExusrExamexId Coefficient
+        description: Search filter for Score
         required: false
       - schema:
           type: string
@@ -2104,7 +2106,7 @@ paths:
           - NA
         in: query
         name: qualExusrExamexId__qualExamexExId__qualExType
-        description: Search filter for qualExusrExamexId qualExamexExId Type d'exercice
+        description: Search filter for Type d'exercice
         required: false
       - schema:
           type: string
@@ -3642,13 +3644,13 @@ paths:
           type: string
         in: query
         name: qualUsrexamExamId__qualExamName
-        description: Search filter for qualUsrexamExamId Nom
+        description: Search filter for Examen
         required: false
       - schema:
           type: boolean
         in: query
         name: qualUsrexamExamId__qualExamPublic
-        description: Search filter for qualUsrexamExamId Public
+        description: Search filter for Public
         required: false
       - schema:
           type: string
@@ -3688,19 +3690,19 @@ paths:
           type: string
         in: query
         name: qualUsrexamCertusrId__qualCertusrCertId
-        description: Search filter for qualUsrexamCertusrId ID Certification
+        description: Search filter for ID Certification Certification du candidat
         required: false
       - schema:
           type: string
         in: query
         name: qualUsrexamCertusrId__qualCertusrCertId__qualCertNom
-        description: Search filter for qualUsrexamCertusrId qualCertusrCertId Nom
+        description: Search filter for Nom ID Certification Certification du candidat
         required: false
       - schema:
           type: string
         in: query
         name: qualUsrexamCertusrId__qualCertusrUsrId
-        description: Search filter for qualUsrexamCertusrId ID Utilisateur
+        description: Search filter for ID Utilisateur Certification du candidat
         required: false
       - schema:
           type: string
@@ -5019,10 +5021,10 @@ tags:
 - name: QualExercise
   description: Énoncé
 - name: QualExUsr
-  description: QualExUsr
+  description: Réponses enregistrées
 - name: QualUser
   description: Candidat
 - name: QualUserExam
-  description: QualUserExam
+  description: Examen passé
 - name: QualUsrExamSubjects
   description: Sujets du candidat

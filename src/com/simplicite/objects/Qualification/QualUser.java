@@ -52,7 +52,7 @@ public class QualUser extends com.simplicite.objects.System.SimpleUser {
         if ("".equals(getFieldValue("qualUsrToken")))
             setFieldValue("qualUsrToken", Tool.randomUUID());
         if ("".equals(getFieldValue("qualUsrUrlQuest")))
-            setFieldValue("qualUsrUrlQuest", "https://qualification5.dev.simplicite.io/ext/QualPostTraining?token="
+            setFieldValue("qualUsrUrlQuest", getGrant().getSystemParam("DIRECT_URL") + "ext/QualPostTraining?token="
                     + getFieldValue("qualUsrToken"));
 
         return super.preValidate();
