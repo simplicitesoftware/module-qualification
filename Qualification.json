@@ -85,7 +85,25 @@
       "grp_parent_id__grp_name": null,
       "grp_home_id__viw_name": "QualAdminScope",
       "row_module_id__mdl_name": "Qualification"
-     }
+     },
+     "links": [{
+      "object": "Responsability",
+      "label": "Responsabilités",
+      "icon": "img/system/responsability",
+      "field": "rsp_group_id",
+      "list": [{
+       "object": "Responsability",
+       "userkey": "designer~QUAL_ADMIN~2021-03-08",
+       "item": {
+        "rsp_login_id__usr_login": "designer",
+        "rsp_group_id__grp_name": "QUAL_ADMIN",
+        "rsp_start_dt": "2021-03-08",
+        "rsp_end_dt": null,
+        "rsp_activ": true,
+        "row_module_id__mdl_name": "Qualification"
+       }
+      }]
+     }]
     },
     {
      "object": "Group",
